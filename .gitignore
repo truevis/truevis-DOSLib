@@ -106,6 +106,8 @@ StyleCopReport.xml
 *.pch
 *.pdb
 *.ipdb
+*.exp
+*.ilk
 *.pgc
 *.pgd
 *.rsp
