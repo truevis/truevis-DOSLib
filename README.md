@@ -45,6 +45,43 @@ Functions are named `dos_*`. Example from a working command:
 (setq fname (dos_getfiled "Select a file" "C:\\" "PTS files (*.pts)|*.pts||"))
 ```
 
+The full function reference is in [docs/functions](docs/functions/README.md): all 316 `dos_*` functions, with syntax, parameters, return values, and examples.
+
+## Tested in AutoCAD 2027
+
+Checked in AutoCAD 2027 with `DOSLib26x64.arx` loaded:
+
+- **Module loaded:** `dos_arxlist` lists `doslib26x64.arx`.
+
+  ![DOSLib listed in the loaded ARX modules](docs/images/arx-loaded-check.jpg)
+
+- **File size:** `dos_filesize` on the 5,114,241-byte sample `Pump_points_exported_from_ReCap.pts` returns `(("Pump_points_exported_from_ReCap.pts" . 5114241))`.
+- **Tokenizing:** `dos_strtokens "1 2 3" " "` returns `(1 2 3)`.
+
+  ![dos_filesize and dos_strtokens results in AutoCAD 2027](docs/images/dos-filesize-strtokens.jpg)
+
+- **Color conversion:** `dos_rgbtoaci` maps `(255 0 0)` to ACI 1 (red) and `(0 255 0)` to ACI 3 (green). `dos_acitorgb 1` returns `(255 0 0)`.
+
+### Dialogs and pop-ups
+
+These DOSLib functions open standard Windows dialogs from AutoLISP, with results returned to your code:
+
+- **`dos_msgbox`:** shows a message box with the Information icon and an OK button. Clicking OK returns `4`, as documented.
+
+  ![dos_msgbox message box in AutoCAD 2027](docs/images/gui-msgbox.jpg)
+
+- **`dos_listbox`:** shows a list of pump parts. Choosing "Intake" and clicking OK returns `"Intake"`.
+
+  ![dos_listbox dialog in AutoCAD 2027](docs/images/gui-listbox.jpg)
+
+- **`dos_getcolor`:** opens the Windows color picker, starting at ACI 1. Clicking Cancel returns `nil`. Choosing a color with OK was not tested here.
+
+  ![dos_getcolor color dialog in AutoCAD 2027](docs/images/gui-getcolor.jpg)
+
+The command-line results for these calls:
+
+![Command-line results for the dialog tests](docs/images/gui-results.jpg)
+
 ## Example: PTS point-cloud import
 
 The PTS import command for AutoCAD uses DOSLib for its file dialog, file size, and RGB-to-ACI color mapping. It imports ReCap `.pts` files as colored POINT entities.
