@@ -36,9 +36,7 @@ nil on error.
 
 ```lisp
 Command: (dos_absolutepath "C:\\Program Files\\AutoCAD 2006\\" "..\\..\\Drawings\\Xrefs\\")
-```
 
-```lisp
 "C:\\Drawings\\Xrefs"
 ```
 
@@ -78,21 +76,11 @@ nil on error.
 
 ```lisp
 Command: (dos_compactpath "C:\\Program Files\\AutoCAD 2006\\acad.exe" 30)
-```
 
-```lisp
 "C:\\Program Files\\...\\acad.exe"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_compactpath "C:\\Windows\\win.ini" 12)
-```
 
-```lisp
 "...\\win.ini"
 ```
 
@@ -128,21 +116,11 @@ nil on error.
 
 ```lisp
 Command: (dos_fullpath "acad.exe")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\acad.exe"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_fullpath "..\\..\\Windows\\win.ini")
-```
 
-```lisp
 "C:\\Windows\\win.ini"
 ```
 
@@ -170,30 +148,19 @@ A path to verify.
 
 T if the path is a network path.
 
-nil if the path is not a network
- path, or on error.
+nil if the path is not a network path, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_ispathnetwork "C:\\Program Files\\AutoCAD
  2010\\")
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ispathnetwork "Z:\\Program Files\\AutoCAD
  2010\\")
-```
 
-```lisp
 T
 ```
 
@@ -227,21 +194,11 @@ nil if the path is not relative, or on error.
 
 ```lisp
 Command: (dos_ispathrelative "C:\\Program Files\\AutoCAD 2006\\")
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ispathrelative "..\\..\\drawings\\xrefs\\")
-```
 
-```lisp
 T
 ```
 
@@ -275,21 +232,11 @@ nil if the path is not a root path, or on error.
 
 ```lisp
 Command: (dos_ispathroot "C:\\Program Files\\AutoCAD 2006\\")
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ispathroot "C:\\")
-```
 
-```lisp
 T
 ```
 
@@ -329,21 +276,11 @@ nil if the path do not share the same root component, or on error.
 
 ```lisp
 Command: (dos_ispathsameroot "C:\\Program Files\\AutoCAD 2006\\")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ispathsameroot "C:\\Program Files\\AutoCAD 2006\\" "e:\\drawings\\xrefs\\")
-```
 
-```lisp
 nil
 ```
 
@@ -371,29 +308,18 @@ A path to verify.
 
 T if the path is slow.
 
-nil if the path is not slow,
- or on error.
+nil if the path is not slow, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_ispathslow "C:\\Program Files\\AutoCAD
  2010\\")
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ispathslow "Z:\\RemoteUsers\\Data\\")
-```
 
-```lisp
 T
 ```
 
@@ -427,21 +353,11 @@ nil if the path is not a UNC path, or on error.
 
 ```lisp
 Command: (dos_ispathunc "C:\\Program Files\\AutoCAD 2006\\")
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ispathroot "\\\\Server\\Shared Folder")
-```
 
-```lisp
 T
 ```
 
@@ -475,21 +391,11 @@ nil if the path does not conforms to a valid URL format, or on error.
 
 ```lisp
 Command: (dos_ispathurl "C:\\Program Files\\AutoCAD 2006\\")
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ispathurl "http://www.mcneel.com")
-```
 
-```lisp
 T
 ```
 
@@ -523,33 +429,15 @@ nil on error.
 
 ```lisp
 Command: (setq a "z:\\drawing.dwg")
-```
 
-```lisp
 "z:\\drawing.dwg"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (setq b (dos_uncpath a))
-```
 
-```lisp
 "\\\\lulu\\archive\\drawing.dwg"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_localpath b)
-```
 
-```lisp
 "Z:\\drawing.dwg"
 ```
 
@@ -583,21 +471,11 @@ nil on error.
 
 ```lisp
 Command: (setq x (dos_shortpath "C:\\Program Files\\AutoCAD 2006\\"))
-```
 
-```lisp
 "C:\\PROGRA~1\\AUTOCA~1\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_longpath x)
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\"
 ```
 
@@ -649,21 +527,11 @@ nil on error.
 
 ```lisp
 Command: (dos_makepath "C:" "\\Program Files\\AutoCAD 2006" "acad" "exe")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\acad.exe"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_makepath "C:" "\\Program Files\\AutoCAD 2006" "" "")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\"
 ```
 
@@ -693,9 +561,7 @@ nil on error.
 
 ```lisp
 Command: (dos_path)
-```
 
-```lisp
 ("C:\\WINDOWS\\system32" "C:\\WINDOWS" "C:\\WINDOWS\\System32\\Wbem" "C:\\Program Files\\Microsoft SDK\\Bin\\." "C:\\Program Files\\Microsoft SDK\\Bin\\WinNT\\." "C:\\Program Files\\Common Files\\Autodesk Shared\\" "C:\\Program Files\\Rational\\common" "C:\\Program Files\\Microsoft Visual Studio 8\\" "C:\\Program Files\\Microsoft Visual Studio 8\\VC\\bin")
 ```
 
@@ -735,21 +601,11 @@ nil on error.
 
 ```lisp
 Command: (dos_pathbackslash "C:\\Program Files\\AutoCAD 2006")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_pathbackslash "C:\\Program Files\\AutoCAD 2006\\" T)
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006"
 ```
 
@@ -789,33 +645,15 @@ nil on error.
 
 ```lisp
 Command: (dos_pathextension "C:\\Program Files\\AutoCAD 2006\\acad.exe")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\acad"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_pathextension "C:\\Program Files\\AutoCAD 2006\\acad" ".exe")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\acad.exe"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_pathextension "C:\\Program Files\\AutoCAD 2006\\acad.exe" ".xyz")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\acad.xyz"
 ```
 
@@ -828,8 +666,7 @@ Adds or removes a surrounding double-quote characters to a path string.
 ### Syntax
 
 ```lisp
-(dos_pathquotes path
- [T])
+(dos_pathquotes path [T])
 ```
 
 ### Parameters
@@ -856,22 +693,12 @@ nil on error.
 ```lisp
 Command: (dos_pathquotes "C:\\Program Files\\AutoCAD
  2006\\")
-```
 
-```lisp
 "\"C:\\Program Files\\AutoCAD 2006\\\""
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_pathquotes "\"C:\\Program Files\\AutoCAD
  2006\\\"" T)
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\"
 ```
 
@@ -913,9 +740,7 @@ nil on error.
 
 ```lisp
 Command: (setq x (dos_relativepath "C:\\Program Files\\AutoCAD 2006" "C:\\Drawings\\Xrefs"))
-```
 
-```lisp
 "..\\..\\Drawings\\Xrefs"
 ```
 
@@ -949,21 +774,11 @@ nil on error.
 
 ```lisp
 Command: (setq x (dos_shortpath "C:\\Program Files\\AutoCAD 2006\\"))
-```
 
-```lisp
 "C:\\PROGRA~1\\AUTOCA~1\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_longpath x)
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\"
 ```
 
@@ -1020,10 +835,6 @@ Command: (dos_splitpath "C:\\Program Files\\AutoCAD 2006\\acad.exe")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_splitpath "C:\\Program Files\\AutoCAD 2006\\")
 ```
 
@@ -1035,8 +846,7 @@ Command: (dos_splitpath "C:\\Program Files\\AutoCAD 2006\\")
 
 ## dos_uncpath
 
-Converts a drive-based path or filename for a resource to a Universal
- Naming Convention (UNC) path or filename.
+Converts a drive-based path or filename for a resource to a Universal Naming Convention (UNC) path or filename.
 
 ### Syntax
 
@@ -1069,10 +879,6 @@ Command: (dos_uncpath "P:\\Drawings\\")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_uncpath "P:\\Drawing1.dwg")
 ```
 
@@ -1081,5 +887,4 @@ Command: (dos_uncpath "P:\\Drawing1.dwg")
 ```
 
 ---
-
 

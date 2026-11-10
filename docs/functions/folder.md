@@ -30,21 +30,11 @@ nil on error.
 
 ```lisp
 Command: (dos_chdir "\\Program Files\\AutoCAD 2006\\Sample\\")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\Sample\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_chdir "..\\Support\\")
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\Support\\"
 ```
 
@@ -78,9 +68,7 @@ nil on error.
 
 ```lisp
 Command: (dos_deltree "C:\\Temp\\")
-```
 
-```lisp
 "C:\\Temp\\"
 ```
 
@@ -140,21 +128,11 @@ nil on error.
 
 ```lisp
 Command: (dos_dirattrib "C:\\Program Files\\AutoCAD 2006\\*.*")
-```
 
-```lisp
 (("Data Links" . 0) ("Drv" . 0) ("en-US" . 0) ("Express" . 0) ("Fonts" . 0) ("Help" . 0) ("Plot Styles" . 0) ("Plotters" . 0) ("Sample" . 0) ("Support" . 0) ("Template" . 0) ("Textures" . 0) ("UserDataCache" . 2) ("WebDepot" . 0) ("WebServices" . 0))
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dirattrib "C:\\Program Files\\AutoCAD 2006\\Sample\\" 1)
-```
 
-```lisp
 (("Sample" . 1))
 ```
 
@@ -188,21 +166,11 @@ nil if the directory does not exist, or on error.
 
 ```lisp
 Command: (dos_dirp "C:\\Program Files\\AutoCAD 2006\\")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dirp "C:\\Program Files\\AutoCAD 2005\\")
-```
 
-```lisp
 nil
 ```
 
@@ -210,8 +178,7 @@ nil
 
 ## dos_dirsize
 
-Returns the total size, the number of subdirectories, and the number
- of files in the specified directory.
+Returns the total size, the number of subdirectories, and the number of files in the specified directory.
 
 ### Syntax
 
@@ -235,8 +202,8 @@ Recurse into subdirectories.
 
 ### Returns
 
-A list containing the total size in bytes, the number of subdirectories,
- and the number of files if successful. Note, the size is returned as a
+A list containing the total size in bytes, the number of subdirectories, and the number of files if successful. Note, the size is returned as a
+
  real number.
 
 nil on error.
@@ -246,22 +213,12 @@ nil on error.
 ```lisp
 Command: ( dos_dirsize
  "C:\\Program Files\\AutoCAD 2007\\")
-```
 
-```lisp
 (1.78669e+008 0 533)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dirsize "C:\\Program Files\\AutoCAD
  2007\\" T)
-```
 
-```lisp
 (3.86812e+008 81 1620)
 ```
 
@@ -295,29 +252,20 @@ nil on error.
 
 ```lisp
 Command: (dos_dirtree "C:\\Program Files\\AutoCAD 2006\\Support\\")
-```
 
-```lisp
 ("C:\\Program Files\\AutoCAD 2006\\Support\\" "C:\\Program Files\\AutoCAD 2006\\Support\\Color\\")
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_getdir
 
-Displays a Windows "Browse for folder" dialog box. The dos_getdir
- function is also capable of creating directories.
+Displays a Windows "Browse for folder" dialog box. The dos_getdir function is also capable of creating directories.
 
 ### Syntax
 
 ```lisp
-(dos_getdir [title
- [path [message
- [T]]]])
+(dos_getdir [title [path [message [T]]]])
 ```
 
 ### Parameters
@@ -332,8 +280,7 @@ A string containing the dialog box title.
 path
 ```
 
-A string identifying an existing directory. If nil is specified, the
- current directory is used.
+A string identifying an existing directory. If nil is specified, the current directory is used.
 
 ```lisp
 message
@@ -358,9 +305,7 @@ nil on cancel or on error.
 ```lisp
 Command: (dos_getdir "Browse for folder" "C:\\Program
  Files\\AutoCAD 2010\\" "Select a folder to use" T)
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2010\\Support\\"
 ```
 
@@ -394,26 +339,12 @@ nil if not successful, or on error.
 
 ```lisp
 Command: (dos_mkdir "c:\\temp\\")
-```
 
-```lisp
 "c:\\temp\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_mkdir "c:\\temp\\autocad\\drawings\\project")
-```
 
-```lisp
 "c:\\temp\\autocad\\drawings\\project"
-```
-
-```lisp
-
 ```
 
 ---
@@ -446,21 +377,11 @@ nil if not successful, or on error.
 
 ```lisp
 Command: (dos_pwdir)
-```
 
-```lisp
 "c:\\temp\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_pwdir "D:")
-```
 
-```lisp
 "d:\\projects\\drawings\\"
 ```
 
@@ -500,9 +421,7 @@ nil if not successful, or on error.
 
 ```lisp
 Command: (dos_rmdir "c:\\temp\\" "c:\\mydrawings")
-```
 
-```lisp
 "c:\\mydrawings"
 ```
 
@@ -536,9 +455,7 @@ nil if not successful, or on error.
 
 ```lisp
 Command: (dos_rmdir "c:\\temp\\)
-```
 
-```lisp
 "c:\\temp\\"
 ```
 
@@ -820,21 +737,11 @@ nil if not successful on error.
 
 ```lisp
 Command: (dos_specialdir 0)
-```
 
-```lisp
 "C:\\Documents and Settings\\dale\\Desktop\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_specialdir 5)
-```
 
-```lisp
 "C:\\Documents and Settings\\dale\\My Documents\\"
 ```
 
@@ -873,11 +780,7 @@ nil on error.
 ### Example
 
 ```lisp
-(dos_subdir)
-```
-
-```lisp
-("Data Links" "Drv" "en-US" "Express" "Fonts" "Help" "Plot Styles" "Plotters" "Sample" "Support" "Template" "Textures" "UserDataCache" "WebDepot" "WebServices")
+(dos_subdir) ("Data Links" "Drv" "en-US" "Express" "Fonts" "Help" "Plot Styles" "Plotters" "Sample" "Support" "Template" "Textures" "UserDataCache" "WebDepot" "WebServices")
 ```
 
 ---
@@ -906,9 +809,7 @@ nil on error.
 
 ```lisp
 Command: (dos_sysdir)
-```
 
-```lisp
 "C:\\WINDOWS\\system32\\"
 ```
 
@@ -938,21 +839,11 @@ nil on error.
 
 ```lisp
 Command: (dos_tempdir)
-```
 
-```lisp
 "C:\\DOCUME~1\\dale\\LOCALS~1\\Temp\\"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_longpath (dos_tempdir))
-```
 
-```lisp
 "C:\\Documents and Settings\\dale\\Local Settings\\Temp\\"
 ```
 
@@ -982,12 +873,9 @@ nil on error.
 
 ```lisp
 Command: (dos_windir)
-```
 
-```lisp
 "C:\\WINDOWS\\"
 ```
 
 ---
-
 

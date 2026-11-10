@@ -4,8 +4,7 @@
 
 ## dos_abs
 
-Returns the absolute value of a number, or the numerical value of a
- number without regard to its sign.
+Returns the absolute value of a number, or the numerical value of a number without regard to its sign.
 
 ### Syntax
 
@@ -31,21 +30,11 @@ nil on error.
 
 ```lisp
 Command: (dos_abs 3.14)
-```
 
-```lisp
 3.14
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_abs -3.14)
-```
 
-```lisp
 3.14
 ```
 
@@ -53,8 +42,7 @@ Command: (dos_abs -3.14)
 
 ## dos_acos
 
-Calculates the arccosine (inverse cosine) of a number. The inverse cosine
- can be defined as:
+Calculates the arccosine (inverse cosine) of a number. The inverse cosine can be defined as:
 
 ### Syntax
 
@@ -72,7 +60,7 @@ The number, which should be in the range [-1, 1].
 
 ### Returns
 
-The arccosine of the number, in the range [0, &#960;] radians, if successful.
+The arccosine of the number, in the range [0, π] radians, if successful.
 
 nil on error.
 
@@ -80,21 +68,11 @@ nil on error.
 
 ```lisp
 Command: (dos_acos 0.0)
-```
 
-```lisp
 1.5708
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_acos 1.0)
-```
 
-```lisp
 0
 ```
 
@@ -102,8 +80,7 @@ Command: (dos_acos 1.0)
 
 ## dos_acosh
 
-Calculate the inverse hyperbolic cosine. The inverse hyperbolic cosine
- can be defined as:
+Calculate the inverse hyperbolic cosine. The inverse hyperbolic cosine can be defined as:
 
 ### Syntax
 
@@ -129,26 +106,12 @@ nil on error.
 
 ```lisp
 Command: (dos_acosh 1)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_acosh 10)
-```
 
-```lisp
 2.99322
-```
-
-```lisp
-
 ```
 
 ---
@@ -160,8 +123,7 @@ Returns the angle between two 2D or two 3D vectors.
 ### Syntax
 
 ```lisp
-(dos_anglebetween vector0
- vector1)
+(dos_anglebetween vector0 vector1)
 ```
 
 ### Parameters
@@ -188,21 +150,11 @@ nil on error.
 
 ```lisp
 Command: (dos_anglebetween '(1 0) '(0.70710 0.70710))
-```
 
-```lisp
 0.785398
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_anglebetween '(1 0 0) '(0 0 1))
-```
 
-```lisp
 1.5708
 ```
 
@@ -210,8 +162,7 @@ Command: (dos_anglebetween '(1 0 0) '(0 0 1))
 
 ## dos_asin
 
-Calculates the arcsine (inverse sine) of a number. The inverse sine
- can be defined as:
+Calculates the arcsine (inverse sine) of a number. The inverse sine can be defined as:
 
 ### Syntax
 
@@ -229,7 +180,7 @@ The number.
 
 ### Returns
 
-The arcsine of the number in the range [–&#960;/2, &#960;/2] radians, if successful.
+The arcsine of the number in the range [–π/2, π/2] radians, if successful.
 
 nil on error.
 
@@ -237,21 +188,11 @@ nil on error.
 
 ```lisp
 Command: (dos_asin 0.0)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_asin 1.0)
-```
 
-```lisp
 1.5708
 ```
 
@@ -259,8 +200,7 @@ Command: (dos_asin 1.0)
 
 ## dos_asinh
 
-Calculate the inverse hyperbolic sine. The inverse hyperbolic sine can
- be defined as:
+Calculate the inverse hyperbolic sine. The inverse hyperbolic sine can be defined as:
 
 ### Syntax
 
@@ -286,21 +226,11 @@ nil on error.
 
 ```lisp
 Command: (dos_asinh -2.5)
-```
 
-```lisp
 -1.64723
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_asinh 10)
-```
 
-```lisp
 2.99822
 ```
 
@@ -308,8 +238,7 @@ Command: (dos_asinh 10)
 
 ## dos_atan
 
-Calculates the arctangent (inverse tangent) of a number. The inverse
- tangent can be defined as:
+Calculates the arctangent (inverse tangent) of a number. The inverse tangent can be defined as:
 
 ### Syntax
 
@@ -327,7 +256,7 @@ The number.
 
 ### Returns
 
-The arctangent of the number in the range [–&#960;/2, &#960;/2] radians, if successful.
+The arctangent of the number in the range [–π/2, π/2] radians, if successful.
 
 nil on error.
 
@@ -335,21 +264,11 @@ nil on error.
 
 ```lisp
 Command: (dos_atan 0.0)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_atan 1.0)
-```
 
-```lisp
 0.785398
 ```
 
@@ -381,8 +300,7 @@ The x value.
 
 ### Returns
 
-The arctangent of y/x (if x equals 0, dos_atan2 returns &#960;/2 if y is
- positive, -&#960;/2 if y is negative, or 0 if y is 0) if successful.
+The arctangent of y/x (if x equals 0, dos_atan2 returns π/2 if y is positive, -π/2 if y is negative, or 0 if y is 0) if successful.
 
 nil on error.
 
@@ -390,9 +308,7 @@ nil on error.
 
 ```lisp
 Command: (dos_atan2 0.5 5.0)
-```
 
-```lisp
 0.0996687
 ```
 
@@ -400,8 +316,7 @@ Command: (dos_atan2 0.5 5.0)
 
 ## dos_atanh
 
-Calculate the inverse hyperbolic tangent. The inverse hyperbolic tangent
- can be defined as:
+Calculate the inverse hyperbolic tangent. The inverse hyperbolic tangent can be defined as:
 
 ### Syntax
 
@@ -427,21 +342,11 @@ nil on error.
 
 ```lisp
 Command: (dos_atanh 0.76159416)
-```
 
-```lisp
 1.0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_atanh -0.1)
-```
 
-```lisp
 -0.100335
 ```
 
@@ -475,26 +380,12 @@ nil on error.
 
 ```lisp
 Command: (dos_cbrt 25)
-```
 
-```lisp
 2.92402
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_cbrt 45)
-```
 
-```lisp
 3.55689
-```
-
-```lisp
-
 ```
 
 ---
@@ -519,8 +410,7 @@ The number.
 
 ### Returns
 
-The value representing the smallest integer that is greater than or
- equal to the number, if successful.
+The value representing the smallest integer that is greater than or equal to the number, if successful.
 
 nil on error.
 
@@ -528,69 +418,27 @@ nil on error.
 
 ```lisp
 Command: (dos_ceil -1.6)
-```
 
-```lisp
 -1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ceil -1.5)
-```
 
-```lisp
 -1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ceil -1.4)
-```
 
-```lisp
 -1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ceil 1.4)
-```
 
-```lisp
 2
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ceil 1.5)
-```
 
-```lisp
 2
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_ceil 1.6)
-```
 
-```lisp
 2
 ```
 
@@ -624,21 +472,11 @@ nil on error.
 
 ```lisp
 Command: (dos_chgsign 3.14)
-```
 
-```lisp
 -3.14
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_chgsign -3.14)
-```
 
-```lisp
 3.14
 ```
 
@@ -651,8 +489,7 @@ Clamps, or limits, a number to an interval.
 ### Syntax
 
 ```lisp
-(dos_clamp number min
- max)
+(dos_clamp number min max)
 ```
 
 ### Parameters
@@ -677,8 +514,7 @@ The maximum interval value, or upper limit.
 
 ### Returns
 
-The number clamped to lie between min and max, making min <= number
- <= max, if successful.
+The number clamped to lie between min and max, making min <= number <= max, if successful.
 
 nil on error.
 
@@ -686,21 +522,11 @@ nil on error.
 
 ```lisp
 Command: (dos_clamp 3 0 10)
-```
 
-```lisp
 3
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_clamp 11 0 10)
-```
 
-```lisp
 10
 ```
 
@@ -732,8 +558,8 @@ The number whose sign is to be used.
 
 ### Returns
 
-first with its sign changed
- to match the sign of second,
+first with its sign changed to match the sign of second,
+
  if successful.
 
 nil on error.
@@ -742,33 +568,15 @@ nil on error.
 
 ```lisp
 Command: (dos_copysign 3.14 -1)
-```
 
-```lisp
 -3.14
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_copysign -3.14 -1)
-```
 
-```lisp
 -3.14
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_copysign -3.14 1)
-```
 
-```lisp
 3.14
 ```
 
@@ -802,33 +610,15 @@ nil on error.
 
 ```lisp
 Command: (dos_cos 1.047)
-```
 
-```lisp
 0.500171
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_cos (/ (* 60 (dos_pi)) 180))
-```
 
-```lisp
 0.5
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_cos (dos_dtr 60))
-```
 
-```lisp
 0.5
 ```
 
@@ -836,8 +626,7 @@ Command: (dos_cos (dos_dtr 60))
 
 ## dos_cosh
 
-Calculate the hyperbolic cosine of a number. The hyperbolic cosine can
- be defined as:
+Calculate the hyperbolic cosine of a number. The hyperbolic cosine can be defined as:
 
 ### Syntax
 
@@ -863,21 +652,11 @@ nil on error.
 
 ```lisp
 Command: (dos_cosh 4)
-```
 
-```lisp
 27.3082
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_cosh (dos_exp 1))
-```
 
-```lisp
 7.61013
 ```
 
@@ -890,8 +669,7 @@ Calculates the cross product of two 2D or two 3D vectors.
 ### Syntax
 
 ```lisp
-(dos_crossproduct vector0
- vector1)
+(dos_crossproduct vector0 vector1)
 ```
 
 ### Parameters
@@ -918,21 +696,11 @@ nil on error.
 
 ```lisp
 Command: (dos_crossproduct '(1 0) '(0.70710 0.70710))
-```
 
-```lisp
 (0 0 0.7071)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_crossproduct '(1 0 0) '(0 0 1))
-```
 
-```lisp
 (0 -1 0)
 ```
 
@@ -945,8 +713,7 @@ Culls, or removes, duplicate values from a list of numbers.
 ### Syntax
 
 ```lisp
-(dos_cullnumbers list
- [tolerance])
+(dos_cullnumbers list [tolerance])
 ```
 
 ### Parameters
@@ -973,9 +740,7 @@ nil on error.
 
 ```lisp
 Command: (dos_cullnumbers '(3 8 4 8 2 3 9 5 8))
-```
 
-```lisp
 (3 8 4 2 9 5)
 ```
 
@@ -988,13 +753,11 @@ Subtracts numbers, including lists of numbers, and returns the difference.
 ### Syntax
 
 ```lisp
-(dos_difference number0
- ...)
+(dos_difference number0 ...)
 ```
 
 ```lisp
-(dos_difference list0
- ...)
+(dos_difference list0 ...)
 ```
 
 ### Parameters
@@ -1022,45 +785,19 @@ nil on error.
 
 ```lisp
 Command: (dos_difference 10)
-```
 
-```lisp
 -10
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_difference 10 3 5 8)
-```
 
-```lisp
 -6
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_difference '(10 3 5 8))
-```
 
-```lisp
 2
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_difference '(10 3) '(2 7))
-```
 
-```lisp
 (8 -4)
 ```
 
@@ -1073,8 +810,7 @@ Computes the quotient and the remainder of two integers.
 ### Syntax
 
 ```lisp
-(dos_div numerator
- denominator)
+(dos_div numerator denominator)
 ```
 
 ### Parameters
@@ -1101,9 +837,7 @@ nil on error.
 
 ```lisp
 Command: (dos_div 876 13)
-```
 
-```lisp
 (67 5)
 ```
 
@@ -1116,8 +850,7 @@ Calculates the dot product of two 2D or two 3D vectors.
 ### Syntax
 
 ```lisp
-(dos_dotproduct vector0
- vector1)
+(dos_dotproduct vector0 vector1)
 ```
 
 ### Parameters
@@ -1144,21 +877,11 @@ nil on error.
 
 ```lisp
 Command: (dos_dotproduct '(1 0) '(0.70710 0.70710))
-```
 
-```lisp
 0.7071
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dotproduct '(1 0 0) '(0 0 1))
-```
 
-```lisp
 0
 ```
 
@@ -1175,8 +898,7 @@ Converts an angle from degrees to radians.
 ```
 
 ```lisp
-(dos_dtr degrees [minutes [seconds
- [direction]]])
+(dos_dtr degrees [minutes [seconds [direction]]])
 ```
 
 ### Parameters
@@ -1203,8 +925,8 @@ The seconds.
 direction
 ```
 
-The direction. Specify T for
- north or east (default), and nil
+The direction. Specify T for north or east (default), and nil
+
  for south and west.
 
 ### Returns
@@ -1217,33 +939,15 @@ nil on error.
 
 ```lisp
 Command: (dos_dtr 45)
-```
 
-```lisp
 0.785398
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dtr 90)
-```
 
-```lisp
 1.5708
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dtr 47 6 13)
-```
 
-```lisp
 0.822113
 ```
 
@@ -1251,8 +955,7 @@ Command: (dos_dtr 47 6 13)
 
 ## dos_e
 
-Returns e (mathematical constant),
- or the Euler's number, which is 2.71828182845904523536.
+Returns e (mathematical constant), or the Euler's number, which is 2.71828182845904523536.
 
 ### Syntax
 
@@ -1272,46 +975,30 @@ n/a
 
 ```lisp
 Command: (dos_e)
-```
 
-```lisp
 2.71828
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log (dos_e))
-```
 
-```lisp
 1
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_equal
 
-Compares two numbers or two lists of numbers, approximately, by subtracting
- the two variables being compared and testing whether their difference
+Compares two numbers or two lists of numbers, approximately, by subtracting the two variables being compared and testing whether their difference
+
  is less than a value chosen at the limits of significance.
 
 ### Syntax
 
 ```lisp
-(dos_equal number0 number1
- [tolerance])
+(dos_equal number0 number1 [tolerance])
 ```
 
 ```lisp
-(dos_equal list0
- list1 [tolerance[)
+(dos_equal list0 list1 [tolerance[)
 ```
 
 ### Parameters
@@ -1344,14 +1031,13 @@ The second numeric list to compare.
 tolerance
 ```
 
-The tolerance to compare against. Of omitted, the LUPREC
- system variable is used to calculate the tolerance (e.g. if LUPREC = 4,
+The tolerance to compare against. Of omitted, the LUPREC system variable is used to calculate the tolerance (e.g. if LUPREC = 4,
+
  then tolerance = 0.0001).
 
 ### Returns
 
-T if the two number are equal
- within tolerance, if successful.
+T if the two number are equal within tolerance, if successful.
 
 nil on error.
 
@@ -1359,33 +1045,15 @@ nil on error.
 
 ```lisp
 Command: (dos_equal 3.14 3.14159)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_equal 3.14 3.14159 0.01)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_equal '(1 3) '(1 3))
-```
 
-```lisp
 T
 ```
 
@@ -1393,8 +1061,8 @@ T
 
 ## dos_exp
 
-Returns e raised to the power
- of number. The constant e equals
+Returns e raised to the power of number. The constant e equals
+
  2.71828182845904523536, the base of the natural logarithm.
 
 ### Syntax
@@ -1413,8 +1081,7 @@ The exponent applied to the base e.
 
 ### Returns
 
-Returns e raised the power,
- if successful.
+Returns e raised the power, if successful.
 
 nil on error.
 
@@ -1422,21 +1089,11 @@ nil on error.
 
 ```lisp
 Command: (dos_exp 1)
-```
 
-```lisp
 2.71828
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_exp 2)
-```
 
-```lisp
 7.38906
 ```
 
@@ -1444,8 +1101,7 @@ Command: (dos_exp 2)
 
 ## dos_fact
 
-Returns the factorial of a number. The factorial of a number is equal
- to 1*2*3*...* number.
+Returns the factorial of a number. The factorial of a number is equal to 1*2*3*...* number.
 
 ### Syntax
 
@@ -1459,8 +1115,7 @@ Returns the factorial of a number. The factorial of a number is equal
 number
 ```
 
-The nonnegative number you want the factorial of. If number is not an
- integer, it is truncated.
+The nonnegative number you want the factorial of. If number is not an integer, it is truncated.
 
 ### Returns
 
@@ -1472,57 +1127,23 @@ nil on error.
 
 ```lisp
 Command: (dos_fact 5)
-```
 
-```lisp
 120
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_fact 1.9)
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_fact 0)
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_fact -1)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_fact 1)
-```
 
-```lisp
 1
 ```
 
@@ -1530,8 +1151,7 @@ Command: (dos_fact 1)
 
 ## dos_floor
 
-Calculates the floor of a number. The function returns a value representing
- the largest integer that is less than or equal to the number.
+Calculates the floor of a number. The function returns a value representing the largest integer that is less than or equal to the number.
 
 ### Syntax
 
@@ -1549,8 +1169,7 @@ The number.
 
 ### Returns
 
-The value representing the largest integer that is less than or equal
- to the number, if successful.
+The value representing the largest integer that is less than or equal to the number, if successful.
 
 nil on error.
 
@@ -1558,69 +1177,27 @@ nil on error.
 
 ```lisp
 Command: (dos_floor -1.6)
-```
 
-```lisp
 -2
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_floor -1.5)
-```
 
-```lisp
 -2
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_floor -1.4)
-```
 
-```lisp
 -2
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_floor 1.4)
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_floor 1.5)
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_floor 1.6)
-```
 
-```lisp
 1
 ```
 
@@ -1660,21 +1237,11 @@ nil on error.
 
 ```lisp
 Command: (dos_fmod 5.3 2)
-```
 
-```lisp
 1.3
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_fmod 18.5 4.2)
-```
 
-```lisp
 1.7
 ```
 
@@ -1714,21 +1281,11 @@ nil on error.
 
 ```lisp
 Command: (dos_gcd 81 57)
-```
 
-```lisp
 3
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_gcd 12 20)
-```
 
-```lisp
 4
 ```
 
@@ -1736,8 +1293,8 @@ Command: (dos_gcd 12 20)
 
 ## dos_hypot
 
-Calculates the hypotenuse. The function calculates the length of the
- hypotenuse of a right triangle, given the length of the two sides x and
+Calculates the hypotenuse. The function calculates the length of the hypotenuse of a right triangle, given the length of the two sides x and
+
  y (in other words, the square root of x2 + y2).
 
 ### Syntax
@@ -1770,9 +1327,7 @@ nil on error.
 
 ```lisp
 Command: (dos_hypot 3 4)
-```
 
-```lisp
 5
 ```
 
@@ -1785,8 +1340,7 @@ Performs an interpolation between two numbers.
 ### Syntax
 
 ```lisp
-(dos_interp min max t
- [mode])
+(dos_interp min max t [mode])
 ```
 
 ### Parameters
@@ -1807,8 +1361,8 @@ The maximum value in the range.
 t
 ```
 
-The normalized value ( ranging between 0 and 1) between min
- and max. Values of outside this
+The normalized value ( ranging between 0 and 1) between min and max. Values of outside this
+
  range result in extrapolation.
 
 ```lisp
@@ -1853,8 +1407,7 @@ nil on error.
 
 ## dos_lcm
 
-Computes the least common multiple of two integers. The least common
- multiple is the smallest positive integer that is a multiple of both integers.
+Computes the least common multiple of two integers. The least common multiple is the smallest positive integer that is a multiple of both integers.
 
 ### Syntax
 
@@ -1886,21 +1439,11 @@ nil on error.
 
 ```lisp
 Command: (dos_lcm 5 2)
-```
 
-```lisp
 10
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_lcm 24 36)
-```
 
-```lisp
 72
 ```
 
@@ -1934,21 +1477,11 @@ nil on error.
 
 ```lisp
 Command: (dos_length '(3 2))
-```
 
-```lisp
 3.60555
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_length '(3 2 2))
-```
 
-```lisp
 4.12311
 ```
 
@@ -1956,10 +1489,9 @@ Command: (dos_length '(3 2 2))
 
 ## dos_log
 
-Calculates the natural logarithm of a number. Natural logarithms are
- based on the constant e (2.71828182845904523536).
- Note, this function is the inverse of the dos_exp
- function.
+Calculates the natural logarithm of a number. Natural logarithms are based on the constant e (2.71828182845904523536).
+
+ Note, this function is the inverse of the dos_exp function.
 
 ### Syntax
 
@@ -1985,33 +1517,15 @@ nil on error.
 
 ```lisp
 Command: (dos_log 86)
-```
 
-```lisp
 4.45435
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log 2.7182818)
-```
 
-```lisp
 1.0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log (dos_exp 3))
-```
 
-```lisp
 3
 ```
 
@@ -2045,33 +1559,15 @@ nil on error.
 
 ```lisp
 Command: (dos_log10 86)
-```
 
-```lisp
 1.9345
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log10 10)
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log10 1e5)
-```
 
-```lisp
 5
 ```
 
@@ -2105,45 +1601,19 @@ nil on error.
 
 ```lisp
 Command: (dos_log2 1)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log2 2)
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log2 3)
-```
 
-```lisp
 1.58496
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_log2 4)
-```
 
-```lisp
 2
 ```
 
@@ -2172,10 +1642,6 @@ numbers
 The list of numbers.
 
 ```lisp
-
-```
-
-```lisp
 number0 ...
 ```
 
@@ -2191,21 +1657,11 @@ nil on error.
 
 ```lisp
 Command: (dos_max '(1 2 3 4 5 6 7 8 9))
-```
 
-```lisp
 9
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_max 1 2 3 4 5 6 7 8 9)
-```
 
-```lisp
 9
 ```
 
@@ -2250,33 +1706,15 @@ nil on error.
 
 ```lisp
 Command: (dos_mean 1 2 3 4 5 6 7 8 9)
-```
 
-```lisp
 5
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_mean '(1 2 3 4 5 6 7 8 9))
-```
 
-```lisp
 5
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_mean '(1 2) '(3 6) '(1 7))
-```
 
-```lisp
 (1.66667 5)
 ```
 
@@ -2320,21 +1758,11 @@ nil on error.
 
 ```lisp
 Command: (dos_median '(1 2 3 4 5 6 7 8 9))
-```
 
-```lisp
 5
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_median 1 2 3 4 5 6 7 8 9)
-```
 
-```lisp
 5
 ```
 
@@ -2379,21 +1807,11 @@ nil on error.
 
 ```lisp
 Command: (dos_min '(1 2 3 4 5 6 7 8 9))
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_min 1 2 3 4 5 6 7 8 9)
-```
 
-```lisp
 1
 ```
 
@@ -2401,8 +1819,7 @@ Command: (dos_min 1 2 3 4 5 6 7 8 9)
 
 ## dos_mode
 
-Returns the mode (the value that occurs most often) of a list or series
- of numbers.
+Returns the mode (the value that occurs most often) of a list or series of numbers.
 
 ### Syntax
 
@@ -2439,21 +1856,11 @@ nil on error.
 
 ```lisp
 Command: (dos_mode '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
-```
 
-```lisp
 (2)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_mode 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
-```
 
-```lisp
 (2)
 ```
 
@@ -2487,33 +1894,15 @@ nil on error.
 
 ```lisp
 Command: (dos_modf (dos_e))
-```
 
-```lisp
 (2.0 0.718282)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_modf (dos_pi))
-```
 
-```lisp
 (3.0 0.141593)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_modf -14.87654321)
-```
 
-```lisp
 (-14.0 -0.876543)
 ```
 
@@ -2521,8 +1910,7 @@ Command: (dos_modf -14.87654321)
 
 ## dos_moment
 
-Calculates the moments of a distribution: Mean, Average Deviation, Standard
- Deviation, Variance, Skewness, and Kurtosis.
+Calculates the moments of a distribution: Mean, Average Deviation, Standard Deviation, Variance, Skewness, and Kurtosis.
 
 ### Syntax
 
@@ -2551,8 +1939,8 @@ A series of numbers.
 
 ### Returns
 
-A list containing the Mean, Average Deviation, Standard Deviation, Variance,
- Skewness, and Kurtosis, if successful. Note, if Variance = 0, Skewness
+A list containing the Mean, Average Deviation, Standard Deviation, Variance, Skewness, and Kurtosis, if successful. Note, if Variance = 0, Skewness
+
  and Kurtosis will be nil.
 
 nil on error.
@@ -2562,29 +1950,18 @@ nil on error.
 ```lisp
 Command: (dos_moment '(1 3 2 5 6 2 4 6 8 9 6 5 7 2 3 5
  4))
-```
 
-```lisp
 (4.58824 1.84775 2.26547 5.13235 0.210593 -1.04927)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_moment 1 3 2 5 6 2 4 6 8 9 6 5 7 2 3 5 4)
-```
 
-```lisp
 (4.58824 1.84775 2.26547 5.13235 0.210593 -1.04927)
 ```
 
 ---
 
 ## dos_negate
-Negates a list or series of numbers. Note, a negated vector has the
- same magnitude as before, but its direction is now opposite.
+Negates a list or series of numbers. Note, a negated vector has the same magnitude as before, but its direction is now opposite.
 
 ### Syntax
 
@@ -2621,33 +1998,15 @@ nil on error.
 
 ```lisp
 Command: (dos_negate '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
-```
 
-```lisp
 (-1 -1 -2 -2 -2 -3 -4 -4 -5 -6 -7 -7 -8 -9)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_negate 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
-```
 
-```lisp
 (-1 -1 -2 -2 -2 -3 -4 -4 -5 -6 -7 -7 -8 -9)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_negate '(3 2))
-```
 
-```lisp
 (-3 -2)
 ```
 
@@ -2655,14 +2014,12 @@ Command: (dos_negate '(3 2))
 
 ## dos_normalize
 
-Converts a parameter, or value, to a normalized parameter; one that
- ranges between 0.0 and 1.0.
+Converts a parameter, or value, to a normalized parameter; one that ranges between 0.0 and 1.0.
 
 ### Syntax
 
 ```lisp
-(dos_normalize number
- minimum maximum)
+(dos_normalize number minimum maximum)
 ```
 
 ### Parameters
@@ -2672,10 +2029,6 @@ number
 ```
 
 The number to normalize that is within the specified range.
-
-```lisp
-
-```
 
 ```lisp
 minimum
@@ -2699,21 +2052,11 @@ nil on error.
 
 ```lisp
 Command: (dos_normalize 39 0 255)
-```
 
-```lisp
 0.152941
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_parameterize 0.152941 0 255)
-```
 
-```lisp
 39.0
 ```
 
@@ -2726,17 +2069,11 @@ Determines if two 2D or two 3D vectors are non-zero and mutually perpendicular.
 ### Syntax
 
 ```lisp
-(dos_orthogonalp x-axis
- y-axis)
+(dos_orthogonalp x-axis y-axis)
 ```
 
 ```lisp
-
-```
-
-```lisp
-(dos_orthogonalp x-axis
- y-axis z-axis)
+(dos_orthogonalp x-axis y-axis z-axis)
 ```
 
 ### Parameters
@@ -2763,28 +2100,17 @@ The z-axis vector.
 
 T if orthogonal.
 
-nil if not orthogonal, or on
- error.
+nil if not orthogonal, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_orthogonalp '(1 0) '(0.70710 0.70710))
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_orthogonalp '(1 0 0) '(0 1 0) '(0 0 1))
-```
 
-```lisp
 T
 ```
 
@@ -2792,23 +2118,16 @@ T
 
 ## dos_orthonormalp
 
-Determines if two 2D or two 3D vectors are orthogonal
- and of unit length.
+Determines if two 2D or two 3D vectors are orthogonal and of unit length.
 
 ### Syntax
 
 ```lisp
-(dos_orthonormalp x-axis
- y-axis)
+(dos_orthonormalp x-axis y-axis)
 ```
 
 ```lisp
-
-```
-
-```lisp
-(dos_orthonormalp x-axis
- y-axis z-axis)
+(dos_orthonormalp x-axis y-axis z-axis)
 ```
 
 ### Parameters
@@ -2835,28 +2154,17 @@ The z-axis vector.
 
 T if orthonormal.
 
-nil if not orthonormal, or on
- error.
+nil if not orthonormal, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_orthonormalp '(1 0) '(0 1))
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_orthonormalp '(3 0) '(0 2))
-```
 
-```lisp
 nil
 ```
 
@@ -2869,15 +2177,13 @@ Determines if two 2D or two 3D vectors are parallel.
 ### Syntax
 
 ```lisp
-(dos_parallelp vector0
- vector1 [angle_tol])
+(dos_parallelp vector0 vector1 [angle_tol])
 ```
 
 ### Parameters
 
 ```lisp
 vector0
-
 ```
 
 The first vector.
@@ -2892,8 +2198,7 @@ The second vector.
 angle_tol
 ```
 
-An optional angle tolerance in radians. If omitted, an angle tolerance
- of PI/180.0 is used.
+An optional angle tolerance in radians. If omitted, an angle tolerance of PI/180.0 is used.
 
 ### Returns
 
@@ -2909,21 +2214,11 @@ nil on error.
 
 ```lisp
 Command: (dos_parallelp '(1 1) '(2 2))
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_parallelp '(1 1) '(2 3))
-```
 
-```lisp
 0
 ```
 
@@ -2931,14 +2226,12 @@ Command: (dos_parallelp '(1 1) '(2 3))
 
 ## dos_parameterize
 
-Converts a normalized parameter, or value, to a parameter; one in the
- specified range.
+Converts a normalized parameter, or value, to a parameter; one in the specified range.
 
 ### Syntax
 
 ```lisp
-(dos_parameterize number
- minimum maximum)
+(dos_parameterize number minimum maximum)
 ```
 
 ### Parameters
@@ -2948,10 +2241,6 @@ number
 ```
 
 The normalized value, one that ranges between 0.0 and 1.0.
-
-```lisp
-
-```
 
 ```lisp
 minimum
@@ -2975,21 +2264,11 @@ nil on error.
 
 ```lisp
 Command: (dos_normalize 39 0 255)
-```
 
-```lisp
 0.152941
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_parameterize 0.152941 0 255)
-```
 
-```lisp
 39.0
 ```
 
@@ -3002,15 +2281,13 @@ Determines if two 2D or two 3D vectors are perpendicular.
 ### Syntax
 
 ```lisp
-(dos_perpendicularp vector0
- vector1 [angle_tol])
+(dos_perpendicularp vector0 vector1 [angle_tol])
 ```
 
 ### Parameters
 
 ```lisp
 vector0
-
 ```
 
 The first vector.
@@ -3025,35 +2302,23 @@ The second vector.
 angle_tol
 ```
 
-An optional angle tolerance in radians. If omitted, an angle tolerance
- of PI/180.0 is used.
+An optional angle tolerance in radians. If omitted, an angle tolerance of PI/180.0 is used.
 
 ### Returns
 
 T if the vectors are perpendicular.
 
-nil if the vectors are not perpendicular,
- or on error.
+nil if the vectors are not perpendicular, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_perpendicularp '(1 0) '(0 1))
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_perpendicularp '(1 0) '(0.707 1))
-```
 
-```lisp
 nil
 ```
 
@@ -3087,21 +2352,11 @@ nil on error.
 
 ```lisp
 Command: (dos_perpendicularto '(1 0))
-```
 
-```lisp
 (0 1)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_perpendicularto '(3 2 1))
-```
 
-```lisp
 (-2 3 0)
 ```
 
@@ -3129,9 +2384,7 @@ n/a
 
 ```lisp
 Command: (dos_phi)
-```
 
-```lisp
 1.61803
 ```
 
@@ -3139,8 +2392,7 @@ Command: (dos_phi)
 
 ## dos_pi
 
-Returns PI, a mathematical constant whose value is the ratio of any
- circle's circumference to its diameter in Euclidean space, which is 3.14159265358979323846.
+Returns PI, a mathematical constant whose value is the ratio of any circle's circumference to its diameter in Euclidean space, which is 3.14159265358979323846.
 
 ### Syntax
 
@@ -3160,9 +2412,7 @@ n/a
 
 ```lisp
 Command: (dos_pi)
-```
 
-```lisp
 3.14159
 ```
 
@@ -3202,33 +2452,15 @@ nil on error.
 
 ```lisp
 Command: (dos_pow 5 2)
-```
 
-```lisp
 25
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_pow 98.6 3.2)
-```
 
-```lisp
 2.40108e+006
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_pow 4 (/ 5.0 4.0))
-```
 
-```lisp
 5.65685
 ```
 
@@ -3241,8 +2473,7 @@ Multiplies numbers, including lists of numbers, and returns the product.
 ### Syntax
 
 ```lisp
-(dos_product number0
- ...)
+(dos_product number0 ...)
 ```
 
 ```lisp
@@ -3274,33 +2505,15 @@ nil on error.
 
 ```lisp
 Command: (dos_product 50 2 5)
-```
 
-```lisp
 500
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_product '(50 2 5))
-```
 
-```lisp
 500
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_product '(50 25) '(2 5))
-```
 
-```lisp
 (100 125)
 ```
 
@@ -3308,11 +2521,10 @@ Command: (dos_product '(50 25) '(2 5))
 
 ## dos_quadratic
 
-Find solutions of a quadratic equation. A quadratic equation is a polynomial
- equation of the second degree. The general form is
+Find solutions of a quadratic equation. A quadratic equation is a polynomial equation of the second degree. The general form is
 
-where x represents a variable,
- and a, b, and c, constants, with a &#8800; 0. (If a = 0, the equation becomes
+where x represents a variable, and a, b, and c, constants, with a ≠ 0. (If a = 0, the equation becomes
+
  a linear equation.)
 
 ### Syntax
@@ -3377,9 +2589,7 @@ nil on error.
 
 ```lisp
 Command: (dos_quadratic 1 -3 -4)
-```
 
-```lisp
 (0 -1 4)
 ```
 
@@ -3392,8 +2602,7 @@ Divides numbers, including lists of numbers, and returns the quotient.
 ### Syntax
 
 ```lisp
-(dos_quotient number0
- ...)
+(dos_quotient number0 ...)
 ```
 
 ```lisp
@@ -3425,33 +2634,15 @@ nil on error.
 
 ```lisp
 Command: (dos_quotient 50 2 5)
-```
 
-```lisp
 5
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_quotient '(50 2 5))
-```
 
-```lisp
 5
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_quotient '(50 25) '(2 5))
-```
 
-```lisp
 (25 5)
 ```
 
@@ -3481,65 +2672,27 @@ nil on error.
 
 ```lisp
 Command: (dos_random)
-```
 
-```lisp
 4748
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_random)
-```
 
-```lisp
 13395
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (rem (dos_random) 100) 'in
  the range 0-99
-```
 
-```lisp
 37
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (+ (rem (dos_random) 100) 1) 'in
  the range 1-100
-```
 
-```lisp
 69
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (+ (rem (dos_random) 30) 1985) 'in
  the range 1985-2014
-```
 
-```lisp
 2003
-```
-
-```lisp
-
 ```
 
 ---
@@ -3583,21 +2736,11 @@ nil on error.
 
 ```lisp
 Command: (dos_range '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
-```
 
-```lisp
 8
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_range 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
-```
 
-```lisp
 8
 ```
 
@@ -3605,19 +2748,16 @@ Command: (dos_range 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
 
 ## dos_righthandp
 
-Determines if two 2D or two 3D vectors are orthonormal
- and right handed.
+Determines if two 2D or two 3D vectors are orthonormal and right handed.
 
 ### Syntax
 
 ```lisp
-(dos_righthandp x-axis
- y-axis)
+(dos_righthandp x-axis y-axis)
 ```
 
 ```lisp
-(dos_righthandp x-axis
- y-axis z-axis)
+(dos_righthandp x-axis y-axis z-axis)
 ```
 
 ### Parameters
@@ -3644,28 +2784,17 @@ The z-axis vector.
 
 T if right handed.
 
-nil if not right handed, or
- on error.
+nil if not right handed, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_righthandp '(1 0) '(0 1))
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_righthandp '(0 1) '(1 0))
-```
 
-```lisp
 nil
 ```
 
@@ -3676,12 +2805,11 @@ nil
 Rounds a decimal number to an integer.
 
 There are many different ways to round floating point values to integers.
- DOSLib provide a couple basic ones in dos_ceil
- and dos_floor. This function provides several
+ DOSLib provide a couple basic ones in dos_ceil and dos_floor. This function provides several
+
  other useful methods for rounding numbers.
 
-Note, there are two general categories of rounding algorithm: those
- that are symmetric about zero and those that are biased in some way.
+Note, there are two general categories of rounding algorithm: those that are symmetric about zero and those that are biased in some way.
 
 ### Syntax
 
@@ -3765,13 +2893,6 @@ nil on error.
 
 ### Example
 
-The following chart illustrates the result of each rounding method over
- a range of numbers.
-
-```lisp
-
-```
-
 ---
 
 ## dos_rtd
@@ -3802,21 +2923,11 @@ nil on error.
 
 ```lisp
 Command: (dos_rtd 0.785398)
-```
 
-```lisp
 45.0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_rtd 1.5708)
-```
 
-```lisp
 90.0002
 ```
 
@@ -3824,8 +2935,7 @@ Command: (dos_rtd 1.5708)
 
 ## dos_scale
 
-Scales a list of numbers. The list can represent 2D and 3D points and
- vectors.
+Scales a list of numbers. The list can represent 2D and 3D points and vectors.
 
 ### Syntax
 
@@ -3857,9 +2967,7 @@ nil on error.
 
 ```lisp
 Command: (dos_scale '(1 2 3) 5)
-```
 
-```lisp
 (5 10 15)
 ```
 
@@ -3867,8 +2975,7 @@ Command: (dos_scale '(1 2 3) 5)
 
 ## dos_sign
 
-Returns a value indicating the sign of a number, or an expression based
- on the sign of a value.
+Returns a value indicating the sign of a number, or an expression based on the sign of a value.
 
 ### Syntax
 
@@ -3904,17 +3011,15 @@ The third expression.
 
 ### Returns
 
-If optional expressions are not specified, then -1 if number
- is less than zero, 0 if number
- is equal to zero, and 1 if number
- is greater than zero, if successful.
+If optional expressions are not specified, then -1 if number is less than zero, 0 if number
 
-If optional expressions are specified, then expr0
- if number is less than zero,
- expr1 if number
- is equal to zero, and expr2 if
- number is greater than zero,
- if successful.
+ is equal to zero, and 1 if number is greater than zero, if successful.
+
+If optional expressions are specified, then expr0 if number is less than zero,
+
+ expr1 if number is equal to zero, and expr2 if
+
+ number is greater than zero, if successful.
 
 nil on error.
 
@@ -3922,45 +3027,19 @@ nil on error.
 
 ```lisp
 Command: (dos_sign -3.14)
-```
 
-```lisp
 -1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sign 0.0)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sign 3.14)
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sign 3.14 "Less Than" '(2 3) 5.67)
-```
 
-```lisp
 5.67
 ```
 
@@ -3994,33 +3073,15 @@ nil on error.
 
 ```lisp
 Command: (dos_sin (dos_pi))
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sin (/ (dos_pi) 2))
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sin (dos_dtr 30))
-```
 
-```lisp
 0.5
 ```
 
@@ -4028,8 +3089,7 @@ Command: (dos_sin (dos_dtr 30))
 
 ## dos_sinh
 
-Calculate the hyperbolic sine of a number. The hyperbolic sine can be
- defined as:
+Calculate the hyperbolic sine of a number. The hyperbolic sine can be defined as:
 
 ### Syntax
 
@@ -4055,21 +3115,11 @@ nil on error.
 
 ```lisp
 Command: (dos_sinh 1)
-```
 
-```lisp
 1.1752
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sinh -1)
-```
 
-```lisp
 -1.1752
 ```
 
@@ -4082,8 +3132,7 @@ Sorts a list of numbers.
 ### Syntax
 
 ```lisp
-(dos_sortnumbers list
- [ascending])
+(dos_sortnumbers list [ascending])
 ```
 
 ### Parameters
@@ -4099,8 +3148,7 @@ ascending
 ```
 
 Sort the list in either ascending (T)
- or descending (nil) order. If
- omitted, the list is sorted in ascending order.
+ or descending (nil) order. If omitted, the list is sorted in ascending order.
 
 ### Returns
 
@@ -4112,30 +3160,12 @@ nil on error.
 
 ```lisp
 Command: (dos_sortnumbers '(4 3 6 5 1 2 7 9 8))
-```
 
-```lisp
 (1 2 3 4 5 6 7 8 9)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sortnumbers '(4 3 6 5 1 2 7 9 8) nil)
-```
 
-```lisp
 (9 8 7 6 5 4 3 2 1)
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -4168,33 +3198,15 @@ nil on error.
 
 ```lisp
 Command: (dos_sqrt 16)
-```
 
-```lisp
 4
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sqrt -2)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sqrt (dos_abs -2))
-```
 
-```lisp
 1.41421
 ```
 
@@ -4238,33 +3250,15 @@ nil on error.
 
 ```lisp
 Command: (dos_sum 1 1 2 2 2 3 4 4 5 6 7 7 8 9)
-```
 
-```lisp
 61
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sum '(1 1 2 2 2 3 4 4 5 6 7 7 8 9))
-```
 
-```lisp
 61
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sum '(3 2 1) '(2 4 -3))
-```
 
-```lisp
 (5 6 -2)
 ```
 
@@ -4298,21 +3292,11 @@ nil on error.
 
 ```lisp
 Command: (dos_tan 0.785)
-```
 
-```lisp
 0.999204
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_tan (dos_dtr 45))
-```
 
-```lisp
 1.0
 ```
 
@@ -4320,8 +3304,7 @@ Command: (dos_tan (dos_dtr 45))
 
 ## dos_tanh
 
-Calculate the hyperbolic tangent of a number. The hyperbolic tangent
- can be defined as:
+Calculate the hyperbolic tangent of a number. The hyperbolic tangent can be defined as:
 
 ### Syntax
 
@@ -4347,33 +3330,15 @@ nil on error.
 
 ```lisp
 Command: (dos_tanh -2)
-```
 
-```lisp
 -0.964028
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_tanh 0)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_tanh 0.5)
-```
 
-```lisp
 0.462117
 ```
 
@@ -4401,35 +3366,23 @@ The vector.
 tiny_tol
 ```
 
-The tolerance used to determine if the vector is tiny. If omitted, a
- tolerance of 1.0e-12 is used.
+The tolerance used to determine if the vector is tiny. If omitted, a tolerance of 1.0e-12 is used.
 
 ### Returns
 
 T if the vector is tiny.
 
-nil if the vector is not tiny,
- or on error.
+nil if the vector is not tiny, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_tinyp '(1 0 0))
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_tinyp '(0 0 0))
-```
 
-```lisp
 T
 ```
 
@@ -4442,8 +3395,7 @@ Calculates the triple product of three 3D vectors.
 ### Syntax
 
 ```lisp
-(dos_tripleproduct vector0
- vector1 vector2)
+(dos_tripleproduct vector0 vector1 vector2)
 ```
 
 ### Parameters
@@ -4476,9 +3428,7 @@ nil on error.
 
 ```lisp
 Command: (dos_tripleproduct '(1 0 0) '(0 1 0) '(0 0 1))
-```
 
-```lisp
 1
 ```
 
@@ -4518,45 +3468,19 @@ nil on error.
 
 ```lisp
 Command: (dos_trunc (dos_pi))
-```
 
-```lisp
 3
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_trunc (dos_pi) 1)
-```
 
-```lisp
 3.1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_trunc (dos_pi) 2)
-```
 
-```lisp
 3.14
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_trunc (dos_pi) 3)
-```
 
-```lisp
 3.141
 ```
 
@@ -4564,8 +3488,8 @@ Command: (dos_trunc (dos_pi) 3)
 
 ## dos_unitize
 
-Unitizes, or normalized, a 2D or 3D vector. A unitized vector maintains
- its direction but its length becomes 1. The
+Unitizes, or normalized, a 2D or 3D vector. A unitized vector maintains its direction but its length becomes 1. The
+
  resulting vector is often called a unit vector.
 
 ### Syntax
@@ -4592,21 +3516,11 @@ nil on error.
 
 ```lisp
 Command: (dos_unitize '(2 1))
-```
 
-```lisp
 (0.894427 0.447214)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_unitize '(2 1 -3))
-```
 
-```lisp
 (0.534522 0.267261 -0.801784)
 ```
 
@@ -4614,8 +3528,7 @@ Command: (dos_unitize '(2 1 -3))
 
 ## dos_unitp
 
-Determines if a 2D or 3D vector is a unit
- vector.
+Determines if a 2D or 3D vector is a unit vector.
 
 ### Syntax
 
@@ -4635,28 +3548,17 @@ The vector.
 
 T if the vector is a unit vector.
 
-nil if the vector is not a unit
- vector, or on error.
+nil if the vector is not a unit vector, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_unitp (dos_unitize '(2 1)))
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_unitp '(2 1))
-```
 
-```lisp
 nil
 ```
 
@@ -4696,21 +3598,11 @@ nil on error.
 
 ```lisp
 Command: (dos_vector '(3 2) '(1 1))
-```
 
-```lisp
 (2 1)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_vector '(3 2 2) '(1 1 5))
-```
 
-```lisp
 (2 1 -3)
 ```
 
@@ -4718,14 +3610,12 @@ Command: (dos_vector '(3 2 2) '(1 1 5))
 
 ## dos_wedgeproduct
 
-Calculates the wedge product, or the signed area of the parallelogram,
- of two 2D vectors
+Calculates the wedge product, or the signed area of the parallelogram, of two 2D vectors
 
 ### Syntax
 
 ```lisp
-(dos_wedgeproduct vector0
- vector1)
+(dos_wedgeproduct vector0 vector1)
 ```
 
 ### Parameters
@@ -4752,9 +3642,7 @@ nil on error.
 
 ```lisp
 Command: (dos_wedgeproduct '(5 0) '(3 2))
-```
 
-```lisp
 10
 ```
 
@@ -4782,32 +3670,19 @@ The vector.
 
 T if the vector is a zero vector.
 
-nil if the vector is not a zero
- vector, or on error.
+nil if the vector is not a zero vector, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_zerop '(0 0 0))
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_zerop '(0 0 0.00001))
-```
 
-```lisp
 nil
 ```
 
 ---
-
-
 

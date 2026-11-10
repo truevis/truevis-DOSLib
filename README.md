@@ -6,17 +6,11 @@ The original DOSLib by Dale Fugier is no longer maintained, and no binaries are 
 
 > This is an unofficial fork. DOSLib is a trademark of Robert McNeel & Associates, who do not endorse or support this fork.
 
-## Prebuilt binaries
+## Get DOSLib
 
-You don't need to compile to use DOSLib for AutoCAD 2027. The built module is in the repo:
+You can **build from source** or **use a prebuilt module**. The repository ships the full C++ sources and Visual Studio project (`source\DOSLib.vcxproj`, `make\make_doslib.sln`). ObjectARX SDK paths are not included—you install those locally per [BUILDING.md](BUILDING.md). Build outputs under `bin\` and `source\x64\` are generated on your machine and are not committed.
 
-- `arx/2027/DOSLib26x64.arx` (SHA256 `3c98b20618c538365581dffb4532d9aa5d19dc3f019e485ef786be8d96a833f5`)
-
-Copy it to an AutoCAD support folder, for example `%APPDATA%\Autodesk\AutoCAD 2027\R26.0\enu\Support`. A 2026 build will be added to `arx/2026/` once it's verified.
-
-Build from source if you need a different AutoCAD release or want to change DOSLib.
-
-## Quick start
+### Build from source
 
 1. Install Visual Studio 2026 Build Tools with the C++ workload, ATL, and MFC, plus the v143 and v145 toolsets.
 2. Download the ObjectARX SDK for your AutoCAD release from Autodesk Platform Services and unpack it to `\acad\arx\25` (2026) or `\acad\arx\26` (2027) at the drive root.
@@ -29,7 +23,15 @@ Build from source if you need a different AutoCAD release or want to change DOSL
 
 4. Copy `bin\Release\arx\DOSLib26x64.arx` (2027) or `DOSLib25x64.arx` (2026) to an AutoCAD support folder.
 
-See [BUILDING.md](BUILDING.md) for the full build, toolset, and layout details.
+See [BUILDING.md](BUILDING.md) for toolsets, SDK layout, and troubleshooting.
+
+### Prebuilt binaries (optional)
+
+To use DOSLib in AutoCAD 2027 without compiling, copy the checked-in module from the repo:
+
+- `arx/2027/DOSLib26x64.arx` (SHA256 `3c98b20618c538365581dffb4532d9aa5d19dc3f019e485ef786be8d96a833f5`)
+
+Example support folder: `%APPDATA%\Autodesk\AutoCAD 2027\R26.0\enu\Support`. A verified 2026 build will be added under `arx/2026/` when ready. After you build locally, you can copy your own `.arx` from `bin\Release\arx\` instead—same file name.
 
 ## Using DOSLib
 

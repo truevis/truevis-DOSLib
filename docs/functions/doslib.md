@@ -24,9 +24,7 @@ nil if successful or on error.
 
 ```lisp
 Command: (dos_about)
-```
 
-```lisp
 nil
 ```
 
@@ -60,26 +58,12 @@ nil if command invocation, or on error.
 
 ```lisp
 Command: (dos_demandload T)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_demandload)
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -110,21 +94,11 @@ nil on success or on error.
 
 ```lisp
 Command: (dos_help)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_help "dos_dir")
-```
 
-```lisp
 nil
 ```
 
@@ -146,8 +120,7 @@ n/a
 
 ### Returns
 
-A list containing the DOSLib major version number, minor version number,
- and service release if successful.
+A list containing the DOSLib major version number, minor version number, and service release if successful.
 
 nil on error.
 
@@ -155,12 +128,9 @@ nil on error.
 
 ```lisp
 Command: (dos_version)
-```
 
-```lisp
 (8 4 0)
 ```
 
 ---
-
 

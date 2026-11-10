@@ -26,14 +26,8 @@ nil on error.
 
 ```lisp
 Command: (dos_getprn)
-```
 
-```lisp
 "HP LaserJet 8100 Series PCL"
-```
-
-```lisp
-
 ```
 
 ---
@@ -62,9 +56,7 @@ nil on error.
 
 ```lisp
 Command: (dos_printers)
-```
 
-```lisp
 ("HP LaserJet 8100 Series PCL 6" "hp LaserJet 1300 PCL 6" "HP DeskJet 935C" "HP Color LaserJet 4500")
 ```
 
@@ -98,9 +90,7 @@ nil on error.
 
 ```lisp
 Command: (dos_setprn (cadr (dos_printers)))
-```
 
-```lisp
 "hp LaserJet 1300 PCL 6"
 ```
 
@@ -140,12 +130,9 @@ nil on error.
 
 ```lisp
 Command: (dos_spool "readme.txt" (dos_getprn))
-```
 
-```lisp
 "C:\\temp\\readme.txt"
 ```
 
 ---
-
 

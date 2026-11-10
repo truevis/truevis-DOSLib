@@ -48,8 +48,6 @@ Archive
 
 ### Returns
 
-### Returns
-
 An association list containing the filenames and the attribute bits if successful.
 
 nil on error.
@@ -58,21 +56,11 @@ nil on error.
 
 ```lisp
 Command: (dos_attrib "C:\\Program Files\\AutoCAD 2006\\acad.exe")
-```
 
-```lisp
 (("acad.exe" . 8))
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_attrib "C:\\Program Files\\AutoCAD 2006\\acad.exe" 1)
-```
 
-```lisp
 (("acad.exe" . 1))
 ```
 
@@ -112,33 +100,15 @@ nil on error.
 
 ```lisp
 Command: (dos_copy "C:\\Drawings\\test1.dwg" "C:\\Drawings\\test2.dwg")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_copy "C:\\Drawings\\test1.dwg" "C:\\Temp\\")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_copy "C:\\Drawings\\*.dwg" "C:\\Temp\\")
-```
 
-```lisp
 T
 ```
 
@@ -172,21 +142,11 @@ nil on error.
 
 ```lisp
 Command: (dos_delete "C:\\Temp\\test1.dwg")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_delete "C:\\Temp\\*.dwg")
-```
 
-```lisp
 T
 ```
 
@@ -254,45 +214,19 @@ nil on error.
 
 ```lisp
 Command: (dos_dir)
-```
 
-```lisp
 ("Blocks and Tables - Imperial.3dm" "Blocks and Tables - Imperial.bak" "Blocks and Tables - Imperial.dwg" "Blocks and Tables - Metric.3dm" "Blocks and Tables - Metric.dwg" "Blocks and Tables.dwf" "colorwh.dwg" "db_samp.3dm" "db_samp.dwg" "db_samples.mdb" "Hotel Model.dwg" "Hummer Elevation.dwg" "Lineweights.dwg" "Plot Screening and Fill Patterns.dwg" "Stadium North Elevation.dwg" "Tablet.dwg" "Taisei Detail Plan.dwg" "Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dir "t*.dwg" 1)
-```
 
-```lisp
 ("Tablet.dwg" "Taisei Detail Plan.dwg" "Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dir "t*.dwg" 3)
-```
 
-```lisp
 ("Tablet.dwg" "Taisei Detail Plan.dwg" "Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_dir "t*.dwg" 5)
-```
 
-```lisp
 ("Taisei Door Window Sheet.dwg" "Taisei Interior Elv.dwg" "Taisei Detail Plan.dwg" "Tablet.dwg")
 ```
 
@@ -332,14 +266,8 @@ nil on error.
 
 ```lisp
 Command: (dos_dos2unix "readme.dos" "readme.unix")
-```
 
-```lisp
 "C:\\temp\\readme.unix"
-```
-
-```lisp
-
 ```
 
 ---
@@ -368,9 +296,7 @@ nil on error.
 
 ```lisp
 Command: (dos_emptyrecycle)
-```
 
-```lisp
 T
 ```
 
@@ -414,14 +340,8 @@ nil on error.
 
 ```lisp
 Command: (dos_encrypt "C:\\Program Files\\Autocad 2006\\Sample\\colorwh.dwg" "password")
-```
 
-```lisp
 "C:\\Program Files\\Autocad 2006\\Sample\\colorwh.dwg"
-```
-
-```lisp
-
 ```
 
 ---
@@ -446,8 +366,7 @@ The source filename.
 
 ### Returns
 
-A list describing the file's details if successful. The information
- returned is as follows:
+A list describing the file's details if successful. The information returned is as follows:
 
 		Element
 
@@ -503,28 +422,20 @@ nil on error.
 
 ```lisp
 Command: (dos_file "C:\\Program Files\\AutoCAD 2007\\acad.exe")
-```
 
-```lisp
 ("acad.exe" 9.48746e+006 2.00603e+007 8)
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_filecrc
 
-Calculates the Cyclic Redundancy Check, or CRC, of a file. A file CRC
- can be useful in detecting whether or not a file has changed.
+Calculates the Cyclic Redundancy Check, or CRC, of a file. A file CRC can be useful in detecting whether or not a file has changed.
 
 ### Syntax
 
 ```lisp
-(dos_filecrc filename
- [T])
+(dos_filecrc filename [T])
 ```
 
 ### Parameters
@@ -545,34 +456,19 @@ If specified, a 64-bit CRC is returned. Otherwise, a 32-bit CRC is returned.
 
 A 32- bit or 64-bit CRC, represented as a string, if successful.
 
-nil if filename does not exist,
- or on error.
+nil if filename does not exist, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_filecrc "C:\\Users\\Dale\\Desktop\\Drawing1.dwg")
-```
 
-```lisp
 "664C1CC4"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_filecrc "C:\\Users\\Dale\\Desktop\\Drawing1.dwg"
  T)
-```
 
-```lisp
 "9EDBD808460C988F"
-```
-
-```lisp
-
 ```
 
 ---
@@ -605,9 +501,7 @@ nil on error.
 
 ```lisp
 Command: (dos_filedate "C:\\Program Files\\Autocad 2006\\Support\\*.dwg")
-```
 
-```lisp
 (("chroma.dwg" . 2.00301e+007) ("direct.dwg" . 2.00301e+007) ("overhead.dwg" . 2.00301e+007) ("rm_sdb.dwg" . 2.00301e+007) ("sh_spot.dwg" . 2.00301e+007))
 ```
 
@@ -633,8 +527,7 @@ The source filename.
 
 ### Returns
 
-A list describing the file's details if successful. The information
- returned is as follows:
+A list describing the file's details if successful. The information returned is as follows:
 
 		Element
 
@@ -718,19 +611,16 @@ nil on error.
 
 ```lisp
 Command: (dos_fileex "acad.exe")
-```
 
-```lisp
-("C:\\program files\\autocad 2010\\" "acad.exe"
- 1.57155e+007 2.00908e+007 2.00908e+007 2.00911e+007 8)
+("C:\\program files\\autocad 2010\\" "acad.exe" 1.57155e+007 2.00908e+007 2.00908e+007 2.00911e+007 8)
 ```
 
 ---
 
 ## dos_fileinfo
 
-Returns a file's version information. This is information about a file
- that you see if you right-click on a file, in Windows Explorer, and pick
+Returns a file's version information. This is information about a file that you see if you right-click on a file, in Windows Explorer, and pick
+
  Properties and then pick Details.
 
 ### Syntax
@@ -745,13 +635,12 @@ Returns a file's version information. This is information about a file
 filename
 ```
 
-The filename of either an executable (EXE) or a dynamic link library
- (DLL) file.
+The filename of either an executable (EXE) or a dynamic link library (DLL) file.
 
 ### Returns
 
-A list describing the file's version information if successful. Note,
- a developer is not required to fill in all fields. Thus, some items in
+A list describing the file's version information if successful. Note, a developer is not required to fill in all fields. Thus, some items in
+
  the list may be empty strings.
 
 The information returned is as follows:
@@ -831,21 +720,15 @@ nil on error.
 
 ```lisp
 Command: (dos_fileinfo "acad.exe")
-```
 
-```lisp
-((24 0 215 0) (18 0 215 0) "" "Autodesk,
- Inc." "AutoCAD Application" "R18.0.215.0.0" "AutoCAD"
- "Copyright (c) 1982-2009 by Autodesk, Inc." "" "ACAD.EXE"
- "" "AutoCAD" "R18.0.215.0.0" "")
+((24 0 215 0) (18 0 215 0) "" "Autodesk, Inc." "AutoCAD Application" "R18.0.215.0.0" "AutoCAD" "Copyright (c) 1982-2009 by Autodesk, Inc." "" "ACAD.EXE" "" "AutoCAD" "R18.0.215.0.0" "")
 ```
 
 ---
 
 ## dos_fileowner
 
-Returns the current owner of a file. Note, the specified file must exist
- on an NTFS formatted drive.
+Returns the current owner of a file. Note, the specified file must exist on an NTFS formatted drive.
 
 ### Syntax
 
@@ -865,33 +748,18 @@ The source filename.
 
 The current owner of the file, if successful.
 
-nil if filename does not exist,
- or on error.
+nil if filename does not exist, or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_fileowner "z:\\drawing.dwg")
-```
 
-```lisp
 "BUILTIN\\Administrators"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_fileowner "c:\\users\\dale\\desktop\\drawing.dwg")
-```
 
-```lisp
 "MCNEEL\\dale"
-```
-
-```lisp
-
 ```
 
 ---
@@ -924,26 +792,12 @@ nil if filename does not exist, or on error.
 
 ```lisp
 Command: (dos_filep "C:\\Program Files\\Autocad 2006\\acad.exe")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_filep "C:\\Program Files\\Autocad 2006\\drawing1.dwg")
-```
 
-```lisp
 nil
-```
-
-```lisp
-
 ```
 
 ---
@@ -976,14 +830,8 @@ nil on error.
 
 ```lisp
 Command: (dos_filesize "C:\\Program Files\\Autocad 2006\\Support\\*.dwg")
-```
 
-```lisp
 (("chroma.dwg" . 42419.0) ("direct.dwg" . 34704.0) ("overhead.dwg" . 34991.0) ("rm_sdb.dwg" . 35183.0) ("sh_spot.dwg" . 35248.0))
-```
-
-```lisp
-
 ```
 
 ---
@@ -1050,9 +898,7 @@ nil on error.
 
 ```lisp
 Command: (dos_find "C:\\Program Files\\Autocad 2006\\b*.dwg")
-```
 
-```lisp
 ("C:\\Program Files\\Autocad 2006\\Express\\brkline.dwg" "C:\\Program Files\\Autocad 2006\\Help\\Tutorials\\createTransmittal\\Brush Roller.dwg" "C:\\Program Files\\Autocad 2006\\Help\\Tutorials\\PlaceView\\Building Elevations.dwg" "C:\\Program Files\\Autocad 2006\\Help\\Tutorials\\sheetListTable\\Base Plate.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\DesignCenter\\Basic Electronics.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\Sheet Sets\\Architectural\\Res\\Building Section.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\Blocks and Tables - Imperial.dwg" "C:\\Program Files\\Autocad 2006\\Sample\\Blocks and Tables - Metric.dwg")
 ```
 
@@ -1060,14 +906,12 @@ Command: (dos_find "C:\\Program Files\\Autocad 2006\\b*.dwg")
 
 ## dos_getfiled
 
-Displays a resizing Windows common file open dialog box that allows
- for single file selection.
+Displays a resizing Windows common file open dialog box that allows for single file selection.
 
 ### Syntax
 
 ```lisp
-(dos_getfiled title
- path filter)
+(dos_getfiled title path filter)
 ```
 
 ### Parameters
@@ -1089,12 +933,12 @@ filter
 ```
 
 A filename filter string. The filter string consists of two components:
- a description (for example, "Text Files"), and a filter pattern
- (for example, "*.TXT"). Multiple filter patterns can be specified
- for a single item by separating the filter-pattern strings with a semicolon
- (for example, "*.TXT;*.DOC;*.BAK"). The components must be separated
- by a pipe character ("|"). The filename filter string can consist
- of one or more filter strings, each separated by a pipe character ("|").
+ a description (for example, "Text Files"), and a filter pattern (for example, "*.TXT"). Multiple filter patterns can be specified
+
+ for a single item by separating the filter-pattern strings with a semicolon (for example, "*.TXT;*.DOC;*.BAK"). The components must be separated
+
+ by a pipe character ("|"). The filename filter string can consist of one or more filter strings, each separated by a pipe character ("|").
+
  The entire string must be terminated with two pipe characters ("||").
 
 ### Returns
@@ -1109,24 +953,20 @@ nil on cancel or on error.
 Command: (dos_getfiled "Select a file" "C:\\Program
  Files\\Autocad 2010\\" "Drawing files (*.dwg)|*.dwg|All files
  (*.*)|*.*||")
-```
 
-```lisp
- "C:\\Program Files\\AutoCAD 2010\\Sample\\A-01.dwg"
+"C:\\Program Files\\AutoCAD 2010\\Sample\\A-01.dwg"
 ```
 
 ---
 
 ## dos_getfilem
 
-Displays a resizing Windows common file open dialog box that allows
- for multiple file selection.
+Displays a resizing Windows common file open dialog box that allows for multiple file selection.
 
 ### Syntax
 
 ```lisp
-(dos_getfilem title
- path filter)
+(dos_getfilem title path filter)
 ```
 
 ### Parameters
@@ -1148,18 +988,17 @@ filter
 ```
 
 A filename filter string. The filter string consists of two components:
- a description (for example, "Text Files"), and a filter pattern
- (for example, "*.TXT"). Multiple filter patterns can be specified
- for a single item by separating the filter-pattern strings with a semicolon
- (for example, "*.TXT;*.DOC;*.BAK"). The components must be separated
- by a pipe character ("|"). The filename filter string can consist
- of one or more filter strings, each separated by a pipe character ("|").
+ a description (for example, "Text Files"), and a filter pattern (for example, "*.TXT"). Multiple filter patterns can be specified
+
+ for a single item by separating the filter-pattern strings with a semicolon (for example, "*.TXT;*.DOC;*.BAK"). The components must be separated
+
+ by a pipe character ("|"). The filename filter string can consist of one or more filter strings, each separated by a pipe character ("|").
+
  The entire string must be terminated with two pipe characters ("||").
 
 ### Returns
 
-A list of filenames if successful. The first element of the list is
- a qualified path to the selected directory.
+A list of filenames if successful. The first element of the list is a qualified path to the selected directory.
 
 nil on cancel or on error.
 
@@ -1169,12 +1008,8 @@ nil on cancel or on error.
 Command: (dos_getfilem "Select a file" "C:\\Program
  Files\\Autocad 2010\\" "Drawing files (*.dwg)|*.dwg|All files
  (*.*)|*.*||")
-```
 
-```lisp
-("C:\\Program Files\\AutoCAD 2010\\Sample\\"
- "A-01.dwg" "A-02.dwg" "A-03.dwg" "A-04.dwg"
- "A-05.dwg")
+("C:\\Program Files\\AutoCAD 2010\\Sample\\" "A-01.dwg" "A-02.dwg" "A-03.dwg" "A-04.dwg" "A-05.dwg")
 ```
 
 ---
@@ -1186,8 +1021,7 @@ Displays an AutoCAD-style file selection dialog box.
 ### Syntax
 
 ```lisp
-(dos_getfilenav title
- default ext flags)
+(dos_getfilenav title default ext flags)
 ```
 
 ### Parameters
@@ -1208,15 +1042,13 @@ A default file name to use; can be a null string ("").
 ext
 ```
 
-The default file name extension. If ext is passed as a null string
- (""), it defaults to * (all file types).
+The default file name extension. If ext is passed as a null string (""), it defaults to * (all file types).
 
 ```lisp
 flags
 ```
 
-An integer value (a bit-coded field) that controls the behavior of the
- dialog box. To set more than one condition at a time, add the values together.
+An integer value (a bit-coded field) that controls the behavior of the dialog box. To set more than one condition at a time, add the values together.
 
 		1
 		 (bit 0)
@@ -1393,16 +1225,13 @@ An integer value (a bit-coded field) that controls the behavior of the
 
 ### Returns
 
-If flag bits 11 (2048) and 12 (4096) are not specified, then the qualified
- path to the selected file is returned. This is similar to dos_getfiled.
+If flag bits 11 (2048) and 12 (4096) are not specified, then the qualified path to the selected file is returned. This is similar to dos_getfiled.
 
-If flag bit 11 (2048) is specified, then the qualified path to the selected
- folder is returned. This is similar to dos_getdir.
+If flag bit 11 (2048) is specified, then the qualified path to the selected folder is returned. This is similar to dos_getdir.
 
-If flag bit 12 (4096) is specified, then a list of selected filenames
- is returned. This is similar to dos_getfilem.
- Note, the first element of the list is the qualified path to the selected
- folder.
+If flag bit 12 (4096) is specified, then a list of selected filenames is returned. This is similar to dos_getfilem.
+
+ Note, the first element of the list is the qualified path to the selected folder.
 
 nil on cancel or on error.
 
@@ -1419,18 +1248,13 @@ Command: (dos_getfilenav "Select Lisp Files"
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_getfilenav "Select Lisp Files"
  "C:\\Program Files\\AutoCAD 2007\\Support\\" "lsp"
  4104)
 ```
 
 ```lisp
-("C:\\Program Files\\AutoCAD 2007\\Support\\"
- "3darray.lsp" "3d.lsp")
+("C:\\Program Files\\AutoCAD 2007\\Support\\" "3darray.lsp" "3d.lsp")
 ```
 
 ---
@@ -1442,8 +1266,7 @@ Merges, or combines, two or more files into a single file.
 ### Syntax
 
 ```lisp
-(dos_mergefiles source
- [destination])
+(dos_mergefiles source [destination])
 ```
 
 ### Parameters
@@ -1458,8 +1281,8 @@ A list of filenames to merge into a single file..
 destination
 ```
 
-The name of the destination file to create. if omitted, the source files
- will be merged into the file identified by the first element of the source
+The name of the destination file to create. if omitted, the source files will be merged into the file identified by the first element of the source
+
  list.
 
 ### Returns
@@ -1473,33 +1296,15 @@ nil on error.
 ```lisp
 Command: (setq z '("one.txt" "two.txt"
  "three.txt"))
-```
 
-```lisp
 ("one.txt" "two.txt" "three.txt")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_mergefiles z)
-```
 
-```lisp
 "one.txt"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_mergefiles z "four.txt")
-```
 
-```lisp
 "four.txt"
 ```
 
@@ -1539,26 +1344,12 @@ nil on error.
 
 ```lisp
 Command: (dos_move "C:\\Program Files\\AutoCAD 2006\\drawing1.dwg" "C:\\Temp\\")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_move "C:\\Program Files\\AutoCAD 2006\\drawing1.dwg" "C:\\Temp\\drawing1.bak")
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -1591,9 +1382,7 @@ nil if the file is closed, or on error.
 
 ```lisp
 Command: (dos_openp "C:\\Program Files\\Autocad 2006\\Sample\\colorwh.dwg")
-```
 
-```lisp
 T
 ```
 
@@ -1601,20 +1390,19 @@ T
 
 ## dos_readdelimitedfile
 
-Reads a delimited text file from disk. A delimited file is a specially
- formatted text file which stores spreadsheet or database-style information
- in a very simple format, with one row/record on each line, and each column/
- field within that row/record separated by a delimiter character.
+Reads a delimited text file from disk. A delimited file is a specially formatted text file which stores spreadsheet or database-style information
 
-Each row that is read from the file is split into a specified number
- of columns based on the specified delimiter character. The columnar data
- is then converted to the appropriate data type, either numbers or strings,
- and added to a list that will eventually be returned. Empty or missing
+ in a very simple format, with one row/record on each line, and each column/ field within that row/record separated by a delimiter character.
+
+Each row that is read from the file is split into a specified number of columns based on the specified delimiter character. The columnar data
+
+ is then converted to the appropriate data type, either numbers or strings, and added to a list that will eventually be returned. Empty or missing
+
  columns will be represented as empty elements (nil)
  in the list.
 
-A list containing one or more lists will be returned. The number of
- elements in each list will correspond to the maximum number of columns
+A list containing one or more lists will be returned. The number of elements in each list will correspond to the maximum number of columns
+
  found in the file.
 
 ANSI, UTF-8 and Unicode encoded text files are supported.
@@ -1622,9 +1410,7 @@ ANSI, UTF-8 and Unicode encoded text files are supported.
 ### Syntax
 
 ```lisp
-(dos_readdelimitedfile [filename
- [delimiter [ignore_empty
- [trim_spaces]]])
+(dos_readdelimitedfile [filename [delimiter [ignore_empty [trim_spaces]]])
 ```
 
 ### Parameters
@@ -1639,26 +1425,23 @@ The name of an existing delimited text file to read.
 delimiter
 ```
 
-The file's delimiter character. If omitted, a comma character will be
- used.
+The file's delimiter character. If omitted, a comma character will be used.
 
 ```lisp
 ignore_empty
 ```
 
-If omitted or nil, then if an
- empty row in the file is encountered, a nil
- element for each column will be added to the list. If T,
- then empty lines will be ignored.
+If omitted or nil, then if an empty row in the file is encountered, a nil
+
+ element for each column will be added to the list. If T, then empty lines will be ignored.
 
 ```lisp
 trim_spaces
 ```
 
-If omitted or nil, then leading
- and trailing spaces for string elements in the will not be trimmed.  If
- T, then leading and trailing spaces
- will be trimmed.
+If omitted or nil, then leading and trailing spaces for string elements in the will not be trimmed.  If
+
+ T, then leading and trailing spaces will be trimmed.
 
 ### Returns
 
@@ -1670,15 +1453,8 @@ nil on error.
 
 ```lisp
 Command: (dos_readdelimitedfile "users.csv")
-```
 
-```lisp
-(("Ted" 1 2.3 3) ("Bill" 2 5 6.7) ("Larry"
- 7.1 8 9))
-```
-
-```lisp
-
+(("Ted" 1 2.3 3) ("Bill" 2 5 6.7) ("Larry" 7.1 8 9))
 ```
 
 ---
@@ -1691,8 +1467,7 @@ Reads a text file from disk and returns the text as a list of strings.
 ### Syntax
 
 ```lisp
-(dos_readtextfile [filename
- [ignore_empty [trim_spaces]])
+(dos_readtextfile [filename [ignore_empty [trim_spaces]])
 ```
 
 ### Parameters
@@ -1707,19 +1482,17 @@ The name of an existing text file to read.
 ignore_empty
 ```
 
-If omitted or nil, then if an
- empty line in the file is encountered, a nil
- element will be added to the list. If T,
- then empty lines will be ignored.
+If omitted or nil, then if an empty line in the file is encountered, a nil
+
+ element will be added to the list. If T, then empty lines will be ignored.
 
 ```lisp
 trim_spaces
 ```
 
-If omitted or nil, then leading
- and trailing spaces, for each line in the file, will not be trimmed. If
- T, then leading and trailing spaces
- will be trimmed.
+If omitted or nil, then leading and trailing spaces, for each line in the file, will not be trimmed. If
+
+ T, then leading and trailing spaces will be trimmed.
 
 ### Returns
 
@@ -1731,11 +1504,8 @@ nil on error.
 
 ```lisp
 Command: (dos_readtextfile "test.txt")
-```
 
-```lisp
-("The quick brown fox" "jumped over the
- lazy dog.")
+("The quick brown fox" "jumped over the lazy dog.")
 ```
 
 ---
@@ -1766,14 +1536,8 @@ nil if successful or on error.
 
 ```lisp
 Command: (dos_recent "C:\\Program Files\\Autocad 2006\\drawing1.dwg")
-```
 
-```lisp
 nil
-```
-
-```lisp
-
 ```
 
 ---
@@ -1794,8 +1558,7 @@ Sends existing files to the Windows Recycle Bin.
 filespec
 ```
 
-The desired file or files. filespec can contain wildcard characters
- ("*" and "?").
+The desired file or files. filespec can contain wildcard characters ("*" and "?").
 
 ### Returns
 
@@ -1807,21 +1570,11 @@ nil on error.
 
 ```lisp
 Command: (dos_recycle "C:\\Temp\\test1.dwg")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_recycle "C:\\Temp\\*.dwg")
-```
 
-```lisp
 T
 ```
 
@@ -1861,26 +1614,12 @@ nil on error.
 
 ```lisp
 Command: (dos_rename "drawing1.dwg" "drawing1.bak")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_rename "C:\\Program Files\\Autocad 2006\\drawing1.dwg" "C:\\Program Files\\Autocad 2006\\drawing1.bak")
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -1929,21 +1668,11 @@ nil if not successful, or on error.
 
 ```lisp
 Command: (dos_search "kernel32.dll")
-```
 
-```lisp
 "C:\\WINNT\\System32\\kernel32.dll"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_search "3d.lsp" (getvar "acadprefix"))
-```
 
-```lisp
 "C:\\Program Files\\AutoCAD 2006\\support\\3d.lsp"
 ```
 
@@ -1973,33 +1702,15 @@ nil on error.
 
 ```lisp
 Command: (dos_tempfile)
-```
 
-```lisp
 "C:\\Documents and Settings\\dale\\Local Settings\\Temp\\~acA04B.tmp"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_tempfile)
-```
 
-```lisp
 "C:\\Documents and Settings\\dale\\Local Settings\\Temp\\~acA3BC.tmp"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_tempfile)
-```
 
-```lisp
 "C:\\Documents and Settings\\dale\\Local Settings\\Temp\\~acA679.tmp"
 ```
 
@@ -2045,9 +1756,7 @@ nil on error.
 
 ```lisp
 Command: (dos_touch "C:\\Program Files\\Autocad 2006\\*.dwg")
-```
 
-```lisp
 ("Drawing2.dwg" "Drawing1.dwg")
 ```
 
@@ -2087,28 +1796,20 @@ nil on error.
 
 ```lisp
 Command: (dos_unix2dos "readme.unix" "readme.dos")
-```
 
-```lisp
 "C:\\temp\\readme.dos"
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_writetextfile
 
-Writes a list of strings to a text file. ANSI, UTF-8 and Unicode encoded
- text files are supported.
+Writes a list of strings to a text file. ANSI, UTF-8 and Unicode encoded text files are supported.
 
 ### Syntax
 
 ```lisp
-(dos_writetextfile [filename
- strings [append [encoding]])
+(dos_writetextfile [filename strings [append [encoding]])
 ```
 
 ### Parameters
@@ -2129,16 +1830,15 @@ The array of strings to write.
 append
 ```
 
-If omitted or nil, the file
- will be overwritten if it already exists. If T,
+If omitted or nil, the file will be overwritten if it already exists. If T,
+
  then the will be appended to if it already exists.
 
 ```lisp
 encoding
 ```
 
-The text file encoding, where: 0 = ANSI Encoding (default), 1 = UTF-8
- Encoding, and 2 = Unicode Encoding.
+The text file encoding, where: 0 = ANSI Encoding (default), 1 = UTF-8 Encoding, and 2 = Unicode Encoding.
 
 ### Returns
 
@@ -2151,25 +1851,13 @@ nil on error.
 ```lisp
 Command: (setq strings (list "The quick brown fox"
  "jumped over the lazy dog."))
-```
 
-```lisp
-("The quick brown fox" "jumped over the
- lazy dog.")
-```
+("The quick brown fox" "jumped over the lazy dog.")
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_writetextfile "test.txt" strings)
-```
 
-```lisp
 2
 ```
 
 ---
-
 

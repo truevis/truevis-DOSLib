@@ -36,21 +36,11 @@ nil on error.
 
 ```lisp
 Command: (dos_strcase "AutoCAD 2006")
-```
 
-```lisp
 "AUTOCAD 2006"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strcase "AutoCAD 2006" T)
-```
 
-```lisp
 "autocad 2006"
 ```
 
@@ -84,9 +74,7 @@ nil on error.
 
 ```lisp
 Command: (dos_strcat "Hockey " "is " "the " "best.")
-```
 
-```lisp
 "Hockey is the best."
 ```
 
@@ -134,41 +122,26 @@ nil on error.
 
 ```lisp
 Command: (dos_strchar "AutoCAD 2006" 11)
-```
 
-```lisp
 "6"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strchar "AutoCAD 2006" 11 "7")
-```
 
-```lisp
 "AutoCAD 2007"
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_strcmplogical
 
-Compares two strings logically, or naturally. Digits in the strings
- are considered as numerical content rather than text. This test is not
+Compares two strings logically, or naturally. Digits in the strings are considered as numerical content rather than text. This test is not
+
  case-sensitive. Note, Windows Explorer sorts files using this method.
 
 ### Syntax
 
 ```lisp
-(dos_strcmplogical string1
- string2)
+(dos_strcmplogical string1 string2)
 ```
 
 ### Parameters
@@ -187,8 +160,7 @@ The second string.
 
 ### Returns
 
-Zero if the strings are identical, < 0 if string1 is less than string2,
- or > 0 if string1 object is greater than string2.
+Zero if the strings are identical, < 0 if string1 is less than string2, or > 0 if string1 object is greater than string2.
 
 nil on error.
 
@@ -196,45 +168,19 @@ nil on error.
 
 ```lisp
 Command: (dos_strcmplogical "Layer2" "Layer3")
-```
 
-```lisp
 -1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strcmplogical "Layer2" "Layer20")
-```
 
-```lisp
 -1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strcmplogical "Layer3" "Layer20")
-```
 
-```lisp
 -1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strcmplogical "Layer30" "Layer20")
-```
 
-```lisp
 1
 ```
 
@@ -280,26 +226,12 @@ nil on error.
 
 ```lisp
 Command: (dos_strcompare "AutoCAD" "AUTOCAD")
-```
 
-```lisp
 1
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strcompare "AutoCAD" "AUTOCAD" T)
-```
 
-```lisp
 0
-```
-
-```lisp
-
 ```
 
 ---
@@ -326,8 +258,7 @@ A list of strings.
 T
 ```
 
-If specified as T, a case insensitive
- comparison is performed. Otherwise, a case sensitive comparison is performed..
+If specified as T, a case insensitive comparison is performed. Otherwise, a case sensitive comparison is performed..
 
 ### Returns
 
@@ -340,22 +271,12 @@ nil on error.
 ```lisp
 Command: (dos_strcull '("autocad" "AutoCAD"
  "AUTOCAD" "autocad"))
-```
 
-```lisp
 ("autocad" "AutoCAD" "AUTOCAD")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strcull '("autocad" "AutoCAD"
  "AUTOCAD" "autocad") T)
-```
 
-```lisp
 ("autocad")
 ```
 
@@ -401,26 +322,12 @@ nil on error.
 
 ```lisp
 Command: (setq str "Hockey is the best.")
-```
 
-```lisp
 "Hockey is the best."
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strdelete str 6 8)
-```
 
-```lisp
 "Hockeybest."
-```
-
-```lisp
-
 ```
 
 ---
@@ -459,9 +366,7 @@ nil on error.
 
 ```lisp
 Command: (dos_strexcluding "1.0,1.0,1.0" ";,-:")
-```
 
-```lisp
 "1.0"
 ```
 
@@ -507,26 +412,12 @@ nil on error.
 
 ```lisp
 Command: (dos_strfind "AutoCAD 2006" "C")
-```
 
-```lisp
 4
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strfind "The stars are aligned." "e" 5)
-```
 
-```lisp
 12
-```
-
-```lisp
-
 ```
 
 ---
@@ -565,28 +456,20 @@ nil on error.
 
 ```lisp
 Command: (dos_strfindoneof "abcdefg" "xd")
-```
 
-```lisp
 3
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_strformat
 
-Formats string similar to the sprintf C-Runtime
- library function.
+Formats string similar to the sprintf C-Runtime library function.
 
 ### Syntax
 
 ```lisp
-(dos_strformat format
- arg1 arg2 ...)
+(dos_strformat format arg1 arg2 ...)
 ```
 
 ### Parameters
@@ -595,11 +478,10 @@ Formats string similar to the sprintf C-Runtime
 format
 ```
 
-A string that contains the text to be formatted. It can optionally contain
- embedded format tags that are substituted by the values specified in subsequent
+A string that contains the text to be formatted. It can optionally contain embedded format tags that are substituted by the values specified in subsequent
+
  argument(s) and formatted as requested.
- The number of arguments following the format parameters should at least
- be as much as the number of format tags.
+ The number of arguments following the format parameters should at least be as much as the number of format tags.
 
 The format tags follow this prototype:
 
@@ -607,8 +489,7 @@ The format tags follow this prototype:
 %[flags][width][.precision][length]specifier
 ```
 
-Where specifier is the most significant one and defines the type and
- the interpretation of the value of the corresponding argument:
+Where specifier is the most significant one and defines the type and the interpretation of the value of the corresponding argument:
 
 		Specifier
 
@@ -712,8 +593,7 @@ Where specifier is the most significant one and defines the type and
 		A
 		 % followed by another % character will write % to the string.
 
-The tag can also contain flags, width, .precision and modifiers sub-specifiers,
- which are optional and follow these specifications:
+The tag can also contain flags, width, .precision and modifiers sub-specifiers, which are optional and follow these specifications:
 
 		Flag
 
@@ -837,10 +717,10 @@ The tag can also contain flags, width, .precision and modifiers sub-specifiers,
 substring
 ```
 
-Depending on the format string, the function may expect a sequence of
- additional arguments, each containing one value to be inserted instead
- of each %-tag specified in the format parameter, if any. There should
- be the same number of these arguments as the number of %-tags that expect
+Depending on the format string, the function may expect a sequence of additional arguments, each containing one value to be inserted instead
+
+ of each %-tag specified in the format parameter, if any. There should be the same number of these arguments as the number of %-tags that expect
+
  a value.
 
 ### Returns
@@ -852,234 +732,7 @@ nil on error.
 ### Example
 
 ```lisp
-(defun c:test (/ ch string count fp)
-```
-
-```lisp
-  (setq ch "h")
-```
-
-```lisp
-  (setq string "computer")
-```
-
-```lisp
-  (setq count -9234)
-```
-
-```lisp
-  (setq fp 251.7366)
-```
-
-```lisp
-  ; Display integers
-```
-
-```lisp
-  (princ
-```
-
-```lisp
-    (dos_strformat
-```
-
-```lisp
-      "Integer formats:\n
-   Decimal: %d  Justified: %.6d  Unsigned: %u\n"
-```
-
-```lisp
-      count count count
-```
-
-```lisp
-    )
-```
-
-```lisp
-  )
-```
-
-```lisp
-  ; Display decimals
-```
-
-```lisp
-  (princ
-```
-
-```lisp
-    (dos_strformat
-```
-
-```lisp
-      "Decimal %d as:\n
-   Hex: %Xh  C hex: 0x%x  Octal: %o\n"
-```
-
-```lisp
-      count count count count
-```
-
-```lisp
-    )
-```
-
-```lisp
-  )
-```
-
-```lisp
-  ; Display characters
-```
-
-```lisp
-  (princ
-```
-
-```lisp
-    (dos_strformat
-```
-
-```lisp
-      "Characters in
- field:\n%10c%5hc%5c%5lc\n"
-```
-
-```lisp
-      ch ch ch ch
-```
-
-```lisp
-    )
-```
-
-```lisp
-  )
-```
-
-```lisp
-
-```
-
-```lisp
-  ; Display strings
-```
-
-```lisp
-  (princ
-```
-
-```lisp
-    (dos_strformat
-```
-
-```lisp
-      "Strings in field:\n%25s\n%25.4hs\n
-   %s%25.3ls\n"
-```
-
-```lisp
-      string string string
- string
-```
-
-```lisp
-    )
-```
-
-```lisp
-  )
-```
-
-```lisp
-  ; Display real numbers
-```
-
-```lisp
-  (princ
-```
-
-```lisp
-    (dos_strformat
-```
-
-```lisp
-      "Real numbers:\n
-   %f %.2f %e %E\n"
-```
-
-```lisp
-      fp fp fp fp
-```
-
-```lisp
-    )
-```
-
-```lisp
-  )
-```
-
-```lisp
-  (princ)
-```
-
-```lisp
-)
-```
-
-### Output
-
-```lisp
-Integer formats:
-```
-
-```lisp
-   Decimal: -9234  Justified: -009234
-  Unsigned: 4294958062
-```
-
-```lisp
-Decimal -9234 as:
-```
-
-```lisp
-   Hex: FFFFDBEEh  C hex: 0xffffdbee
-  Octal: 37777755756
-```
-
-```lisp
-Characters in field:
-```
-
-```lisp
-         h
-    h    h    h
-```
-
-```lisp
-Strings in field:
-```
-
-```lisp
-                 computer
-```
-
-```lisp
-                        c
-```
-
-```lisp
-   computer                      com
-```
-
-```lisp
-Real numbers:
-```
-
-```lisp
-   251.736600 251.74 2.517366e+002 2.517366E+002
+(defun c:test (/ ch string count fp) (setq ch "h") (setq string "computer") (setq count -9234) (setq fp 251.7366) ; Display integers (princ (dos_strformat "Integer formats:\n Decimal: %d Justified: %.6d Unsigned: %u\n" count count count ) ) ; Display decimals (princ (dos_strformat "Decimal %d as:\n Hex: %Xh C hex: 0x%x Octal: %o\n" count count count count ) ) ; Display characters (princ (dos_strformat "Characters in field:\n%10c%5hc%5c%5lc\n" ch ch ch ch ) ) ; Display strings (princ (dos_strformat "Strings in field:\n%25s\n%25.4hs\n %s%25.3ls\n" string string string string ) ) ; Display real numbers (princ (dos_strformat "Real numbers:\n %f %.2f %e %E\n" fp fp fp fp ) ) (princ) ) Integer formats: Decimal: -9234 Justified: -009234 Unsigned: 4294958062 Decimal -9234 as: Hex: FFFFDBEEh C hex: 0xffffdbee Octal: 37777755756 Characters in field: h h h h Strings in field: computer c computer com Real numbers: 251.736600 251.74 2.517366e+002 2.517366E+002
 ```
 
 ---
@@ -1144,38 +797,16 @@ nil on error.
 
 ```lisp
 Command: (dos_strformatcurrency 1234.56)
-```
 
-```lisp
 "$1,234.56"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strformatcurrency 1234.56 0)
-```
 
-```lisp
 "$1,235"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strformatcurrency 0.56 2 0)
-```
 
-```lisp
 "$.56"
-```
-
-```lisp
-
 ```
 
 ---
@@ -1187,8 +818,7 @@ Returns a formatted string containing a specified date and/or time.
 ### Syntax
 
 ```lisp
-(dos_strformatdate format
- date/time)
+(dos_strformatdate format date/time)
 ```
 
 ### Parameters
@@ -1197,8 +827,8 @@ Returns a formatted string containing a specified date and/or time.
 format
 ```
 
- A string containing one or more formatting codes. Other characters
- in the formatting string are copied unchanged to the returned string.
+ A string containing one or more formatting codes. Other characters in the formatting string are copied unchanged to the returned string.
+
  The formatting codes are as follows:
 
 		%a
@@ -1314,8 +944,7 @@ format
 		Percent
 		 sign
 
-The # flag may prefix any formatting
- code. In that case, the meaning of the format code is changed as follows:
+The # flag may prefix any formatting code. In that case, the meaning of the format code is changed as follows:
 
 		%#a,
 		 %#A, %#b, %#B, %#p, %#X, %#z, %#Z, %#%
@@ -1345,8 +974,8 @@ The # flag may prefix any formatting
 date/time
 ```
 
-A list of numbers specifying the year (1970–3000), month (1–12), and
- day (1–31). Optionally, the list can contain the hour (0-23), minute (0-59),
+A list of numbers specifying the year (1970–3000), month (1–12), and day (1–31). Optionally, the list can contain the hour (0-23), minute (0-59),
+
  and second (0-59).
 
 ### Returns
@@ -1359,27 +988,13 @@ nil on error.
 
 ```lisp
 Command: (dos_strformatdate "%m/%d/%y" (dos_date))
-```
 
-```lisp
 "11/06/09"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strformatdate "%A, %B %d, %Y" (dos_getdate
  "Date"))
-```
 
-```lisp
 "Wednesday, November 11, 2009"
-```
-
-```lisp
-
 ```
 
 ---
@@ -1438,38 +1053,16 @@ nil on error.
 
 ```lisp
 Command: (dos_strformatnumber 1234.56)
-```
 
-```lisp
 "1,234.56"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strformatnumber 1234.56 0)
-```
 
-```lisp
 "1,235"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strformatnumber 0.56 2 0)
-```
 
-```lisp
 ".56"
-```
-
-```lisp
-
 ```
 
 ---
@@ -1508,14 +1101,8 @@ nil on error.
 
 ```lisp
 Command: (dos_strincluding "cabbage" "abc")
-```
 
-```lisp
 "cabba"
-```
-
-```lisp
-
 ```
 
 ---
@@ -1560,26 +1147,12 @@ nil on error.
 
 ```lisp
 Command: (setq str "HockeyBest.")
-```
 
-```lisp
 "HockeyBest."
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strinsert str 6 " is the ")
-```
 
-```lisp
 "Hockey is the Best."
-```
-
-```lisp
-
 ```
 
 ---
@@ -1658,38 +1231,16 @@ nil if not successful, or on error.
 
 ```lisp
 Command: (dos_strischar "D" 2)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strischar "D" 4)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strischar "D" 129)
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -1728,14 +1279,8 @@ nil on error.
 
 ```lisp
 Command: (dos_strleft "AutoCAD 2006" 7)
-```
 
-```lisp
 "AutoCAD"
-```
-
-```lisp
-
 ```
 
 ---
@@ -1768,14 +1313,8 @@ nil on error.
 
 ```lisp
 Command: (dos_strlength "AutoCAD 2006")
-```
 
-```lisp
 12
-```
-
-```lisp
-
 ```
 
 ---
@@ -1787,8 +1326,7 @@ Matches a string against a wildcard string.
 ### Syntax
 
 ```lisp
-(dos_strmatch string wildcard
- [T])
+(dos_strmatch string wildcard [T])
 ```
 
 ### Parameters
@@ -1809,8 +1347,7 @@ A string containing wildcard characters (* and ?).
 T
 ```
 
-If specified, then a case-insensitive comparison is performed. Otherwise,
- a case-sensitive comparison is performed.
+If specified, then a case-insensitive comparison is performed. Otherwise, a case-sensitive comparison is performed.
 
 ### Returns
 
@@ -1822,30 +1359,12 @@ nil on error.
 
 ```lisp
 Command: (dos_strmatch "MyLayerName" "My*")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strmatch "MyDrawing.dwg" "My*.*")
-```
 
-```lisp
 T
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1890,43 +1409,26 @@ nil on error.
 
 ```lisp
 Command: (dos_strmid "AutoCAD 2006" 8)
-```
 
-```lisp
 "2006"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strmid "AutoCAD 2006" 4 3)
-```
 
-```lisp
 "CAD"
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_strregexp
 
-Parses a string using a regular expression. A regular expression provides
- a concise and flexible means for "matching" (specifying and
- recognizing) strings of text, such as particular characters, words, or
- patterns of characters.
+Parses a string using a regular expression. A regular expression provides a concise and flexible means for "matching" (specifying and
+
+ recognizing) strings of text, such as particular characters, words, or patterns of characters.
 
 ### Syntax
 
 ```lisp
-(dos_strregexp regexp
- input [ignore_case
- [value [replace_all]]])
+(dos_strregexp regexp input [ignore_case [value [replace_all]]])
 ```
 
 ### Parameters
@@ -1935,8 +1437,7 @@ Parses a string using a regular expression. A regular expression provides
 regexp
 ```
 
-The regular expression. The metacharacters understood by this function
- are::
+The regular expression. The metacharacters understood by this function are::
 
 		Metacharacter
 
@@ -2043,8 +1544,8 @@ The regular expression. The metacharacters understood by this function
 		 operator: the expression following ! does not match the input.
 		 Example: a!b matches "a" not followed by "b".
 
-A regular expression can also contain abbreviations, or shortcuts, such
- as \d instead of [0-9].  The predefined character traits classes
+A regular expression can also contain abbreviations, or shortcuts, such as \d instead of [0-9].  The predefined character traits classes
+
  provide the following abbreviations are:
 
 		Abbreviation
@@ -2129,8 +1630,8 @@ The input string to parse using the regular expression.
 ignore_case
 ```
 
-Specify T to ignore character
- case when parsing, or nil (default)
+Specify T to ignore character case when parsing, or nil (default)
+
  to respect character case.
 
 ```lisp
@@ -2143,8 +1644,8 @@ The string to replace matches with.
 replace_all
 ```
 
-Specify T (default) to replace
- all matches or nil to replace
+Specify T (default) to replace all matches or nil to replace
+
  the first match.
 
 ### Returns
@@ -2177,10 +1678,6 @@ Command: (dos_strregexp "{[0-9]?[0-9]}:{[0-9][0-9]}"
 (0 "1:57" (0 "1") (2 "57"))
 ```
 
-```lisp
-
-```
-
 Parses a seven digit phone number using abbreviations.
 
 ```lisp
@@ -2190,10 +1687,6 @@ Command: (dos_strregexp "\\d\\d\\d-\\d\\d\\d\\d"
 
 ```lisp
 (25 "555-1212")
-```
-
-```lisp
-
 ```
 
 Parses a seven digit phone number using abbreviations.
@@ -2207,10 +1700,6 @@ Command: (dos_strregexp "\\d+-\\d+" "My
 (25 "555-1212")
 ```
 
-```lisp
-
-```
-
 Another matching group example.
 
 ```lisp
@@ -2219,12 +1708,7 @@ Command: (dos_strregexp "product: {.*?};" "product:
 ```
 
 ```lisp
-(0 "product: Bowling ball;" (9 "Bowling
- ball"))
-```
-
-```lisp
-
+(0 "product: Bowling ball;" (9 "Bowling ball"))
 ```
 
 ---
@@ -2263,14 +1747,8 @@ nil on error.
 
 ```lisp
 Command: (dos_strremove "AutoCAD 2006" "A")
-```
 
-```lisp
 "utoCD 2006"
-```
-
-```lisp
-
 ```
 
 ---
@@ -2321,26 +1799,12 @@ nil on error.
 
 ```lisp
 Command: (setq str "Everybody likes ice hockey.")
-```
 
-```lisp
 "Everybody likes ice hockey."
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strreplace str "hockey" "golf")
-```
 
-```lisp
 "Everybody likes ice golf."
-```
-
-```lisp
-
 ```
 
 ---
@@ -2373,14 +1837,8 @@ nil on error.
 
 ```lisp
 Command: (dos_strreverse "AutoCAD 2006")
-```
 
-```lisp
 "6002 DACotuA"
-```
-
-```lisp
-
 ```
 
 ---
@@ -2419,9 +1877,7 @@ nil on error.
 
 ```lisp
 Command: (dos_strreversefind "abcabc" "b")
-```
 
-```lisp
 4
 ```
 
@@ -2434,8 +1890,7 @@ Extracts the right part of a string (like the Basic RIGHT$ function).
 ### Syntax
 
 ```lisp
-(dos_strright string
- count)
+(dos_strright string count)
 ```
 
 ### Parameters
@@ -2450,13 +1905,11 @@ A string.
 count
 ```
 
-The number of characters to extract from string. If count exceeds the
- length of string, then the entire string is extracted.
+The number of characters to extract from string. If count exceeds the length of string, then the entire string is extracted.
 
 ### Returns
 
-A string that contains a copy of the specified range of characters if
- successful.
+A string that contains a copy of the specified range of characters if successful.
 
 nil on error.
 
@@ -2464,14 +1917,8 @@ nil on error.
 
 ```lisp
 Command: (dos_strright "AutoCAD 2010" 4)
-```
 
-```lisp
 "2010"
-```
-
-```lisp
-
 ```
 
 ---
@@ -2483,8 +1930,7 @@ Sorts a list of strings.
 ### Syntax
 
 ```lisp
-(dos_strsort strings
- [mode [ascending]])
+(dos_strsort strings [mode [ascending]])
 ```
 
 ### Parameters
@@ -2520,8 +1966,7 @@ ascending
 ```
 
 Sort the list in either ascending (T)
- or descending (nil) order. If
- omitted, the list is sorted in ascending order.
+ or descending (nil) order. If omitted, the list is sorted in ascending order.
 
 ### Returns
 
@@ -2534,63 +1979,24 @@ nil on error.
 ```lisp
 Command: (setq x '("1A" "2A" "3A"
  "10C" "10B" "10A" "11B" "11D"))
-```
 
-```lisp
-("1A" "2A" "3A" "10C"
- "10B" "10A" "11B" "11D")
-```
+("1A" "2A" "3A" "10C" "10B" "10A" "11B" "11D")
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strsort x)
-```
 
-```lisp
-("10A" "10B" "10C" "11B"
- "11D" "1A" "2A" "3A")
-```
+("10A" "10B" "10C" "11B" "11D" "1A" "2A" "3A")
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strsort x 0 nil)
-```
 
-```lisp
-("3A" "2A" "1A" "11D"
- "11B" "10C" "10B" "10A")
-```
+("3A" "2A" "1A" "11D" "11B" "10C" "10B" "10A")
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strsort x -1)
-```
 
-```lisp
-("1A" "2A" "3A" "10A"
- "10B" "10C" "11B" "11D")
-```
+("1A" "2A" "3A" "10A" "10B" "10C" "11B" "11D")
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strsort x -1 nil)
-```
 
-```lisp
-("11D" "11B" "10C" "10B"
- "10A" "3A" "2A" "1A")
+("11D" "11B" "10C" "10B" "10A" "3A" "2A" "1A")
 ```
 
 ---
@@ -2635,50 +2041,20 @@ nil on error.
 
 ```lisp
 Command: (dos_strtokens "Hockey is the best." " ")
-```
 
-```lisp
 ("Hockey" "is" "the" "best.")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtokens "A string\tof ,,tokens\nand some more tokens" " ,\t\n" t)
-```
 
-```lisp
 ("A" "string" "of" "tokens" "and" "some" "more" "tokens")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtokens "0,0,,0,0" ",")
-```
 
-```lisp
 ("0" "0" "" "0" "0")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtokens "0,0,,0,0" "," t)
-```
 
-```lisp
 ("0" "0" "0" "0")
-```
-
-```lisp
-
 ```
 
 ---
@@ -2716,21 +2092,11 @@ nil on error.
 
 ```lisp
 Command: (setq str "  Hockey is the best  ")
-```
 
-```lisp
 "  Hockey is the best  "
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtrim str)
-```
 
-```lisp
 "Hockey is the best"
 ```
 
@@ -2743,8 +2109,7 @@ Trims leading characters from a string.
 ### Syntax
 
 ```lisp
-(dos_strtrimleft string
- [chars])
+(dos_strtrimleft string [chars])
 ```
 
 ### Parameters
@@ -2759,10 +2124,10 @@ A string.
 chars
 ```
 
-A string containing the target characters to be trimmed. All trailing
- occurrences of characters in chars will be trimmed from string.
- If chars
- is not specified, this function removes leading newline, space,
+A string containing the target characters to be trimmed. All trailing occurrences of characters in chars will be trimmed from string.
+
+ If chars is not specified, this function removes leading newline, space,
+
  and tab characters from string.
 
 ### Returns
@@ -2775,50 +2140,20 @@ nil on error.
 
 ```lisp
 Command: (setq str "****Hockey is the best")
-```
 
-```lisp
 "****Hockey is the best"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtrimleft str "*")
-```
 
-```lisp
 "Hockey is the best"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (setq str "\t\tHockey is the best")
-```
 
-```lisp
 "\t\tHockey is the best"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtrimleft str)
-```
 
-```lisp
 "Hockey is the best"
-```
-
-```lisp
-
 ```
 
 ---
@@ -2830,8 +2165,7 @@ Trims trailing characters from a string.
 ### Syntax
 
 ```lisp
-(dos_strtrimright string
- [chars])
+(dos_strtrimright string [chars])
 ```
 
 ### Parameters
@@ -2846,10 +2180,10 @@ A string.
 chars
 ```
 
-A string containing the target characters to be trimmed. All trailing
- occurrences of characters in chars will be trimmed from string.
- If chars
- is not specified, this function removes trailing newline, space,
+A string containing the target characters to be trimmed. All trailing occurrences of characters in chars will be trimmed from string.
+
+ If chars is not specified, this function removes trailing newline, space,
+
  and tab characters from string.
 
 ### Returns
@@ -2862,53 +2196,21 @@ nil on error.
 
 ```lisp
 Command: (setq str "Hockey is the best!!!!")
-```
 
-```lisp
 "Hockey is the best!!!!"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtrimright str "!")
-```
 
-```lisp
 "Hockey is the best"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (setq str "Hockey is the best ")
-```
 
-```lisp
 "Hockey is the best "
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_strtrimright str)
-```
 
-```lisp
 "Hockey is the best"
-```
-
-```lisp
-
 ```
 
 ---
-
-
 

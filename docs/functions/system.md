@@ -18,8 +18,8 @@ n/a
 
 ### Returns
 
-A list containing one or more sublists describing the details of each
- network adapter if successful. The information returned in each sublist
+A list containing one or more sublists describing the details of each network adapter if successful. The information returned in each sublist
+
  is as follows:
 
 		Element
@@ -74,22 +74,8 @@ nil on error.
 
 ```lisp
 Command: (dos_nicinfo)
-```
 
-```lisp
-(("{914DECA6-4DDC-4FEE-92DC-B36EA7BE2DAD}" "Wireless
- Network Connection 2" "Microsoft Virtual WiFi Miniport Adapter"
- "00:24:2C:49:D5:F1" "UNKNOWN" "0.0.0.0"
- "0.0.0.0" "0.0.0.0" "DHCP") ("{C12C38A5-8225-422E-8D46-F6FF46902FD0}"
- "Local Area Connection 2" "TAP-Win32 Adapter V9" "00:FF:C1:2C:38:A5"
- "ETHERNET" "0.0.0.0" "0.0.0.0" "0.0.0.0"
- "DHCP") ("{FA0586CA-CC81-4C08-9226-4C77D6203C4C}"
- "Wireless Network Connection" "Dell Wireless 1397 WLAN
- Mini-Card" "00:24:2C:49:D5:F1" "UNKNOWN" "192.168.1.110"
- "255.255.255.0" "192.168.1.1" "DHCP") ("{6C2A5A61-CA16-4DDC-AEE7-41ABB3326CF3}"
- "Local Area Connection" "Intel(R) 82567LM Gigabit Network
- Connection" "00:21:70:F9:0D:4E" "ETHERNET" "0.0.0.0"
- "0.0.0.0" "10.67.30.1" "DHCP"))
+(("{914DECA6-4DDC-4FEE-92DC-B36EA7BE2DAD}" "Wireless Network Connection 2" "Microsoft Virtual WiFi Miniport Adapter" "00:24:2C:49:D5:F1" "UNKNOWN" "0.0.0.0" "0.0.0.0" "0.0.0.0" "DHCP") ("{C12C38A5-8225-422E-8D46-F6FF46902FD0}" "Local Area Connection 2" "TAP-Win32 Adapter V9" "00:FF:C1:2C:38:A5" "ETHERNET" "0.0.0.0" "0.0.0.0" "0.0.0.0" "DHCP") ("{FA0586CA-CC81-4C08-9226-4C77D6203C4C}" "Wireless Network Connection" "Dell Wireless 1397 WLAN Mini-Card" "00:24:2C:49:D5:F1" "UNKNOWN" "192.168.1.110" "255.255.255.0" "192.168.1.1" "DHCP") ("{6C2A5A61-CA16-4DDC-AEE7-41ABB3326CF3}" "Local Area Connection" "Intel(R) 82567LM Gigabit Network Connection" "00:21:70:F9:0D:4E" "ETHERNET" "0.0.0.0" "0.0.0.0" "10.67.30.1" "DHCP"))
 ```
 
 ---
@@ -118,14 +104,8 @@ nil if not a member of the local Administrators group, or on error.
 
 ```lisp
 Command: (dos_adminp)
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -181,26 +161,12 @@ nil on error.
 
 ```lisp
 Command: (dos_beep)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_beep 1)
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -233,26 +199,12 @@ nil if <Caps Lock> is turned off.
 
 ```lisp
 Command: (dos_capslock t)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_capslock)
-```
 
-```lisp
 nil
-```
-
-```lisp
-
 ```
 
 ---
@@ -273,8 +225,8 @@ Returns a formatted string containing the current date and/or time.
 format
 ```
 
- A string containing one or more formatting codes. Other characters
- in the formatting string are copied unchanged to the returned string.
+ A string containing one or more formatting codes. Other characters in the formatting string are copied unchanged to the returned string.
+
  The formatting codes are as follows:
 
 		%a
@@ -390,8 +342,7 @@ format
 		Percent
 		 sign
 
-The # flag may prefix any formatting
- code. In that case, the meaning of the format code is changed as follows:
+The # flag may prefix any formatting code. In that case, the meaning of the format code is changed as follows:
 
 		%#a,
 		 %#A, %#b, %#B, %#p, %#X, %#z, %#Z, %#%
@@ -427,40 +378,18 @@ nil on error.
 
 ```lisp
 Command: (dos_cdate "%m/%d/%y")
-```
 
-```lisp
 "01/09/02"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_cdate "%A, %B %d, %Y")
-```
 
-```lisp
 "Wednesday, January 09, 2002"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_cdate "Today is %A, day %d of %B in
  the year %Y.")
-```
 
-```lisp
 "Today is Wednesday, day 09 of January in the year
  2002."
-```
-
-```lisp
-
 ```
 
 ---
@@ -493,26 +422,12 @@ nil on error.
 
 ```lisp
 Command: (dos_clipboard "Hello World!")
-```
 
-```lisp
 "Hello World!"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_clipboard)
-```
 
-```lisp
 "Hello World!"
-```
-
-```lisp
-
 ```
 
 ---
@@ -589,9 +504,7 @@ nil on error.
 
 ```lisp
 Command: (dos_cmdargs)
-```
 
-```lisp
 ("C:\\Program Files\\AutoCAD 2007\\acad.exe" "/b" "C:\\Scripts\\MyScript")
 ```
 
@@ -625,34 +538,19 @@ nil on error.
 
 ```lisp
 Command: (dos_computer)
-```
 
-```lisp
 "ELVIS"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_computer "SPEEDO")
-```
 
-```lisp
 "SPEEDO"
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_date
 
-Returns the current system date or changes the current system date to
- one specified.
+Returns the current system date or changes the current system date to one specified.
 
 ### Syntax
 
@@ -666,8 +564,7 @@ Returns the current system date or changes the current system date to
 date
 ```
 
-A list of numbers specifying the year (1970–3000), month (1–12), and
- day (1–31).
+A list of numbers specifying the year (1970–3000), month (1–12), and day (1–31).
 
 ### Returns
 
@@ -679,26 +576,12 @@ nil on error.
 
 ```lisp
 Command: (dos_date)
-```
 
-```lisp
 (2006 7 14)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_date '(2007 7 14))
-```
 
-```lisp
 (2007 7 14)
-```
-
-```lisp
-
 ```
 
 ---
@@ -727,14 +610,8 @@ nil on error.
 
 ```lisp
 Command: (dos_guidgen)
-```
 
-```lisp
 "947823AD-9F0B-4171-85B9-81C73F46E801"
-```
-
-```lisp
-
 ```
 
 ---
@@ -763,14 +640,8 @@ nil on error.
 
 ```lisp
 Command: (dos_hostname)
-```
 
-```lisp
 "ELVIS"
-```
-
-```lisp
-
 ```
 
 ---
@@ -807,14 +678,8 @@ nil successful or on error.
 
 ```lisp
 Command: (dos_htmlhelp "C:\\Program Files\\AutoCAD 2006\\help\\readme.chm")
-```
 
-```lisp
 nil
-```
-
-```lisp
-
 ```
 
 ---
@@ -843,14 +708,8 @@ nil on error.
 
 ```lisp
 Command: (dos_ipaddress)
-```
 
-```lisp
 ("204.177.179.67" "255.255.255.0")
-```
-
-```lisp
-
 ```
 
 ---
@@ -879,9 +738,7 @@ nil otherwise.
 
 ```lisp
 Command: (dos_isacad64)
-```
 
-```lisp
 nil
 ```
 
@@ -911,9 +768,7 @@ nil if not a member of the local power users group, or on error.
 
 ```lisp
 Command: (dos_ispoweruser)
-```
 
-```lisp
 T
 ```
 
@@ -943,9 +798,6 @@ nil otherwise.
 
 ```lisp
 Command: (dos_iswin64)
-```
-
-```lisp
 
 T
 ```
@@ -976,14 +828,8 @@ nil on error.
 
 ```lisp
 Command: (dos_macaddress)
-```
 
-```lisp
 "00:00:86:4A:CF:7F"
-```
-
-```lisp
-
 ```
 
 ---
@@ -1040,14 +886,8 @@ nil on error.
 
 ```lisp
 Command: (dos_mem)
-```
 
-```lisp
 (27 5.3633e+008 3.90562e+008 1.30926e+009 1.18208e+009 2.14735e+009 2.06644e+009)
-```
-
-```lisp
-
 ```
 
 ---
@@ -1080,26 +920,12 @@ nil if <Num Lock> is turned off.
 
 ```lisp
 Command: (dos_numlock t)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_numlock)
-```
 
-```lisp
 nil
-```
-
-```lisp
-
 ```
 
 ---
@@ -1130,18 +956,8 @@ nil if successful on error.
 
 ```lisp
 Command: (dos_pause 3)
-```
 
-```lisp
 nil
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1153,8 +969,7 @@ Screen capture utility.
 ### Syntax
 
 ```lisp
-(dos_printscrn filename
- [mode [prompt]])
+(dos_printscrn filename [mode [prompt]])
 ```
 
 ### Parameters
@@ -1163,8 +978,8 @@ Screen capture utility.
 filename
 ```
 
-The name of the bitmap file to create, or nil
- to copy the screen capture to the Windows Clipboard. The allowable file
+The name of the bitmap file to create, or nil to copy the screen capture to the Windows Clipboard. The allowable file
+
  types are as follows:
 
 		BMP
@@ -1191,10 +1006,6 @@ The name of the bitmap file to create, or nil
 
 		Portable
 		 Network Graphics
-
-```lisp
-
-```
 
 ```lisp
 mode
@@ -1229,15 +1040,10 @@ The screen capture mode. The allowable file types are as follows:
 		 a user-defined region.
 
 ```lisp
-
-```
-
-```lisp
 prompt
 ```
 
-A string to be displayed to prompt the user when in user-defined region
- capture mode.
+A string to be displayed to prompt the user when in user-defined region capture mode.
 
 ### Returns
 
@@ -1249,9 +1055,7 @@ nil on error.
 
 ```lisp
 Command: (dos_printscrn "C:\\test.bmp")
-```
 
-```lisp
 "C:\\test.bmp"
 ```
 
@@ -1285,26 +1089,12 @@ nil if <Scroll Lock> is turned off.
 
 ```lisp
 Command: (dos_scrolllock t)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_scrolllock)
-```
 
-```lisp
 nil
-```
-
-```lisp
-
 ```
 
 ---
@@ -1337,36 +1127,12 @@ nil on error.
 
 ```lisp
 Command: (dos_sortlist '(4 3 6 5 1 2 7 9 8))
-```
 
-```lisp
 (1 2 3 4 5 6 7 8 9)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_sortlist (dos_dir "*.dwg"))
-```
 
-```lisp
-("1st floor architectural.dwg" "1st floor
- electrical.dwg" "1st floor lighting.dwg" "1st floor
- plan.dwg" "1st floor.dwg" "Campus.dwg" "City
- base map.dwg" "City map.dwg" "City skyway map.dwg"
- "Colorwh.dwg" "Db_samp.dwg" "EXPO98 base.dwg"
- "EXPO98 maps.dwg" "Elevation.dwg" "Expo Headquarters
- model.dwg" "Lineweights.dwg" "MKMPlan.dwg" "Oceanarium.dwg"
- "Opera.dwg" "Plot Screening and Fill Patterns.dwg"
- "R300-20.dwg" "Single cavity mold.dwg" "Tablet
- 2000.dwg" "Truck model.dwg" "TrueType.dwg" "Watch.dwg"
- "Wilhome.dwg")
-```
-
-```lisp
-
+("1st floor architectural.dwg" "1st floor electrical.dwg" "1st floor lighting.dwg" "1st floor plan.dwg" "1st floor.dwg" "Campus.dwg" "City base map.dwg" "City map.dwg" "City skyway map.dwg" "Colorwh.dwg" "Db_samp.dwg" "EXPO98 base.dwg" "EXPO98 maps.dwg" "Elevation.dwg" "Expo Headquarters model.dwg" "Lineweights.dwg" "MKMPlan.dwg" "Oceanarium.dwg" "Opera.dwg" "Plot Screening and Fill Patterns.dwg" "R300-20.dwg" "Single cavity mold.dwg" "Tablet 2000.dwg" "Truck model.dwg" "TrueType.dwg" "Watch.dwg" "Wilhome.dwg")
 ```
 
 ---
@@ -1375,27 +1141,24 @@ Command: (dos_sortlist (dos_dir "*.dwg"))
 
 Plays a sound out of the PC speaker.
 
-Note, dos_speaker does not work
- on all systems.
+Note, dos_speaker does not work on all systems.
 
-A long time ago, all PC computers shared a common 8254 programmable
- interval timer chip for the generation of primitive sounds. The dos_speaker function was written
+A long time ago, all PC computers shared a common 8254 programmable interval timer chip for the generation of primitive sounds. The dos_speaker function was written
+
  specifically to emit a beep on that piece of hardware.
 
-Since then, sound cards have become standard equipment on almost all
- PC computers. As sound cards became more common, manufacturers began to
- remove the old timer chip from computers. The chips were also excluded
- from the design of server computers. The result is that dos_speaker
- did not work on all computers without the chip. This was okay because
- most developers had moved on to calling the dos_beep
- function that uses whatever is the default sound device instead of the
- 8254 chip.
+Since then, sound cards have become standard equipment on almost all PC computers. As sound cards became more common, manufacturers began to
+
+ remove the old timer chip from computers. The chips were also excluded from the design of server computers. The result is that dos_speaker
+
+ did not work on all computers without the chip. This was okay because most developers had moved on to calling the dos_beep
+
+ function that uses whatever is the default sound device instead of the 8254 chip.
 
 ### Syntax
 
 ```lisp
-(dos_speaker frequency
- duration)
+(dos_speaker frequency duration)
 ```
 
 ### Parameters
@@ -1404,8 +1167,7 @@ Since then, sound cards have become standard equipment on almost all
 frequency
 ```
 
-The frequency of the sound, in hertz. This parameter must be in the
- range 37 through 32,767.
+The frequency of the sound, in hertz. This parameter must be in the range 37 through 32,767.
 
 ```lisp
 duration
@@ -1423,28 +1185,22 @@ nil on error.
 
 ```lisp
 Command: (dos_speaker 1500 5)
-```
 
-```lisp
 nil
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_tickcount
 
-Returns the number of milliseconds since the device booted, excluding
- any time that the system was suspended. The system "tick count"
- starts at zero on boot and then counts up from there. Because AutoLISP
- does not use "unsigned long" integers, the value is returned
+Returns the number of milliseconds since the device booted, excluding any time that the system was suspended. The system "tick count"
+
+ starts at zero on boot and then counts up from there. Because AutoLISP does not use "unsigned long" integers, the value is returned
+
  as a double-precision floating point number.
 
-This function is useful for benchmarking time consuming tasks. Just
- obtain the tick count immediately before and after the time consuming
+This function is useful for benchmarking time consuming tasks. Just obtain the tick count immediately before and after the time consuming
+
  task. Then, subtract the two values to determine the elapsed time in milliseconds.
 
 ### Syntax
@@ -1459,16 +1215,13 @@ n/a
 
 ### Returns
 
-The number of milliseconds as a real, or
- double-precision floating point, number.
+The number of milliseconds as a real, or double-precision floating point, number.
 
 ### Example
 
 ```lisp
 Command: (rtos (dos_tickcount) 2 0)
-```
 
-```lisp
 "12263784"
 ```
 
@@ -1476,8 +1229,7 @@ Command: (rtos (dos_tickcount) 2 0)
 
 ## dos_time
 
-Returns the current system time or changes the current system time to
- one specified.
+Returns the current system time or changes the current system time to one specified.
 
 ### Syntax
 
@@ -1496,8 +1248,7 @@ A list of numbers specifying the new hour and minutes in 24-hour format.
 
 ### Returns
 
-A list of numbers identifying the current hour, minutes, seconds, and
- milliseconds in 24-hour format if successful.
+A list of numbers identifying the current hour, minutes, seconds, and milliseconds in 24-hour format if successful.
 
 nil on error.
 
@@ -1505,26 +1256,12 @@ nil on error.
 
 ```lisp
 Command: (dos_time)
-```
 
-```lisp
 (15 8 15 242)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_time '(16 0 0))
-```
 
-```lisp
 (16 0 0 10)
-```
-
-```lisp
-
 ```
 
 ---
@@ -1553,14 +1290,8 @@ nil on error.
 
 ```lisp
 Command: (dos_username)
-```
 
-```lisp
 "dale"
-```
-
-```lisp
-
 ```
 
 ---
@@ -1589,9 +1320,7 @@ nil on error.
 
 ```lisp
 Command: (dos_ver)
-```
 
-```lisp
 "Microsoft Windows XP Professional Service Pack 2 (Build 2600)"
 ```
 
@@ -1625,9 +1354,7 @@ nil on error.
 
 ```lisp
 Command: (dos_wav "c:\\windows\\media\\ding.wav")
-```
 
-```lisp
 T
 ```
 
@@ -1635,14 +1362,12 @@ T
 
 ## dos_winhelp
 
-Starts Windows Help (Winhelp.exe) and passes additional data that indicates
- the nature of the help requested by the application.
+Starts Windows Help (Winhelp.exe) and passes additional data that indicates the nature of the help requested by the application.
 
 ### Syntax
 
 ```lisp
-(dos_winhelp filename
- [index/topic])
+(dos_winhelp filename [index/topic])
 ```
 
 ### Parameters
@@ -1657,8 +1382,7 @@ A Windows Help filename.
 index/topic
 ```
 
-Either an index number into the help file, or a topic string in the
- help file (depending on how the help file was designed).
+Either an index number into the help file, or a topic string in the help file (depending on how the help file was designed).
 
 ### Returns
 
@@ -1671,29 +1395,9 @@ nil on error.
 ```lisp
 Command: (dos_winhelp "c:\\Program Files\\AutoCAD
  2002\\Help\\readme.hlp")
-```
 
-```lisp
 T
 ```
 
-```lisp
-
-```
-
-```lisp
-
-```
-
-```lisp
-
-```
-
-```lisp
-
-```
-
 ---
-
-
 

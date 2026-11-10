@@ -56,14 +56,8 @@ nil on error.
 
 ```lisp
 Command: (dos_command "copy *.dwg c:\temp")
-```
 
-```lisp
 "CMD.EXE /C copy *.dwg c:\temp"
-```
-
-```lisp
-
 ```
 
 ---
@@ -122,9 +116,7 @@ nil on error.
 
 ```lisp
 Command: (dos_execute "Notepad.exe")
-```
 
-```lisp
 "Notepad.exe"
 ```
 
@@ -184,13 +176,9 @@ nil on error.
 
 ```lisp
 Command: (dos_exewait "Notepad.exe")
-```
 
-```lisp
 Running external process, please wait...
-```
 
-```lisp
 T
 ```
 
@@ -224,9 +212,7 @@ nil on error.
 
 ```lisp
 Command: (dos_processes)
-```
 
-```lisp
 ("smss.exe" "csrss.exe" "winlogon.exe" "services.exe" "lsass.exe" "Ati2evxx.exe" "svchost.exe" "svchost.exe" "svchost.exe" "S24EvMon.exe" "svchost.exe" "svchost.exe" "ccSetMgr.exe" "SPBBCSvc.exe" "ccEvtMgr.exe" "spoolsv.exe" "DefWatch.exe" "mdm.exe" "RegSrvc.exe" "ZCfgSvc.exe" "Ati2evxx.exe" "svchost.exe" "Rtvscan.exe" "1XConfig.exe" "wdfmgr.exe" "ccApp.exe" "VPTray.exe" "type32.exe" "point32.exe" "ctfmon.exe" "alg.exe" "svchost.exe" "explorer.exe" "devenv.exe" "RoboHTML.exe" "notepad.exe" "mspdbsrv.exe" "hh.exe" "dexplore.exe" "acad.exe" "AdskCleanup.0001" "AdskScSrv.exe" "wmiprvse.exe" "WSCommCntr1.exe")
 ```
 
@@ -258,10 +244,6 @@ The parameters to be passed to the application, like a document. If file specifi
 
 ```lisp
 operation
-```
-
-```lisp
-
 ```
 
 0
@@ -312,40 +294,17 @@ nil on error.
 
 ```lisp
 Command: (dos_shellexe "notepad.exe" "readme.txt")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 (dos_shellexe "www.mcneel.com" nil)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 (dos_shellexe "c:\\drawings\\" nil 2)
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
-
 

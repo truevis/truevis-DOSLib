@@ -10,9 +10,7 @@ Displays a sizeable Windows dialog box with a check-style list box.
 ### Syntax
 
 ```lisp
-(dos_checklist title
- prompt assoc-list
- [T])
+(dos_checklist title prompt assoc-list [T])
 ```
 
 ### Parameters
@@ -33,20 +31,17 @@ A string containing the dialog box prompt.
 assoc-list
 ```
 
-An association list of string values and their associated state, either
- 1 for on or 0 for off.
+An association list of string values and their associated state, either 1 for on or 0 for off.
 
 ```lisp
 T
 ```
 
-If specified, the dialog will display an Add... button allowing the
- user to add new items to the list.
+If specified, the dialog will display an Add... button allowing the user to add new items to the list.
 
 ### Returns
 
-The association list with the state values updated to reflect the changed
- made by the user if successful.
+The association list with the state values updated to reflect the changed made by the user if successful.
 
 nil on cancel or on error.
 
@@ -55,37 +50,13 @@ nil on cancel or on error.
 ```lisp
 Command: (setq layer_list '(("Layer1" . 0) ("Layer2"
  . 0) ("Layer3" . 0)))
-```
 
-```lisp
-(("Layer1" . 0) ("Layer2" . 0) ("Layer3"
- . 0))
-```
+(("Layer1" . 0) ("Layer2" . 0) ("Layer3" . 0))
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_checklist "Display Layers" "Layers
  to turn on/off" layer_list)
-```
 
-```lisp
-
-```
-
-```lisp
-(("Layer1" . 1) ("Layer2" . 0) ("Layer3"
- . 1))
-```
-
-```lisp
-
-```
-
-```lisp
-
+(("Layer1" . 1) ("Layer2" . 0) ("Layer3" . 1))
 ```
 
 ---
@@ -98,9 +69,7 @@ Displays a sizeable Windows dialog box with a combo-style list box.
 ### Syntax
 
 ```lisp
-(dos_combolist title
- prompt list
- [default])
+(dos_combolist title prompt list [default])
 ```
 
 ### Parameters
@@ -151,15 +120,12 @@ Command: (dos_combolist "Set Current Layer" "Select
 ## dos_duallist
 
 Displays a sizeable Windows dialog box with a include/exclude list boxes.
- Items can be moved between the list boxes by either dragging or by using
- the move left/right buttons.
+ Items can be moved between the list boxes by either dragging or by using the move left/right buttons.
 
 ### Syntax
 
 ```lisp
-(dos_duallist title
- prompt list1
- list2 [list1_prompt list2_prompt])
+(dos_duallist title prompt list1 list2 [list1_prompt list2_prompt])
 ```
 
 ### Parameters
@@ -202,8 +168,7 @@ A prompt for the second list box.
 
 ### Returns
 
-A list of two lists: each containing the results of each list box, if
- successful.
+A list of two lists: each containing the results of each list box, if successful.
 
 nil on cancel or on error.
 
@@ -212,45 +177,18 @@ nil on cancel or on error.
 ```lisp
 Command: (setq list1 (list "Layer1" "Layer2"
  "Layer3"))
-```
 
-```lisp
 ("Layer1" "Layer2" "Layer3")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (setq list2 (list "Layer5" "Layer5"
  "Layer6"))
-```
 
-```lisp
 ("Layer5" "Layer5" "Layer6")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_duallist "Layers" "Drag or
  move the layers" list1 list2 "List1" "List2")
-```
 
-```lisp
-(("Layer2" "Layer5") ("Layer1"
- "Layer5" "Layer6" "Layer3"))
-```
-
-```lisp
-
-```
-
-```lisp
-
+(("Layer2" "Layer5") ("Layer1" "Layer5" "Layer6" "Layer3"))
 ```
 
 ---
@@ -258,14 +196,12 @@ Command: (dos_duallist "Layers" "Drag or
 ## dos_editbox
 
 Displays a sizeable Windows dialog box with a multi-line edit control.
- Useful for editing paragraphs of text. Text can also be imported into
- the dialog box from external files.
+ Useful for editing paragraphs of text. Text can also be imported into the dialog box from external files.
 
 ### Syntax
 
 ```lisp
-(dos_editbox title
- prompt [default])
+(dos_editbox title prompt [default])
 ```
 
 ### Parameters
@@ -286,13 +222,12 @@ A string containing the dialog box prompt.
 default
 ```
 
-A default string value. Lines can be separated with a newline, or '\n',
- character.
+A default string value. Lines can be separated with a newline, or '\n', character.
 
 ### Returns
 
-A string value if successful. Lines will be separated with a newline,
- or '\n', character. Use the dos_strtokens
+A string value if successful. Lines will be separated with a newline, or '\n', character. Use the dos_strtokens
+
  function to convert the return value into a list of strings.
 
 nil on cancel or on error.
@@ -302,9 +237,7 @@ nil on cancel or on error.
 ```lisp
 Command: (dos_editbox "Editor" "Enter some
  text" "Hockey\nis\nthe\nbest!")
-```
 
-```lisp
 "I really think \nHockey\nis\nthe\nbest!"
 ```
 
@@ -312,15 +245,14 @@ Command: (dos_editbox "Editor" "Enter some
 
 ## dos_editlist
 
-Displays a sizeable Windows dialog box with an editable list box. Items
- can be added or removed from the list, and the order of the list can be
+Displays a sizeable Windows dialog box with an editable list box. Items can be added or removed from the list, and the order of the list can be
+
  changed.
 
 ### Syntax
 
 ```lisp
-(dos_editlist title
- prompt list)
+(dos_editlist title prompt list)
 ```
 
 ### Parameters
@@ -345,8 +277,8 @@ A list of string values.
 
 ### Returns
 
-A list of string items selected from the list if successful. Note, if
- the list is empty, a list containing a single nil
+A list of string items selected from the list if successful. Note, if the list is empty, a list containing a single nil
+
  symbol is returned.
 
 nil on cancel or on error.
@@ -356,38 +288,26 @@ nil on cancel or on error.
 ```lisp
 Command: (dos_editlist "Edit Items" "Add,
  remove, or edit items" '("Item1" "Item2" "Item3"))
-```
 
-```lisp
-("Item1" "Item2" "Item3"
- "NewItem4")
-```
-
-```lisp
-
-```
-
-```lisp
-
+("Item1" "Item2" "Item3" "NewItem4")
 ```
 
 ---
 
 ## dos_getcancel
 
-Displays a modeless dialog box that consists of a message and a cancel
- button. Because the dialog box is modeless, you can use it when performing
- long processes that can be interrupted by the user. The function is called
- once with arguments to initialize the dialog box. It is called with no
- arguments to check the open status of the dialog box. It can be called
- with a T argument to close the
+Displays a modeless dialog box that consists of a message and a cancel button. Because the dialog box is modeless, you can use it when performing
+
+ long processes that can be interrupted by the user. The function is called once with arguments to initialize the dialog box. It is called with no
+
+ arguments to check the open status of the dialog box. It can be called with a T argument to close the
+
  dialog box.
 
 ### Syntax
 
 ```lisp
-(dos_getcancel title
- message)
+(dos_getcancel title message)
 ```
 
 ```lisp
@@ -420,80 +340,43 @@ Closes the dialog box.
 
 ### Returns
 
-Returns nil when initializing
- and closing the dialog box.
+Returns nil when initializing and closing the dialog box.
 
-When checking the open status, it return T
- if the dialog box is open, otherwise, nil
+When checking the open status, it return T if the dialog box is open, otherwise, nil
+
  is returned.
 
 ### Example
 
 ```lisp
 Command: (setq x 0)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_getcancel "Testing" "Testing,
  please wait...")
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (while (and (dos_getcancel) (< x 10000)) (setq
  x (1+ x)))
-```
 
-```lisp
 10000
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (if (= x 10000) (dos_getcancel t))
-```
 
-```lisp
 nil
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_getcolor
-Displays a Windows common color selection dialog box. This is useful
- for selecting Red-Green-Blue (RGB) color values.
+Displays a Windows common color selection dialog box. This is useful for selecting Red-Green-Blue (RGB) color values.
 
 ### Syntax
 
 ```lisp
-(dos_getcolor title
- [default])
+(dos_getcolor title [default])
 ```
 
 ### Parameters
@@ -508,8 +391,7 @@ A string containing the dialog box title.
 default
 ```
 
-An integer between 1 and 255 that represents an ACI color value, or
- a list of three integers that represent an RGB color value.
+An integer between 1 and 255 that represents an ACI color value, or a list of three integers that represent an RGB color value.
 
 ### Returns
 
@@ -527,14 +409,6 @@ Command: (dos_getcolor "Select a color" 1)
 (255 0 0)
 ```
 
-```lisp
-
-```
-
-```lisp
-
-```
-
 ---
 
 ## dos_getdate
@@ -544,8 +418,7 @@ Displays a date selection dialog box.
 ### Syntax
 
 ```lisp
-(dos_getdate title
- [date])
+(dos_getdate title [date])
 ```
 
 ### Parameters
@@ -560,8 +433,7 @@ A string containing the dialog box title.
 date
 ```
 
-A list of numbers specifying the year (1970–3000), month (1–12), and
- day (1–31) to select. Of omitted, the current date is selected.
+A list of numbers specifying the year (1970–3000), month (1–12), and day (1–31) to select. Of omitted, the current date is selected.
 
 ### Returns
 
@@ -579,17 +451,14 @@ Command: (dos_getdate "Select Date")
 
 ## dos_getint
 
-Windows Dialog box equivalent to LISP getint
- function. ADSRX limits integers to 16-bit signed numbers with values ranging
+Windows Dialog box equivalent to LISP getint function. ADSRX limits integers to 16-bit signed numbers with values ranging
+
  from +32767 to -32,768.
 
 ### Syntax
 
 ```lisp
-(dos_getint title
- prompt [flags
- [default [max
- [min]]]])
+(dos_getint title prompt [flags [default [max [min]]]])
 ```
 
 ### Parameters
@@ -610,8 +479,7 @@ A string containing a prompt.
 flags
 ```
 
-An optional bit-coded integer identifying the desired validation. Specify
- more than one validation by adding the following bit values:
+An optional bit-coded integer identifying the desired validation. Specify more than one validation by adding the following bit values:
 
 		0
 
@@ -662,33 +530,20 @@ nil on cancel or on error
 ```lisp
 Command: (dos_getint "Copies" "Enter number
  of copies")
-```
 
-```lisp
 2
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_getpassword
 
-Windows Dialog box equivalent to LISP getstring
- function. The Dialog box displays a password-style edit control.
+Windows Dialog box equivalent to LISP getstring function. The Dialog box displays a password-style edit control.
 
 ### Syntax
 
 ```lisp
-(dos_getpassword title
- message [default
- [length]])
+(dos_getpassword title message [default [length]])
 ```
 
 ### Parameters
@@ -728,38 +583,26 @@ nil on cancel or on error
 ```lisp
 Command: (dos_getpassword "Password" "Enter
  your password")
-```
 
-```lisp
 "password"
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_getprogress
 
-Displays a modeless dialog box that consists of a message, a progress
- bar, and an optional cancel button. Because the dialog box is modeless,
- you can use it when performing long processes that can be interrupted
- by the user. The function is called once with arguments to initialize
- the dialog box. Then, it is called any number of times to move the progress
- bar in an absolute or relative manner. It is called with no arguments
+Displays a modeless dialog box that consists of a message, a progress bar, and an optional cancel button. Because the dialog box is modeless,
+
+ you can use it when performing long processes that can be interrupted by the user. The function is called once with arguments to initialize
+
+ the dialog box. Then, it is called any number of times to move the progress bar in an absolute or relative manner. It is called with no arguments
+
  to check the open status of the dialog box. It can be called with a T argument to close the dialog box.
 
 ### Syntax
 
 ```lisp
-(dos_getprogress title
- message maxvalue
- [T])
+(dos_getprogress title message maxvalue [T])
 ```
 
 ```lisp
@@ -799,71 +642,43 @@ An integer representing the maximum range value (between 0 and maxvalue)
 abs/-rel
 ```
 
-An absolute position to move the progress meter, or a relative position
- (denoted with a negative sign) to move the progress meter.
+An absolute position to move the progress meter, or a relative position (denoted with a negative sign) to move the progress meter.
 
 ```lisp
 T
 ```
 
-If specified during the creation of the dialog box, an optional Cancel
- button is displayed. Otherwise, T
+If specified during the creation of the dialog box, an optional Cancel button is displayed. Otherwise, T
+
  closes the dialog box.
 
 ### Returns
 
-Returns nil when initializing,
- incrementing, and closing the dialog box.
+Returns nil when initializing, incrementing, and closing the dialog box.
 
-When checking the open status, it return T
- if the dialog box is open, otherwise, nil
+When checking the open status, it return T if the dialog box is open, otherwise, nil
+
  is returned
 
 ### Example
 
 ```lisp
 Command: (setq x 0 y 1000)
-```
 
-```lisp
 1000
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_getprogress "Testing" "Testing,
  please wait..." y)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (while (< x y) (dos_getprogress -1) (setq x
  (1+ x)))
-```
 
-```lisp
 1000
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_getprogress t)
-```
 
-```lisp
 nil
 ```
 
@@ -871,19 +686,16 @@ nil
 
 ## dos_getreal
 
-Windows Dialog box equivalent to LISP getreal
- function. Real numbers are double-precision floating-point values, providing
- at least 14 significant digits of precision. Values can be expressed in
- scientific notation, which has an optional e or E followed by the exponent
+Windows Dialog box equivalent to LISP getreal function. Real numbers are double-precision floating-point values, providing
+
+ at least 14 significant digits of precision. Values can be expressed in scientific notation, which has an optional e or E followed by the exponent
+
  of the number (for example, 0.0000041 is the same as 4.1e-6).
 
 ### Syntax
 
 ```lisp
-(dos_getreal title
- prompt [flags
- [default [max
- [min]]]])
+(dos_getreal title prompt [flags [default [max [min]]]])
 ```
 
 ### Parameters
@@ -904,8 +716,7 @@ A string containing a prompt.
 flags
 ```
 
-An optional bit-coded integer identifying the desired validation. Specify
- more than one validation by adding the following bit values:
+An optional bit-coded integer identifying the desired validation. Specify more than one validation by adding the following bit values:
 
 		0
 
@@ -956,18 +767,8 @@ nil on cancel or on error
 ```lisp
 Command: (dos_getreal "Distance" "Enter
  a distance")
-```
 
-```lisp
 23.4
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1006,9 +807,7 @@ nil on cancel or on error
 
 ```lisp
 Command: (dos_getsecret "Password: ")
-```
 
-```lisp
 "MySecretPassword"
 ```
 
@@ -1016,15 +815,12 @@ Command: (dos_getsecret "Password: ")
 
 ## dos_getstring
 
-Windows Dialog box equivalent to LISP getstring
- function.
+Windows Dialog box equivalent to LISP getstring function.
 
 ### Syntax
 
 ```lisp
-(dos_getstring title
- prompt [default
- [length]])
+(dos_getstring title prompt [default [length]])
 ```
 
 ### Parameters
@@ -1064,18 +860,8 @@ nil on cancel or on error
 ```lisp
 Command: (dos_getstring "Text" "Enter some
  text")
-```
 
-```lisp
 "This is a string of text"
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1087,9 +873,7 @@ Displays an HTML web page in a sizable dialog box.
 ### Syntax
 
 ```lisp
-(dos_htmlbox title
- address [width
- height])
+(dos_htmlbox title address [width height])
 ```
 
 ### Parameters
@@ -1126,18 +910,8 @@ nil if successful or on error.
 
 ```lisp
 Command: (dos_htmlbox "McNeel" "www.mcneel.com")
-```
 
-```lisp
 nil
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1149,9 +923,7 @@ Displays an HTML web page in a modeless, sizable dialog box.
 ### Syntax
 
 ```lisp
-(dos_htmlboxex title
- address [width
- height])
+(dos_htmlboxex title address [width height])
 ```
 
 ```lisp
@@ -1196,20 +968,17 @@ Closes the dialog box.
 
 ### Returns
 
-Returns nil when initializing
- and closing the dialog box.
+Returns nil when initializing and closing the dialog box.
 
-When checking the open status, it return T
- if the dialog box is open, otherwise, nil
+When checking the open status, it return T if the dialog box is open, otherwise, nil
+
  is returned.
 
 ### Example
 
 ```lisp
 Command: (dos_htmlboxex "McNeel" "www.mcneel.com")
-```
 
-```lisp
 nil
 ```
 
@@ -1217,15 +986,12 @@ nil
 
 ## dos_htmldialog
 
-Creates a dialog box that displays HTML. An HTML dialog box can be used
- as an alternative to a DCL dialog box.
+Creates a dialog box that displays HTML. An HTML dialog box can be used as an alternative to a DCL dialog box.
 
 ### Syntax
 
 ```lisp
-(dos_htmldialog filename
- [arguments [options
- [modeless]]])
+(dos_htmldialog filename [arguments [options [modeless]]])
 ```
 
 ### Parameters
@@ -1234,31 +1000,28 @@ Creates a dialog box that displays HTML. An HTML dialog box can be used
 filename
 ```
 
-The filename containing the HTML dialog box to display. If a full path
- is not specified, the function will search the AutoCAD search path for
+The filename containing the HTML dialog box to display. If a full path is not specified, the function will search the AutoCAD search path for
+
  the file.
 
 ```lisp
 arguments
 ```
 
-The argument or arguments to pass to the HTML dialog box. The data
- passed in is converted to a SAFEARRAY, and it is placed in the window
- object's window.dialogArguments
- property.
+The argument or arguments to pass to the HTML dialog box. The data passed in is converted to a SAFEARRAY, and it is placed in the window
 
-Note, AutoCAD does not allow ActiveX objects to be passed as parameters
- to ObjectARX-defined LISP functions. So to ensure that HTML dialogs have
+ object's window.dialogArguments property.
+
+Note, AutoCAD does not allow ActiveX objects to be passed as parameters to ObjectARX-defined LISP functions. So to ensure that HTML dialogs have
+
  AutoCAD functionality, the AutoCAD object (returned in LISP by the vlax-get-Acad-Object function, is passed to your dialog automatically.
- This object will always
- be the first element of the SAFEARRAY placed in the window object's window.dialogArguments property.
+ This object will always be the first element of the SAFEARRAY placed in the window object's window.dialogArguments property.
 
 ```lisp
 options
 ```
 
-A string specifying the window ornaments for the dialog box. Use one
- or more of the following semicolon-delimited values:
+A string specifying the window ornaments for the dialog box. Use one or more of the following semicolon-delimited values:
 
 		Value
 		Description
@@ -1335,99 +1098,93 @@ An optional dialog box height.
 modeless
 ```
 
-If omitted or nil , a modal
- dialog will be displayed. A modal dialog box retains the input focus while
+If omitted or nil , a modal dialog will be displayed. A modal dialog box retains the input focus while
+
  open. The user cannot switch windows until the dialog box is closed.
 
-If T, a modeless dialog box
- will be displayed.
+If T, a modeless dialog box will be displayed.
 
 ### Returns
 
-If a model dialog is displayed, then if successful, the return value
- of the method will be dependant on the developer's implementation of the
- custom HTML dialog page. In most cases the developer will set the windows.returnValue property before
- closing the dialog box. This property will then be converted from either
- a VARIANT or a SAFEARRAY and returned to LISP. Note, although it is possible
- to create multi-dimensional SAFEARRAY objects, this function will only
+If a model dialog is displayed, then if successful, the return value of the method will be dependant on the developer's implementation of the
+
+ custom HTML dialog page. In most cases the developer will set the windows.returnValue property before closing the dialog box. This property will then be converted from either
+
+ a VARIANT or a SAFEARRAY and returned to LISP. Note, although it is possible to create multi-dimensional SAFEARRAY objects, this function will only
+
  accept a single VARIANT or a 1-dimensional SAFEARRAY as a return value.
 
-If a modeless dialog is displayed, then T
- indicating success.
+If a modeless dialog is displayed, then T indicating success.
 
-In both cases, nil is returned
- on error.
+In both cases, nil is returned on error.
 
 ### Notes
 
-You can also eliminate scroll bars on dialog boxes by setting the scroll attribute to false in the
- body element for the dialog window, or call the modal dialog box from
+You can also eliminate scroll bars on dialog boxes by setting the scroll attribute to false in the body element for the dialog window, or call the modal dialog box from
+
  a trusted application.
 
-You can set the default font settings the same way you set Cascading
- Style Sheets (CSS) attributes (for example, "font:3;font-size:4").
+You can set the default font settings the same way you set Cascading Style Sheets (CSS) attributes (for example, "font:3;font-size:4").
+
  To define multiple font values, use multiple font attributes.
 
-The default unit of measure for dialogHeight
- and dialogWidth in Internet Explorer
- 4.0 is the pixel; in Internet Explorer 5 it is the "em". The
- value can be an integer or floating-point number, followed by an absolute
- units designator (cm, mm, in, pt, or pc) or a relative units designator
- (em, ex, or px). For consistent results, specify the dialogHeight
- and dialogWidth in pixels when
- designing modal dialog boxes.
+The default unit of measure for dialogHeight and dialogWidth in Internet Explorer
 
-Although a user can manually adjust the height of a dialog box to a
- smaller value - provided the dialog box is resizable - the minimum dialogHeight you can specify is
+ 4.0 is the pixel; in Internet Explorer 5 it is the "em". The value can be an integer or floating-point number, followed by an absolute
+
+ units designator (cm, mm, in, pt, or pc) or a relative units designator (em, ex, or px). For consistent results, specify the dialogHeight
+
+ and dialogWidth in pixels when designing modal dialog boxes.
+
+Although a user can manually adjust the height of a dialog box to a smaller value - provided the dialog box is resizable - the minimum dialogHeight you can specify is
+
  100 pixels.
 
-To override center, even though the default for center is yes, you can
- specify either dialogLeft and/or
+To override center, even though the default for center is yes, you can specify either dialogLeft and/or
+
  dialogTop.
 
-To enable visual styles for your dialog, add the following META tag
- to the <head> section of your HTML file:
+To enable visual styles for your dialog, add the following META tag to the <head> section of your HTML file:
 
 ```lisp
 <META HTTP-EQUIV="MSThemeCompatible" CONTENT="yes">
 ```
 
-Unlike a modal dialog, where the script code is halted until the dialog
- is dismissed, when a modeless dialog is displayed, the script code will
+Unlike a modal dialog, where the script code is halted until the dialog is dismissed, when a modeless dialog is displayed, the script code will
+
  continue.
 
-Internet Explorer (IE) 7 is the default rendering mode for embedded
- IE controls (for compatibility reasons). You can use the FEATURE_BROWSER_EMULATION
- registry key to change this if you want. To run in IE11 Standards Mode,
- add the following new value into the registry:
+Internet Explorer (IE) 7 is the default rendering mode for embedded IE controls (for compatibility reasons). You can use the FEATURE_BROWSER_EMULATION
+
+ registry key to change this if you want. To run in IE11 Standards Mode, add the following new value into the registry:
 
 ```lisp
 [HKEY_CURRENT_USER or HKEY_LOCAL_MACHINE]
 ```
 
 ```lisp
- \Software
+\Software
 ```
 
 ```lisp
-  \Microsoft
+\Microsoft
 ```
 
 ```lisp
-   \Internet
+\Internet
  Explorer
 ```
 
 ```lisp
-    \Main
+\Main
 ```
 
 ```lisp
-     \FeatureControl
+\FeatureControl
 ```
 
 ```lisp
-      \FEATURE_BROWSER_EMULATION
+\FEATURE_BROWSER_EMULATION
 ```
 
 ```lisp
@@ -1458,14 +1215,6 @@ Command: (dos_htmldialog "renamelayer.htm" (getvar
 "Plumbing"
 ```
 
-```lisp
-
-```
-
-```lisp
-
-```
-
 RenameLayer.htm
 
 ```lisp
@@ -1474,20 +1223,16 @@ RenameLayer.htm
 ```
 
 ```lisp
- <HEAD>
+<HEAD>
 ```
 
 ```lisp
-  <TITLE>Rename
+<TITLE>Rename
  Layer</TITLE>
 ```
 
 ```lisp
-  <SCRIPT LANGUAGE="VBScript">
-```
-
-```lisp
-
+<SCRIPT LANGUAGE="VBScript">
 ```
 
 ```lisp
@@ -1499,33 +1244,29 @@ Sub OnInitDialog()
 ```
 
 ```lisp
-  Dim sArgs
+Dim sArgs
 ```
 
 ```lisp
-  sArgs = window.dialogArguments
+sArgs = window.dialogArguments
 ```
 
 ```lisp
-  If Not IsNull(sArgs)
+If Not IsNull(sArgs)
  Then
 ```
 
 ```lisp
-    txtOldName.value
+txtOldName.value
  = CStr(sArgs(1))
 ```
 
 ```lisp
-  End If
+End If
 ```
 
 ```lisp
 End Sub
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -1533,20 +1274,20 @@ Sub OnOk()
 ```
 
 ```lisp
-  Dim sResult
+Dim sResult
 ```
 
 ```lisp
-  sResult = txtNewName.value
+sResult = txtNewName.value
 ```
 
 ```lisp
-  window.returnValue
+window.returnValue
  = sResult
 ```
 
 ```lisp
-  window.close
+window.close
 ```
 
 ```lisp
@@ -1554,20 +1295,16 @@ End Sub
 ```
 
 ```lisp
-
-```
-
-```lisp
 Sub OnCancel()
 ```
 
 ```lisp
-  window.returnValue
+window.returnValue
  = ""
 ```
 
 ```lisp
-  window.close
+window.close
 ```
 
 ```lisp
@@ -1579,10 +1316,6 @@ End Sub
 ```
 
 ```lisp
-
-```
-
-```lisp
 </SCRIPT>
 ```
 
@@ -1591,142 +1324,142 @@ End Sub
 ```
 
 ```lisp
- <BODY ONLOAD="OnInitDialog()"
+<BODY ONLOAD="OnInitDialog()"
  STYLE="font-family: Arial, sans-serif">
 ```
 
 ```lisp
-  <H3>
+<H3>
 ```
 
 ```lisp
-   <FONT FACE="Verdana,Arial,Times
+<FONT FACE="Verdana,Arial,Times
  New I2">Enter new layer name</FONT></H3>
 ```
 
 ```lisp
-  <P>
+<P>
 ```
 
 ```lisp
-   <TABLE CELLPADDING="1"
+<TABLE CELLPADDING="1"
  CELLSPACING="2" BORDER="0">
 ```
 
 ```lisp
-    <TR>
+<TR>
 ```
 
 ```lisp
-     <TD
+<TD
  VALIGN=CENTER>
 ```
 
 ```lisp
-      <P>
+<P>
 ```
 
 ```lisp
-       <FONT
+<FONT
  FACE="Verdana,Arial,Times New I2">Old layer name:</FONT></TD>
 ```
 
 ```lisp
-     <TD
+<TD
  VALIGN=CENTER>
 ```
 
 ```lisp
-      <P>
+<P>
 ```
 
 ```lisp
-       <INPUT
+<INPUT
  TYPE=TEXT NAME="txtOldName" SIZE="25" MAXLENGTH="256"></TD>
 ```
 
 ```lisp
-    </TR>
+</TR>
 ```
 
 ```lisp
-    <TR>
+<TR>
 ```
 
 ```lisp
-     <TD
+<TD
  VALIGN=CENTER>
 ```
 
 ```lisp
-      <P>
+<P>
 ```
 
 ```lisp
-       <FONT
+<FONT
  FACE="Verdana,Arial,Times New I2">New layer name:</FONT></TD>
 ```
 
 ```lisp
-     <TD
+<TD
  VALIGN=CENTER>
 ```
 
 ```lisp
-      <P>
+<P>
 ```
 
 ```lisp
-       <INPUT
+<INPUT
  TYPE=TEXT NAME="txtNewName" SIZE="25" MAXLENGTH="256"></TD>
 ```
 
 ```lisp
-    </TR>
+</TR>
 ```
 
 ```lisp
-    <TR>
+<TR>
 ```
 
 ```lisp
-     <TD
+<TD
  VALIGN=CENTER><DIV ALIGN=RIGHT>
 ```
 
 ```lisp
-      <P
+<P
  ALIGN=RIGHT>
 ```
 
 ```lisp
-       <INPUT
+<INPUT
  TYPE=SUBMIT VALUE="OK" ID="cmdOK" CLASS="button"
  ONCLICK="OnOk()" STYLE="width: 5em"></TD>
 ```
 
 ```lisp
-     <TD
+<TD
  VALIGN=CENTER><CENTER>
 ```
 
 ```lisp
-      <P
+<P
  ALIGN=CENTER>
 ```
 
 ```lisp
-       <INPUT
+<INPUT
  TYPE=SUBMIT VALUE="Cancel" ID="cmdCancel" CLASS="button"
  ONCLICK="OnCancel()" STYLE="width: 5em"></TD>
 ```
 
 ```lisp
-    </TR>
+</TR>
 ```
 
 ```lisp
-   </TABLE>
+</TABLE>
 ```
 
 ```lisp
@@ -1750,14 +1483,6 @@ Command: (dos_htmldialog "testargs.htm" (list
 
 ```lisp
 nil
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 TestArgs.htm
@@ -1807,76 +1532,76 @@ Sub DumpArguments(val)
 ```
 
 ```lisp
-  Dim item
+Dim item
 ```
 
 ```lisp
-  If IsEmpty(val) Then
+If IsEmpty(val) Then
 ```
 
 ```lisp
-    Call document.writeln("Empty<br>")
+Call document.writeln("Empty<br>")
 ```
 
 ```lisp
-  ElseIf IsNull(val)
+ElseIf IsNull(val)
  Then
 ```
 
 ```lisp
-    Call document.writeln("Null<br>")
+Call document.writeln("Null<br>")
 ```
 
 ```lisp
-  ElseIf IsArray(val)
+ElseIf IsArray(val)
  Then
 ```
 
 ```lisp
-    document.writeln("*Begin
+document.writeln("*Begin
  Array*<br>")
 ```
 
 ```lisp
-    For Each
+For Each
  item In val
 ```
 
 ```lisp
-      Call
+Call
  DumpArguments(item)
 ```
 
 ```lisp
-    Next
+Next
 ```
 
 ```lisp
-    document.writeln("*End
+document.writeln("*End
  Array*<br>")
 ```
 
 ```lisp
-  ElseIf IsObject(val)
+ElseIf IsObject(val)
  Then
 ```
 
 ```lisp
-    Call document.writeln("Object
+Call document.writeln("Object
  = " & TypeName(val) & "<br>")
 ```
 
 ```lisp
-  Else
+Else
 ```
 
 ```lisp
-    Call document.writeln(TypeName(val)
+Call document.writeln(TypeName(val)
  & " = " & CStr(val) & "<br>")
 ```
 
 ```lisp
-  End If
+End If
 ```
 
 ```lisp
@@ -1903,15 +1628,12 @@ End Sub
 
 ## dos_listbox
 
-Displays a sizeable Windows dialog box with a single-selection list
- box.
+Displays a sizeable Windows dialog box with a single-selection list box.
 
 ### Syntax
 
 ```lisp
-(dos_listbox title
- prompt list
- [default])
+(dos_listbox title prompt list [default])
 ```
 
 ### Parameters
@@ -1951,9 +1673,7 @@ nil on cancel or on error.
 ```lisp
 Command: (dos_listbox "Set Current Layer" "Select
  a layer" '("Layer1" "Layer2" "Layer3"))
-```
 
-```lisp
 "Layer1"
 ```
 
@@ -1962,16 +1682,14 @@ Command: (dos_listbox "Set Current Layer" "Select
 ## dos_msgbox
 
 Creates, displays and operates a Windows message box, or dialog, box.
- The message box contains an application-defined message and title plus
- any combination of predefined icons and push buttons. An optional duration
+ The message box contains an application-defined message and title plus any combination of predefined icons and push buttons. An optional duration
+
  allows the message box to be closed automatically.
 
 ### Syntax
 
 ```lisp
-(dos_msgbox text
- title button
- icon [duration])
+(dos_msgbox text title button icon [duration])
 ```
 
 ### Parameters
@@ -2057,8 +1775,7 @@ The icon. The allowable values are as follows:
 duration
 ```
 
-The duration time in seconds. Note, duration only works with button
- bit values 1, 2, 3 and 5
+The duration time in seconds. Note, duration only works with button bit values 1, 2, 3 and 5
 
 ### Returns
 
@@ -2092,51 +1809,35 @@ An integer indicating one of the following buttons was pressed:
 
 		Yes
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_msgbox "Are you sure?" "Save"
  4 3)
-```
 
-```lisp
 6
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_msgboxchk
 
-Displays a message box that gives the user the option of suppressing
- further occurrences. If the user has already opted to suppress the message
- box, the function does not display a dialog box and instead simply returns
- the default value.
+Displays a message box that gives the user the option of suppressing further occurrences. If the user has already opted to suppress the message
 
-Note  Do not confuse "Do not show this dialog box" with
- "Remember this answer". This function does not provide "Remember
- this answer" functionality. If the user opts to suppress the message
- box again, the function does not preserve which button they clicked. Instead,
- subsequent invocations of this function simply return a developer-provided
- default value.
+ box, the function does not display a dialog box and instead simply returns the default value.
+
+Note  Do not confuse "Do not show this dialog box" with "Remember this answer". This function does not provide "Remember
+
+ this answer" functionality. If the user opts to suppress the message box again, the function does not preserve which button they clicked. Instead,
+
+ subsequent invocations of this function simply return a developer-provided default value.
 
 ### Syntax
 
 ```lisp
-(dos_msgboxchk text
- title button
- icon default
- regkey)
+(dos_msgboxchk text title button icon default regkey)
 ```
 
 ### Parameters
@@ -2222,10 +1923,10 @@ The icon. The allowable values are as follows:
 default
 ```
 
-The value that the function returns when the user has opted not to have
- the message box displayed again. If the user has not opted to suppress
- the message box, the message box is displayed and the function ignores
- default. Note, default values
+The value that the function returns when the user has opted not to have the message box displayed again. If the user has not opted to suppress
+
+ the message box, the message box is displayed and the function ignores default. Note, default values
+
  must be either less than -1 or greater than 6.
 
 ```lisp
@@ -2266,49 +1967,31 @@ An integer indicating one of the following buttons was pressed:
 
 		Yes
 
-If the user has not opted to suppress the
- message box, the default value is returned.
+If the user has not opted to suppress the message box, the default value is returned.
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_msgboxchk "Are you sure?" "Save"
  4 3 -2 "MyMsgBox")
-```
 
-```lisp
 6
-```
-
-```lisp
-
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_msgboxex
 
-Creates, displays and operates a custom Windows message box, or dialog,
- box. The message box contains an application-defined message and title
+Creates, displays and operates a custom Windows message box, or dialog, box. The message box contains an application-defined message and title
+
  plus user-definable push buttons.
 
 ### Syntax
 
 ```lisp
-(dos_msgboxex text
- title button-list
- icon)
+(dos_msgboxex text title button-list icon)
 ```
 
 ### Parameters
@@ -2329,10 +2012,9 @@ The message box title.
 button-list
 ```
 
-A list of strings identifying the custom button labels.  For each
- string found in the list, a custom button will be created.  The maximum
- number of buttons allowed is five.  Note, the default button is always
- the first button in the list.
+A list of strings identifying the custom button labels.  For each string found in the list, a custom button will be created.  The maximum
+
+ number of buttons allowed is five.  Note, the default button is always the first button in the list.
 
 ```lisp
 icon
@@ -2369,62 +2051,24 @@ The icon. The allowable values are as follows:
 An integer indicating the button that was pressed. Note, if the <Esc>
  key is pressed, the index of the last button is returned.
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
-(setq a "Wouldn't it be nice to have a custom message
- box\n")
-```
-
-```lisp
-(setq b "function that would accept a list of strings
- that\n")
-```
-
-```lisp
-(setq c "identify custom button labels?  Thus,
- for instance,\n")
-```
-
-```lisp
-(setq d "you could present a user with three custom
- buttons.")
-```
-
-```lisp
-(setq text (strcat a b c d))
-```
-
-```lisp
-(setq buttons (list "Sometimes" "Never"
- "What?"))
-```
-
-```lisp
-(dos_msgboxex text "Question of the Day" buttons
- 4)
-```
-
-```lisp
-0
+(setq a "Wouldn't it be nice to have a custom message box\n") (setq b "function that would accept a list of strings that\n") (setq c "identify custom button labels? Thus, for instance,\n") (setq d "you could present a user with three custom buttons.") (setq text (strcat a b c d)) (setq buttons (list "Sometimes" "Never" "What?")) (dos_msgboxex text "Question of the Day" buttons 4) 0
 ```
 
 ---
 
 ## dos_multilist
 
-Displays a sizeable Windows dialog box with a multiple-selection list
- box.
+Displays a sizeable Windows dialog box with a multiple-selection list box.
 
 ### Syntax
 
 ```lisp
-(dos_multilist title
- prompt list
- [indices])
+(dos_multilist title prompt list [indices])
 ```
 
 ### Parameters
@@ -2465,33 +2109,20 @@ nil on cancel or on error.
 Command: (dos_multilist "Freeze Layers" "Select
  layers" '("Layer1" "Layer2" "Layer3")
  '(0 2))
-```
 
-```lisp
 ("Layer1" "Layer3")
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_orderlist
 
-Displays a sizeable Windows dialog box with an orderable list box. Items
- can be moved by either dragging or by using the top/up/down/bottom buttons.
+Displays a sizeable Windows dialog box with an orderable list box. Items can be moved by either dragging or by using the top/up/down/bottom buttons.
 
 ### Syntax
 
 ```lisp
-(dos_orderlist title
- prompt list
- [strings])
+(dos_orderlist title prompt list [strings])
 ```
 
 ### Parameters
@@ -2518,8 +2149,8 @@ A list of string values.
 strings
 ```
 
-If not specified or T, then
- an ordered list of strings is returned. If nil,
+If not specified or T, then an ordered list of strings is returned. If nil,
+
  then a list of integers identifying the new sort order is returned
 
 ### Returns
@@ -2533,48 +2164,27 @@ nil on cancel or on error.
 ```lisp
 Command: (setq list1 (list "Layer1" "Layer2"
  "Layer3" "Layer4" "Layer5" "Layer6"))
-```
 
-```lisp
-("Layer1" "Layer2" "Layer3"
- "Layer4" "Layer5" "Layer6")
-```
+("Layer1" "Layer2" "Layer3" "Layer4" "Layer5" "Layer6")
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_orderlist "Layers" "Drag to
  reorder layers" list1)
-```
 
-```lisp
-("Layer3" "Layer4" "Layer5"
- "Layer6" "Layer1" "Layer2")
-```
-
-```lisp
-
-```
-
-```lisp
-
+("Layer3" "Layer4" "Layer5" "Layer6" "Layer1" "Layer2")
 ```
 
 ---
 
 ## dos_popupmenu
 
-Displays a user-defined, context-style popup menu. The popup menu can
- appear almost anywhere. And, it can be dismissed by either clicking the
+Displays a user-defined, context-style popup menu. The popup menu can appear almost anywhere. And, it can be dismissed by either clicking the
+
  left or right mouse buttons.
 
 ### Syntax
 
 ```lisp
-(dos_popupmenu menu-items
- [item-modes])
+(dos_popupmenu menu-items [item-modes])
 ```
 
 ### Parameters
@@ -2583,17 +2193,15 @@ Displays a user-defined, context-style popup menu. The popup menu can
 menu-items
 ```
 
-A list of string representing the menu items. An empty string, or "",
- will create a menu separator item.
+A list of string representing the menu items. An empty string, or "", will create a menu separator item.
 
 ```lisp
 item-modes
 ```
 
-A list if numbers identifying the display mode of the corresponding
- menu items. If omitted, all menu items are enabled. Note, although they
- must be specified, display modes are ignored for menu separators. The
- display modes are a follows:
+A list if numbers identifying the display mode of the corresponding menu items. If omitted, all menu items are enabled. Note, although they
+
+ must be specified, display modes are ignored for menu separators. The display modes are a follows:
 
 		0
 
@@ -2617,8 +2225,7 @@ A list if numbers identifying the display mode of the corresponding
 
 ### Returns
 
-The index value of the menu item that was picked. Note, menu separators
- are not included as part of the returned index value.
+The index value of the menu item that was picked. Note, menu separators are not included as part of the returned index value.
 
 nil on cancel or on error.
 
@@ -2627,72 +2234,32 @@ nil on cancel or on error.
 ```lisp
 Command: (setq x '("Line" "" "Circle"
  "Arc"))
-```
 
-```lisp
 ("Line" "" "Circle" "Arc")
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (setq y '(0 0 1 2))
-```
 
-```lisp
 (0 0 1 2)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_popupmenu x y)
-```
 
-```lisp
 0
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_popupmenu x)
-```
 
-```lisp
 0
-```
-
-```lisp
-
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_proplist
 
-Displays a sizeable Windows dialog box with a editable properties list
- box.
+Displays a sizeable Windows dialog box with a editable properties list box.
 
 ### Syntax
 
 ```lisp
-(dos_proplist title
- prompt assoclist)
+(dos_proplist title prompt assoclist)
 ```
 
 ### Parameters
@@ -2717,8 +2284,7 @@ An association list of string descriptions and their values.
 
 ### Returns
 
-The association list with the state values updated to reflect the changed
- made by the user if successful.
+The association list with the state values updated to reflect the changed made by the user if successful.
 
 nil on cancel or on error.
 
@@ -2727,33 +2293,13 @@ nil on cancel or on error.
 ```lisp
 Command: (setq x '(("Title" . "Floorplan")
  ("Project" . "Project A")))
-```
 
-```lisp
-(("Title" . "Floorplan") ("Project"
- . "Project A"))
-```
+(("Title" . "Floorplan") ("Project" . "Project A"))
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_proplist "Drawing Properties" "Modify
  Properties" x)
-```
 
-```lisp
-(("Title" . "Floorplan") ("Project"
- . "Project B"))
-```
-
-```lisp
-
-```
-
-```lisp
-
+(("Title" . "Floorplan") ("Project" . "Project B"))
 ```
 
 ---
@@ -2765,8 +2311,7 @@ Displays a multi-threaded Windows bitmap splash screen.
 ### Syntax
 
 ```lisp
-(dos_splash filename
- duration [T])
+(dos_splash filename duration [T])
 ```
 
 ### Parameters
@@ -2775,8 +2320,7 @@ Displays a multi-threaded Windows bitmap splash screen.
 filename
 ```
 
-The filename of the bitmap to display. The allowable file types are
- as follows:
+The filename of the bitmap to display. The allowable file types are as follows:
 
 		BMP
 
@@ -2799,10 +2343,6 @@ The filename of the bitmap to display. The allowable file types are
 		 Network Graphics
 
 ```lisp
-
-```
-
-```lisp
 duration
 ```
 
@@ -2812,8 +2352,7 @@ The duration time in seconds.
 T
 ```
 
-If specified, the user can dismiss the splash screen by pressing a key
- or clicking the mouse.
+If specified, the user can dismiss the splash screen by pressing a key or clicking the mouse.
 
 ### Returns
 
@@ -2829,23 +2368,16 @@ Command: (dos_splash "mylogo.bmp" 10)
 nil
 ```
 
-```lisp
-
-```
-
 ---
 
 ## dos_traywnd
 
-Displays a popup tray window similar to the MSN Messenger style notification
- window.
+Displays a popup tray window similar to the MSN Messenger style notification window.
 
 ### Syntax
 
 ```lisp
-(dos_traywnd title text
- width height [operation
- [duration]])
+(dos_traywnd title text width height [operation [duration]])
 ```
 
 ### Parameters
@@ -2878,8 +2410,7 @@ The height of the popup window in pixels.
 operation
 ```
 
-The operation to run if the user clicks
- on either the title or the window text.
+The operation to run if the user clicks on either the title or the window text.
 
 ```lisp
 duration
@@ -2900,14 +2431,6 @@ Command: (dos_traywnd "DOSLib" "To check
 
 ```lisp
 nil
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -2940,25 +2463,13 @@ nil if the hourglass is turned off.
 
 ```lisp
 Command: (dos_waitcursor t)
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_waitcursor)
-```
 
-```lisp
 nil
 ```
 
 ---
-
-
 

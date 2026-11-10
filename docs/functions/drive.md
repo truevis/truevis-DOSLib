@@ -30,33 +30,15 @@ nil on error.
 
 ```lisp
 Command: (dos_chkdsk)
-```
 
-```lisp
 (1.94292e+010 1.23667e+010 7.06254e+009)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (rtos (cadr (dos_chkdsk)) 2 0)
-```
 
-```lisp
 "12366708736"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_chkdsk "Z:")
-```
 
-```lisp
 (5.03223e+010 4.86313e+010 1.69095e+009)
 ```
 
@@ -90,21 +72,11 @@ nil on error.
 
 ```lisp
 Command: (dos_drive)
-```
 
-```lisp
 "C:"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_drive "D:")
-```
 
-```lisp
 "D:"
 ```
 
@@ -138,21 +110,11 @@ nil on error.
 
 ```lisp
 Command: (dos_drivep "D:")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_drivep "Z:")
-```
 
-```lisp
 nil
 ```
 
@@ -182,9 +144,7 @@ nil on error.
 
 ```lisp
 Command: (dos_drives)
-```
 
-```lisp
 ("A:" "C:" "D:" "E:" "F:")
 ```
 
@@ -218,33 +178,15 @@ nil on error.
 
 ```lisp
 Command: (dos_drivetype)
-```
 
-```lisp
 "FIXED"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_drivetype "F:")
-```
 
-```lisp
 "CDROM"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_drivetype "Z:")
-```
 
-```lisp
 "REMOTE"
 ```
 
@@ -278,21 +220,11 @@ nil on error.
 
 ```lisp
 Command: (dos_filesys)
-```
 
-```lisp
 "NTFS"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_drive "F:")
-```
 
-```lisp
 "CDFS"
 ```
 
@@ -326,9 +258,7 @@ nil on error.
 
 ```lisp
 Command: (dos_format "A:")
-```
 
-```lisp
 T
 ```
 
@@ -372,10 +302,6 @@ Command: (dos_label)
 
 ```lisp
 "DRIVE-C"
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -423,10 +349,6 @@ Command: (dos_serialno)
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_serialno "D:")
 ```
 
@@ -435,5 +357,4 @@ Command: (dos_serialno "D:")
 ```
 
 ---
-
 

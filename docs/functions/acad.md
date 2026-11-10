@@ -18,8 +18,7 @@ n/a
 
 ### Returns
 
-A list containing AutoCAD memory statistics if successful. The list
- elements are as follows:
+A list containing AutoCAD memory statistics if successful. The list elements are as follows:
 
 		WorkingSetSize
 
@@ -73,19 +72,15 @@ nil on error.
 
 ```lisp
 Command: (dos_acadmem)
-```
 
-```lisp
-(16003072 73891840 43562 57044992 58130432 469140 481864
- 46140 49708)
+(16003072 73891840 43562 57044992 58130432 469140 481864 46140 49708)
 ```
 
 ---
 
 ## dos_acadname
 
-Returns the product name of the running AutoCAD. Useful in determine
- whether or not you are running a "vertical" version of AutoCAD.
+Returns the product name of the running AutoCAD. Useful in determine whether or not you are running a "vertical" version of AutoCAD.
 
 ### Syntax
 
@@ -107,9 +102,7 @@ nil on error.
 
 ```lisp
 Command: (dos_acadname)
-```
 
-```lisp
 "AutoCAD 2010"
 ```
 
@@ -144,26 +137,12 @@ nil on error.z
 
 ```lisp
 Command: (dos_acitorgb 1)
-```
 
-```lisp
 (255 0 0)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_acitorgb 128)
-```
 
-```lisp
 (0 76 57)
-```
-
-```lisp
-
 ```
 
 ---
@@ -196,14 +175,8 @@ nil on error.
 
 ```lisp
 Command: (dos_arxlist)
-```
 
-```lisp
 ("acapp.arx" "acdblclkedit.arx" "acdblclkeditpe.arx" "acdim.arx" "acdwgrecovery.arx" "acdxnotify.arx" "aceplotx.arx" "acetlodr.arx" "acetutil.arx" "achapi16.dbx" "achlnkui.arx" "acidropmgr.arx" "aclayerp.arx" "acmgd.dll" "acobjclassimp.arx" "acocschemautil.arx" "acopm.arx" "acopmext.arx" "acpexctl.arx" "acpi.arx" "acpltstamp.arx" "acprevinput.arx" "acsign.arx" "acsmdwgmine.arx" "acsmnav.arx" "acsmpublishutils.arx" "acspacetrans.arx" "acstd.arx" "actaskbar.arx" "actp.arx" "doslib16.arx" "fscreen.arx" "movebak.arx" "oleaprot.arx" "vl.arx" "whohas.arx" "wscommcntraccon.arx")
-```
-
-```lisp
-
 ```
 
 ---
@@ -234,9 +207,7 @@ nil if successful.
 
 ```lisp
 Command: (dos_cleardbmod)
-```
 
-```lisp
 nil
 ```
 
@@ -296,21 +267,11 @@ nil on error.
 
 ```lisp
 Command: (dos_cmdline)
-```
 
-```lisp
 "Command: (dos_cmdline)"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_cmdline t)
-```
 
-```lisp
 "Regenerating model.DOSLib Version 6.0.0 (Jan 30 2002)Copyright © 1992-2002, Robert McNeel & AssociatesAutoCAD Express Tools Copyright © 2000 Autodesk, Inc.AutoCAD menu utilities loaded.Command: (dos_cmdline)\"Command: (dos_cmdline)\"Command: (dos_cmdline t)"
 ```
 
@@ -344,14 +305,8 @@ nil if not successful or on error.
 
 ```lisp
 Command: (dos_curvearea (car (entsel "\nSelect a closed curve:")))
-```
 
-```lisp
 6.43372
-```
-
-```lisp
-
 ```
 
 ---
@@ -389,10 +344,6 @@ field_name
 The name of the custom field to retrieve.
 
 ```lisp
-
-```
-
-```lisp
 field_value
 ```
 
@@ -416,93 +367,35 @@ nil on error.
 
 ```lisp
 Command: (dos_custominfo)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_custominfo "Field1" "Value1")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_custominfo "Field2" "Value2")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_custominfo)
-```
 
-```lisp
 (("Field1" . "Value1") ("Field2" . "Value2"))
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_custominfo "Field2" "Value10")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_custominfo)
-```
 
-```lisp
 (("Field1" . "Value1") ("Field2" . "Value10"))
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_custominfo "Field2" "")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_custominfo)
-```
 
-```lisp
 (("Field1" . "Value1"))
 ```
 
@@ -510,20 +403,16 @@ Command: (dos_custominfo)
 
 ## dos_dwgpreview
 
-Displays a list of drawings and their thumbnail preview images. The
- function is useful for selecting drawings to open or blocks to insert.
+Displays a list of drawings and their thumbnail preview images. The function is useful for selecting drawings to open or blocks to insert.
 
 ### Syntax
 
 ```lisp
-(dos_dwgpreview title
- path [T])
+(dos_dwgpreview title path [T])
 ```
 
 ```lisp
-(dos_dwgpreview title
- path-list
- [T])
+(dos_dwgpreview title path-list [T])
 ```
 
 ### Parameters
@@ -538,8 +427,7 @@ A string containing the dialog box title.
 path
 ```
 
-A string identifying an existing directory. If nil is specified, the
- current directory is used.
+A string identifying an existing directory. If nil is specified, the current directory is used.
 
 ```lisp
 path-list
@@ -551,8 +439,7 @@ A list containing fully qualified drawing file path strings.
 T
 ```
 
-Toggles the background color of the preview image from the default color
- of black to white.
+Toggles the background color of the preview image from the default color of black to white.
 
 ### Returns
 
@@ -569,14 +456,6 @@ Command: (dos_dwgpreview "Preview a drawing"
 
 ```lisp
 "C:\\Program Files\\AutoCAD 2010\\Sample\\A-01.dwg"
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -609,14 +488,8 @@ nil on error.
 
 ```lisp
 Command: (dos_dwgver "c:\\Program Files\\AutoCAD 2010\\drawing1.dwg")
-```
 
-```lisp
 "AutoCAD 2010"
-```
-
-```lisp
-
 ```
 
 ---
@@ -637,8 +510,7 @@ Extracts the thumbnail image from the active document to a bitmap file.
 filename
 ```
 
-The name of the bitmap file to create. The allowable file types are
- as follows:
+The name of the bitmap file to create. The allowable file types are as follows:
 
 		BMP
 
@@ -675,9 +547,7 @@ nil on error.
 
 ```lisp
 Command: (dos_extractpreview "C:\\test.bmp")
-```
 
-```lisp
 "C:\\test.bmp"
 ```
 
@@ -711,14 +581,8 @@ nil if not successful or on error.
 
 ```lisp
 Command: (dos_hatcharea (car (entsel "\nSelect a hatch:")))
-```
 
-```lisp
 346.43372
-```
-
-```lisp
-
 ```
 
 ---
@@ -761,9 +625,7 @@ nil on error.
 
 ```lisp
 Command: (dos_hideobjects ss)
-```
 
-```lisp
 3
 ```
 
@@ -788,18 +650,10 @@ hue
 The hue component of an HLS color value.
 
 ```lisp
-
-```
-
-```lisp
 luminance
 ```
 
 The luminance component of an HLS color value.
-
-```lisp
-
-```
 
 ```lisp
 saturation
@@ -817,14 +671,8 @@ nil on error.
 
 ```lisp
 Command: (dos_hlstorgb 160 120 240)
-```
 
-```lisp
 (0 0 255)
-```
-
-```lisp
-
 ```
 
 ---
@@ -853,28 +701,17 @@ nil on error.
 
 ```lisp
 Command: (dos_imagelist)
-```
 
-```lisp
 ("C:\\Users\\dale\\Pictures\\image1.jpg" "C:\\Users\\dale\\Pictures\\image2.jpg")
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_isbreak
 
-Queries AutoCAD's console break handler to verify that the escape key
- has been pressed. Used in conjunction with the vl-catch-all-apply
- function, dos_isbreak is useful
- in breaking out of tight loops.
+Queries AutoCAD's console break handler to verify that the escape key has been pressed. Used in conjunction with the vl-catch-all-apply
+
+ function, dos_isbreak is useful in breaking out of tight loops.
 
 ### Syntax
 
@@ -890,96 +727,12 @@ n/a
 
 A list of drawing file names if successful.
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
-(defun c:breaktest (/ msg cnt err)
-```
-
-```lisp
-  (setq msg "User break!"
-```
-
-```lisp
-        cnt -1
-```
-
-```lisp
-        err (vl-catch-all-apply
- 'dos_isbreak)
-```
-
-```lisp
-  )
-```
-
-```lisp
-  (while (/= err T)
-```
-
-```lisp
-    (if (> 10000000000 (setq cnt
- (1+ cnt)))
-```
-
-```lisp
-      (setq err (vl-catch-all-apply
- 'dos_isbreak))
-```
-
-```lisp
-      (setq msg "Maximum
- count reached."
-```
-
-```lisp
-            err
- T
-```
-
-```lisp
-      )
-```
-
-```lisp
-    )
-```
-
-```lisp
-    (princ cnt)
-```
-
-```lisp
-  )
-```
-
-```lisp
-  (if (vl-catch-all-error-p err)
-```
-
-```lisp
-    (princ (vl-catch-all-error-msg
- err))
-```
-
-```lisp
-    (princ (strcat "\nTerminated
- loop: " msg))
-```
-
-```lisp
-  )
-```
-
-```lisp
-  (princ)
-```
-
-```lisp
-)
+(defun c:breaktest (/ msg cnt err) (setq msg "User break!" cnt -1 err (vl-catch-all-apply 'dos_isbreak) ) (while (/= err T) (if (> 10000000000 (setq cnt (1+ cnt))) (setq err (vl-catch-all-apply 'dos_isbreak)) (setq msg "Maximum count reached." err T ) ) (princ cnt) ) (if (vl-catch-all-error-p err) (princ (vl-catch-all-error-msg err)) (princ (strcat "\nTerminated loop: " msg)) ) (princ) )
 ```
 
 ---
@@ -1018,38 +771,16 @@ nil if not successful or on error.
 
 ```lisp
 Command: (setq ent (car (entsel "\nSelect closed curve:")))
-```
 
-```lisp
 <Entity name: 7ef8d048>
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (setq pt (getpoint "\nPick a test point:"))
-```
 
-```lisp
 (31.6951 25.9553 0.0)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_isinsidecurve ent pt)
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -1078,30 +809,14 @@ nil if the text screen is not open.
 
 ```lisp
 Command: (dos_istextscr)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (textscr)
-```
 
-```lisp
 Command: (dos_istextscr)
-```
 
-```lisp
 T
-```
-
-```lisp
-
 ```
 
 ---
@@ -1130,25 +845,13 @@ nil if the IDE is not open.
 
 ```lisp
 Command: (dos_isvlide)
-```
 
-```lisp
 nil
-```
 
-```lisp
-
-```
-
-```lisp
 Command: VLIDE
-```
 
-```lisp
 Command: (dos_isvlide)
-```
 
-```lisp
 T
 ```
 
@@ -1161,8 +864,7 @@ Displays a list of AutoCAD layers in a sizeable Windows dialog box.
 ### Syntax
 
 ```lisp
-(dos_layerlistbox title
- prompt [bits])
+(dos_layerlistbox title prompt [bits])
 ```
 
 ### Parameters
@@ -1240,47 +942,29 @@ A bit-coded integer identifying the desired file attributes to set.
 
 The layer selected from the list if successful.
 
-If the "allow multiple selection" bit is set, a list of layers
- selected from the list if successful.
+If the "allow multiple selection" bit is set, a list of layers selected from the list if successful.
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_layerlistbox "AutoCAD Layers" "Select
  one or more layers" 256)
-```
 
-```lisp
 ("TB_BORDER" "TB_CORNERS" "TB_INFORMATION")
-```
-
-```lisp
-
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
 
 ## dos_linetypebox
 
-Displays AutoCAD's linetype selection
- dialog box.
+Displays AutoCAD's linetype selection dialog box.
 
 ### Syntax
 
 ```lisp
-( dos_linetypebox
- [default [ T]])
+( dos_linetypebox [default [ T]])
 ```
 
 ### Parameters
@@ -1295,33 +979,22 @@ The name of the default linetype.
 T
 ```
 
-If specified, the " ByBlock"
- and " ByLayer" linetypes
+If specified, the " ByBlock" and " ByLayer" linetypes
+
  will be displayed.
 
 ### Returns
 
 The linetype selected from the list if successful.
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_linetypebox "Continuous")
-```
 
-```lisp
 "HIDDEN"
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1354,14 +1027,8 @@ nil on error.
 
 ```lisp
 Command: (dos_lisplist)
-```
 
-```lisp
 ("acetutil.fas" "acetauto.LSP" "acettest.fas" "dwfout.lsp" "acad2000.FAS" "acad2000doc.FAS" "acad.mnl" "acetmain.mnl")
-```
-
-```lisp
-
 ```
 
 ---
@@ -1382,8 +1049,7 @@ entity
 
 ### Returns
 
-A list of strings describing the file's details if successful. The information
- returned is as follows:
+A list of strings describing the file's details if successful. The information returned is as follows:
 
 		volume
 
@@ -1425,24 +1091,14 @@ A list of strings describing the file's details if successful. The information
 		A
 		 list containing the extents (bounding box) of the solid.
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_massprops (car (entsel "\nSelect a solid:")))
-```
 
-```lisp
-(29.7069 (8.38222 3.97879 2.0) (640.888 2273.47 2597.49)
- (990.758 236.395 498.02) (51.7765 67.3905 39.9486) ((1.0 0.0 0.0) (0.0
- 1.0 0.0) (0.0 0.0 1.0)) (4.64475 8.74815 9.35079) ((6.70725 2.87031 0.0)
- (10.0572 5.08728 4.0)))
-```
-
-```lisp
-
+(29.7069 (8.38222 3.97879 2.0) (640.888 2273.47 2597.49) (990.758 236.395 498.02) (51.7765 67.3905 39.9486) ((1.0 0.0 0.0) (0.0 1.0 0.0) (0.0 0.0 1.0)) (4.64475 8.74815 9.35079) ((6.70725 2.87031 0.0) (10.0572 5.08728 4.0)))
 ```
 
 ---
@@ -1463,13 +1119,11 @@ Returns a list to all linked OLE objects.
 space
 ```
 
-If specified, the work space to query, where 0 = both, 1 = model space,
- and 2 = paper space. Otherwise, both model space and paper space are queried.
+If specified, the work space to query, where 0 = both, 1 = model space, and 2 = paper space. Otherwise, both model space and paper space are queried.
 
 ### Returns
 
-A list of string identifying the OLE objects in the specified space
- if successful.
+A list of string identifying the OLE objects in the specified space if successful.
 
 nil on error.
 
@@ -1477,9 +1131,7 @@ nil on error.
 
 ```lisp
 Command: (dos_olelist)
-```
 
-```lisp
 ("C:\\Users\\dale\\Documents\\Book1.xls")
 ```
 
@@ -1492,8 +1144,7 @@ Returns the centroid of a  closed, planar polyline entity.
 ### Syntax
 
 ```lisp
-(
-dos_plinecentroid entity)
+( dos_plinecentroid entity)
 ```
 
 ### Parameters
@@ -1514,9 +1165,7 @@ nil if not successful or on error.
 
 ```lisp
 Command: (dos_plinecentroid (car (entsel "\nSelect a closed curve:")))
-```
 
-```lisp
 (35.8886 26.6375 0.0)
 ```
 
@@ -1543,14 +1192,11 @@ The entity name of a closed polyline.
 
 ### Returns
 
-> 0 If
- the polyline winds to the left.
+> 0 If the polyline winds to the left.
 
-< 0 If the polyline winds
- to the right.
+< 0 If the polyline winds to the right.
 
-0 If unable to determine the
- winding.
+0 If unable to determine the winding.
 
 nil on error.
 
@@ -1559,9 +1205,7 @@ nil on error.
 ```lisp
 Command: (dos_plinewinding (car (entsel "\nSelect
  a closed polyline:")))
-```
 
-```lisp
 -1
 ```
 
@@ -1637,10 +1281,6 @@ Command: (dos_progbar)
 nil
 ```
 
-```lisp
-
-```
-
 ---
 
 ## dos_proxyclean
@@ -1667,18 +1307,8 @@ nil on error.
 
 ```lisp
 Command: (dos_proxyclean)
-```
 
-```lisp
 2
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1707,18 +1337,8 @@ nil on error.
 
 ```lisp
 Command: (dos_proxycount)
-```
 
-```lisp
 2
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1751,18 +1371,8 @@ nil on error.
 
 ```lisp
 Command: (dos_purgexdata (car (entsel "\nSelect object:")))
-```
 
-```lisp
 T
-```
-
-```lisp
-
-```
-
-```lisp
-
 ```
 
 ---
@@ -1790,28 +1400,16 @@ red
 The red component of an RGB color value.
 
 ```lisp
-
-```
-
-```lisp
 green
 ```
 
 The green component of an RGB color value.
 
 ```lisp
-
-```
-
-```lisp
 blue
 ```
 
 The blue component of an RGB color value.
-
-```lisp
-
-```
 
 ```lisp
 rgb
@@ -1829,21 +1427,11 @@ nil on error.
 
 ```lisp
 Command: (dos_rgbtoaci 0 0 255)
-```
 
-```lisp
 5
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_rgbtoaci 16711680)
-```
 
-```lisp
 5
 ```
 
@@ -1856,8 +1444,7 @@ Converts a Red-Green-Blue (RGB) color value to an RGB grayscale value.
 ### Syntax
 
 ```lisp
-(dos_rgbtogray red green
- blue)
+(dos_rgbtogray red green blue)
 ```
 
 ```lisp
@@ -1873,28 +1460,16 @@ red
 The red component of an RGB color value.
 
 ```lisp
-
-```
-
-```lisp
 green
 ```
 
 The green component of an RGB color value.
 
 ```lisp
-
-```
-
-```lisp
 blue
 ```
 
 The blue component of an RGB color value.
-
-```lisp
-
-```
 
 ```lisp
 rgb
@@ -1912,9 +1487,7 @@ nil on error.
 
 ```lisp
 Command: (dos_rgbtogray 255 0 255)
-```
 
-```lisp
 (104 104 104)
 ```
 
@@ -1922,14 +1495,12 @@ Command: (dos_rgbtogray 255 0 255)
 
 ## dos_rgbtohls
 
-Converts a Red-Green-Blue (RGB) color value to Hue-Luminance-Saturation
- (HLS) format.
+Converts a Red-Green-Blue (RGB) color value to Hue-Luminance-Saturation (HLS) format.
 
 ### Syntax
 
 ```lisp
-(dos_rgbtohls red green
- blue)
+(dos_rgbtohls red green blue)
 ```
 
 ```lisp
@@ -1945,28 +1516,16 @@ red
 The red component of an RGB color value.
 
 ```lisp
-
-```
-
-```lisp
 green
 ```
 
 The green component of an RGB color value.
 
 ```lisp
-
-```
-
-```lisp
 blue
 ```
 
 The blue component of an RGB color value.
-
-```lisp
-
-```
 
 ```lisp
 rgb
@@ -1984,21 +1543,11 @@ nil on error.
 
 ```lisp
 Command: (dos_rgbtohls 0 0 255)
-```
 
-```lisp
 (160 120 240)
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_rgbtohls 16711680)
-```
 
-```lisp
 (160 120 240)
 ```
 
@@ -2026,10 +1575,6 @@ nil if successful or on error.
 
 ```lisp
 Command: (dos_saveall)
-```
-
-```lisp
-
 ```
 
 ---
@@ -2072,9 +1617,7 @@ nil if successful on error.
 
 ```lisp
 Command: (dos_show 0)
-```
 
-```lisp
 nil
 ```
 
@@ -2124,9 +1667,7 @@ nil on error.
 
 ```lisp
 Command: (dos_showobjects ss)
-```
 
-```lisp
 3
 ```
 
@@ -2139,8 +1680,7 @@ Lists the names of the slides in an AutoCAD slide library file (.SLB).
 ### Syntax
 
 ```lisp
-(dos_slblist filename
- [sort])
+(dos_slblist filename [sort])
 ```
 
 ### Parameters
@@ -2155,15 +1695,13 @@ The slide library filename.
 sort
 ```
 
-If not specified, the slide names will be returned in the order found
- in the slide library. If T, then
- the names will be sorted in ascending order. If nil,
- the names will be sorted in descending order.
+If not specified, the slide names will be returned in the order found in the slide library. If T, then
+
+ the names will be sorted in ascending order. If nil, the names will be sorted in descending order.
 
 ### Returns
 
-A list of strings identifying the names of the slides in the slide library
- if successful.
+A list of strings identifying the names of the slides in the slide library if successful.
 
 nil on error.
 
@@ -2171,60 +1709,16 @@ nil on error.
 
 ```lisp
 Command: (dos_slblist acad.slb)
-```
 
-```lisp
-("ZIGZAG" "WEDGEPIC" "WEDGE"
- "VPORT-4R" "VPORT-4L" "VPORT-4" "VPORT-3V"
- "VPORT-3R" "VPORT-3L" "VPORT-3H" "VPORT-3B"
- "VPORT-3A" "VPORT-2V" "VPORT-2H" "VPORT-1"
- "VP-UR" "VP-UL" "VP-U" "VP-RIGHT"
- "VP-PLAN" "VP-LR" "VP-LO" "VP-LL"
- "VP-LEFT" "U-WORLD" "U-TOP" "U-RIGHT"
- "U-PREV" "U-LEFT" "U-FRONT" "U-CVIEW"
- "U-BOTTOM" "U-BACK" "TRIANG" "TRANS"
- "TORUS" "TORPIC" "SWAMP" "STEEL"
- "STARS" "SQUARE" "SPHERPIC" "SPHERE"
- "SOLID" "SACNCR" "PYRAMID" "PT100"
- "PT99" "PT98" "PT97" "PT96" "PT68"
- "PT67" "PT66" "PT65" "PT64" "PT36"
- "PT35" "PT34" "PT33" "PT32" "PT4"
- "PT3" "PT2" "PT1" "PT0" "PM-QUAD"
- "PM-CUBIC" "PM-BEZR" "PLASTI" "PLAST"
- "PL-QUAD" "PL-CUBIC" "NET3" "NET"
- "MUDST" "MESH" "MEDIT_WA" "MEDIT_OT"
- "MEDIT_OC" "MEDIT_MT" "MEDIT_MC" "MEDIT_DV"
- "MEDIT_CT" "MEDIT_CS" "MEDIT_CJ" "MEDIT_CC"
- "MEDIT_CA" "MEDIT_AV" "LINE" "INSUL"
- "HOUND" "HONEY" "HEX" "H-OUTER"
- "H-NORMAL" "H-IGNORE" "GRATE" "GRASS"
- "GDTU" "GDTT" "GDTS" "GDTR" "GDTP"
- "GDTN" "GDTM" "GDTL" "GDTK" "GDTJ"
- "GDTI" "GDTH" "GDTG" "GDTF" "GDTE"
- "GDTD" "GDTC" "GDTB" "GDTA" "FLEX"
- "ESCHER" "EARTH" "DOTS" "DOME"
- "DOLMIT" "DISH" "DDVP3D" "DASH"
- "CYLPIC" "CROSS" "CORK" "CONEPIC"
- "CONE" "CLAY" "CHROMA" "BRSTONE"
- "BRICK" "BRASS" "BOXPIC" "BOX3D"
- "BOX" "AR-SAND" "AR-RSHKE" "AR-RROOF"
- "AR-PARQ1" "AR-HBONE" "AR-CONC" "AR-BRSTD"
- "AR-BRELM" "AR-B88" "AR-B816C" "AR-B816"
- "ANSI38" "ANSI37" "ANSI36" "ANSI35"
- "ANSI34" "ANSI33" "ANSI32" "ANSI31"
- "ANGLE" "AILOGO" "15W100" "14W100"
- "13W100" "12W100" "11W100" "10W100"
- "09W100" "08W100" "07W100" "06W100"
- "05W100" "04W100" "03W100" "02W100"
- "%%BLANK" "GLASS" "WOOD" "GROUND")
+("ZIGZAG" "WEDGEPIC" "WEDGE" "VPORT-4R" "VPORT-4L" "VPORT-4" "VPORT-3V" "VPORT-3R" "VPORT-3L" "VPORT-3H" "VPORT-3B" "VPORT-3A" "VPORT-2V" "VPORT-2H" "VPORT-1" "VP-UR" "VP-UL" "VP-U" "VP-RIGHT" "VP-PLAN" "VP-LR" "VP-LO" "VP-LL" "VP-LEFT" "U-WORLD" "U-TOP" "U-RIGHT" "U-PREV" "U-LEFT" "U-FRONT" "U-CVIEW" "U-BOTTOM" "U-BACK" "TRIANG" "TRANS" "TORUS" "TORPIC" "SWAMP" "STEEL" "STARS" "SQUARE" "SPHERPIC" "SPHERE" "SOLID" "SACNCR" "PYRAMID" "PT100" "PT99" "PT98" "PT97" "PT96" "PT68" "PT67" "PT66" "PT65" "PT64" "PT36" "PT35" "PT34" "PT33" "PT32" "PT4" "PT3" "PT2" "PT1" "PT0" "PM-QUAD" "PM-CUBIC" "PM-BEZR" "PLASTI" "PLAST" "PL-QUAD" "PL-CUBIC" "NET3" "NET" "MUDST" "MESH" "MEDIT_WA" "MEDIT_OT" "MEDIT_OC" "MEDIT_MT" "MEDIT_MC" "MEDIT_DV" "MEDIT_CT" "MEDIT_CS" "MEDIT_CJ" "MEDIT_CC" "MEDIT_CA" "MEDIT_AV" "LINE" "INSUL" "HOUND" "HONEY" "HEX" "H-OUTER" "H-NORMAL" "H-IGNORE" "GRATE" "GRASS" "GDTU" "GDTT" "GDTS" "GDTR" "GDTP" "GDTN" "GDTM" "GDTL" "GDTK" "GDTJ" "GDTI" "GDTH" "GDTG" "GDTF" "GDTE" "GDTD" "GDTC" "GDTB" "GDTA" "FLEX" "ESCHER" "EARTH" "DOTS" "DOME" "DOLMIT" "DISH" "DDVP3D" "DASH" "CYLPIC" "CROSS" "CORK" "CONEPIC" "CONE" "CLAY" "CHROMA" "BRSTONE" "BRICK" "BRASS" "BOXPIC" "BOX3D" "BOX" "AR-SAND" "AR-RSHKE" "AR-RROOF" "AR-PARQ1" "AR-HBONE" "AR-CONC" "AR-BRSTD" "AR-BRELM" "AR-B88" "AR-B816C" "AR-B816" "ANSI38" "ANSI37" "ANSI36" "ANSI35" "ANSI34" "ANSI33" "ANSI32" "ANSI31" "ANGLE" "AILOGO" "15W100" "14W100" "13W100" "12W100" "11W100" "10W100" "09W100" "08W100" "07W100" "06W100" "05W100" "04W100" "03W100" "02W100" "%%BLANK" "GLASS" "WOOD" "GROUND")
 ```
 
 ---
 
 ## dos_summaryinfo
 
-Returns or modifies AutoCAD's drawing summary information, or DWGPROPS.  Note, this function
- just manipulates the summary information fields. If you want to manipulate
+Returns or modifies AutoCAD's drawing summary information, or DWGPROPS.  Note, this function just manipulates the summary information fields. If you want to manipulate
+
  custom fields, use dos_custominfo.
 
 ### Syntax
@@ -2238,8 +1732,7 @@ Returns or modifies AutoCAD's drawing summary information, or DWGPROPS.  Note, t
 ```
 
 ```lisp
-(dos_summaryinfo field_id
- [field_value])
+(dos_summaryinfo field_id [field_value])
 ```
 
 ### Parameters
@@ -2254,8 +1747,7 @@ Clears all drawing summary information.
 field_id
 ```
 
-The identifier of the field to retrieve. The possible field identifiers
- are as follows:
+The identifier of the field to retrieve. The possible field identifiers are as follows:
 
 		0
 
@@ -2293,30 +1785,24 @@ The identifier of the field to retrieve. The possible field identifiers
 		 Base
 
 ```lisp
-
-```
-
-```lisp
 field_value
 ```
 
 The new string value, if specified.
 
-Note, if no argument is specified, all of the drawing summary information
- is returned in an association list. Also, to clear a field, specified
+Note, if no argument is specified, all of the drawing summary information is returned in an association list. Also, to clear a field, specified
+
  a field value of either "" or nil.
 
 ### Returns
 
-If no arguments are specified, then all of the drawing summary information
- is returned in an association list.
+If no arguments are specified, then all of the drawing summary information is returned in an association list.
 
-If nil is specified, then all
- of the drawing summary information is cleared and T
+If nil is specified, then all of the drawing summary information is cleared and T
+
  is returned if successful.
 
-If a valid field identifier is specified, then the field value is returned
- if successful.
+If a valid field identifier is specified, then the field value is returned if successful.
 
 If a valid field identifier and a field value is specified, then T returned if successful.
 
@@ -2326,64 +1812,24 @@ nil on error.
 
 ```lisp
 Command: (dos_summaryinfo)
-```
 
-```lisp
-((0 . "3rd Floor Plumbing") (1 . "McNeel
- Project") (2 . "Dale Fugier") (3 . "McNeel, Plumbing")
- (4 . "In progress") (5 . "Dale") (6 . "")
- (7 . "www.mcneel.com"))
-```
+((0 . "3rd Floor Plumbing") (1 . "McNeel Project") (2 . "Dale Fugier") (3 . "McNeel, Plumbing") (4 . "In progress") (5 . "Dale") (6 . "") (7 . "www.mcneel.com"))
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_summaryinfo 0)
-```
 
-```lisp
 "3rd Floor Plumbing"
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_summaryinfo 0 "2nd Floor Plumbing")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_summaryinfo 2 "")
-```
 
-```lisp
 T
-```
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_summaryinfo)
-```
 
-```lisp
-((0 . "2nd Floor Plumbing") (1 . "McNeel
- Project") (2 . "") (3 . "McNeel, Plumbing") (4
- . "In progress") (5 . "Dale") (6 . "") (7
- . "www.mcneel.com"))
+((0 . "2nd Floor Plumbing") (1 . "McNeel Project") (2 . "") (3 . "McNeel, Plumbing") (4 . "In progress") (5 . "Dale") (6 . "") (7 . "www.mcneel.com"))
 ```
 
 ---
@@ -2404,45 +1850,26 @@ Returns a list of externally referenced drawing files.
 filename
 ```
 
-An AutoCAD drawing filename. If not specified, the externally referenced
- drawing files within the current drawing are returned.
+An AutoCAD drawing filename. If not specified, the externally referenced drawing files within the current drawing are returned.
 
 ### Returns
 
 A list of drawing file names if successful.
 
-nil if not successful or on
- error.
+nil if not successful or on error.
 
 ### Example
 
 ```lisp
 Command: (dos_xreflist)
-```
 
-```lisp
-("C:\\Program Files\\AutoCAD 2010\\Drawing1.dwg"
- "C:\\Program Files\\AutoCAD 2010\\Drawing2.dwg")
-```
+("C:\\Program Files\\AutoCAD 2010\\Drawing1.dwg" "C:\\Program Files\\AutoCAD 2010\\Drawing2.dwg")
 
-```lisp
-
-```
-
-```lisp
 Command: (dos_xreflist "C:\\Program Files\\AutoCAD
  2010\\Sample\\1st floor.dwg")
-```
 
-```lisp
-("1st floor plan.dwg" "1st floor architectural.dwg"
- "1st floor electrical.dwg" "1st floor lighting.dwg")
-```
-
-```lisp
-
+("1st floor plan.dwg" "1st floor architectural.dwg" "1st floor electrical.dwg" "1st floor lighting.dwg")
 ```
 
 ---
-
 

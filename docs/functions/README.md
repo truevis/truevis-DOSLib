@@ -20,23 +20,13 @@ Put the file on the AutoCAD support path, then load it:
 **2. Choose the file by version.** ACADVER starts with the release number, so the name can be built at run time:
 
 ```lisp
-(defun dos-load (/ acadv fname)
-  (setq acadv (substr (getvar "ACADVER") 1 2))            ; "26" for AutoCAD 2027
-  (setq fname (strcat "DOSLib" acadv "x64.arx"))
-  (if (findfile fname)
-    (arxload fname nil)
-    (princ (strcat "\n" fname " not found on the support path.")))
-  (princ))
+(defun dos-load (/ acadv fname) (setq acadv (substr (getvar "ACADVER") 1 2)) ; "26" for AutoCAD 2027 (setq fname (strcat "DOSLib" acadv "x64.arx")) (if (findfile fname) (arxload fname nil) (princ (strcat "\n" fname " not found on the support path."))) (princ))
 ```
 
 **3. Call the functions.** Once loaded, call any dos_* function from your own code:
 
 ```lisp
-(defun c:pickfile (/ fname)
-  (dos-load)
-  (setq fname (dos_getfiled "Select a file" "C:\\" "PTS files (*.pts)|*.pts|All files (*.*)|*.*||"))
-  (if fname (princ (strcat "\nChosen: " fname)))
-  (princ))
+(defun c:pickfile (/ fname) (dos-load) (setq fname (dos_getfiled "Select a file" "C:\\" "PTS files (*.pts)|*.pts|All files (*.*)|*.*||")) (if fname (princ (strcat "\nChosen: " fname))) (princ))
 ```
 
 **4. Check what is loaded.** dos_arxlist returns the loaded ARX module names. Check for DOSLib before calling its functions:
@@ -65,8 +55,7 @@ The ptsimport.lsp command in the truevis PTS import project uses this same patte
 
 ## Notes
 
-- Functions return 
-il on error, as described on each page.
+- Functions return nil on error, as described on each page.
 - Some help pages were written for older AutoCAD and BricsCAD releases. The behavior of functions tied to specific AutoCAD versions may differ on 2026 and 2027.
 - These pages come from the original DOSLib help. The DOSLib trademark belongs to Robert McNeel & Associates. This fork is not endorsed by them.
 

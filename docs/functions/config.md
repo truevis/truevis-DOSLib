@@ -76,19 +76,11 @@ nil "C:\\Windows\\win.ini")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_getini "Mail" nil "C:\\Windows\\win.ini")
 ```
 
 ```lisp
 ("MAPI" "CMC" "CMCDLLNAME" "CMCDLLNAME32" "MAPIX" "MAPIXVER" "OLEMessaging")
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -201,10 +193,6 @@ Command: (dos_regdel "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem")
 
 ```lisp
 T
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -402,19 +390,11 @@ nil on error.
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_regenumkeys "HKEY_CURRENT_USER" "Software\\Autodesk")
 ```
 
 ```lisp
 ("ACPROJECT" "AutoCAD" "Autodesk Digital Signatures" "DWFWriter" "Express Viewer" "FTPConnect" "ObjectARX AppWizard" "ObjectDBX")
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -484,10 +464,6 @@ Command: (dos_regenumnames "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD\\R16
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_regenumnames "HKEY_CURRENT_USER" "Software\\Autodesk\\AutoCAD\\R16.2\\ACAD-4001:409")
 ```
 
@@ -544,19 +520,11 @@ Command: (dos_regget "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_regget "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem2")
 ```
 
 ```lisp
 "False"
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -884,10 +852,6 @@ Command: (dos_regkey "HKEY_CURRENT_USER\\")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_regkey "HKEY_CURRENT_USER\\Software\\Autodesk")
 ```
 
@@ -952,10 +916,6 @@ Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1")
 ```
 
@@ -964,19 +924,11 @@ Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_regset "HKEY_CURRENT_USER\\Software\\MyApp" "MyItem1" "True")
 ```
 
 ```lisp
 "True"
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -1196,19 +1148,11 @@ Command: (dos_setini "section1" "entry1" "string1" "filename.ini")
 ```
 
 ```lisp
-
-```
-
-```lisp
 Command: (dos_setini "section1" "entry2" "string2" "filename.ini")
 ```
 
 ```lisp
 "C:\\Program Files\\AutoCAD 2006\\filename.ini"
-```
-
-```lisp
-
 ```
 
 ```lisp
@@ -1219,10 +1163,5 @@ Command: (dos_setini "section2" "entry1" "string1" "filename.ini")
 "C:\\Program Files\\AutoCAD 2006\\filename.ini"
 ```
 
-```lisp
-
-```
-
 ---
-
 
