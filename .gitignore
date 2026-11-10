@@ -427,3 +427,12 @@ FodyWeavers.xsd
 *.msix
 *.msm
 *.msp
+
+# Added for the AutoCAD 2026/2027 builds
+bin/
+x64/
+*.arx
+acad/
+
+# Prebuilt ARX modules shipped with the repo
+!arx/**/*.arx

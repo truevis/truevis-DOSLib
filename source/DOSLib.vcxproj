@@ -1201,7 +1201,7 @@
       <Optimization>MaxSpeed</Optimization>
       <AdditionalIncludeDirectories>\acad\arx\26\inc;\acad\arx\26\inc-x64;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalUsingDirectories>%(AdditionalUsingDirectories)</AdditionalUsingDirectories>
-      <PreprocessorDefinitions>WIN64;_WIN64;_WINDOWS;NDEBUG;DOSLIB_MODULE;_AFXEXT;_ACRXAPP;_ARX;ARX25;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN64;_WIN64;_WINDOWS;NDEBUG;DOSLIB_MODULE;_AFXEXT;_ACRXAPP;_ARX;ARX26;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <StringPooling>true</StringPooling>
       <BasicRuntimeChecks>Default</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>

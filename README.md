@@ -1,66 +1,71 @@
-# DOSLib: LISP Library for CAD Applications
+# DOSLib for AutoCAD 2026 and 2027
 
-<img width="128" height="128" src="https://github.com/dalefugier/DOSLib/raw/master/resources/doslib.png">
+A maintained build of **DOSLib**, a library of LISP-callable functions for AutoCAD that fill gaps in AutoCAD's built-in AutoLISP, such as file dialogs, file and folder utilities, and color conversion.
 
-This repository contains the source code to DOSLib, a library of LISP-callable functions that provide functionality not available in CAD-based LISP engines, such as those included with AutoCAD, BricsCAD Pro and ZWCAD.
+The original DOSLib by Dale Fugier is no longer maintained, and no binaries are published for recent AutoCAD releases. This fork builds the ObjectARX module for **AutoCAD 2027** (ObjectARX SDK 26) and **AutoCAD 2026** (ObjectARX SDK 25) from source.
 
-> [!IMPORTANT]  
-> After 34 years, DOSLib is done - we are no longer maintaining this repository, and we will not be releasing new binaries to support new versions of AutoCAD and BricsCAD Pro.
+> This is an unofficial fork. DOSLib is a trademark of Robert McNeel & Associates, who do not endorse or support this fork.
 
-## Prerequisites
+## Prebuilt binaries
 
-The following tools are required to build DOSLib:
+You don't need to compile to use DOSLib for AutoCAD 2027. The built module is in the repo:
 
-- [Microsoft Visual Studio 2026](https://visualstudio.microsoft.com/)
-- [ObjectARX SDK for AutoCAD](https://www.autodesk.com/developer-network/platform-technologies/autocad/objectarx-license-download)
-- [BRX SDK for BricsCAD](https://www.bricsys.com/en-eu/applications/developers/)
-- [ZRX SDK for ZWCAD](https://www.zwsoft.com/support/zwcad-devdoc/) (Requires Visual Studio 2017*)
+- `arx/2027/DOSLib26x64.arx` (SHA256 `3c98b20618c538365581dffb4532d9aa5d19dc3f019e485ef786be8d96a833f5`)
 
-When installing Visual Studio 2026, make sure to install the Visual Studio 2022 (v143), Visual Studio 2019 (v142) and Visual Studio 2017 (v141) C++ x64/x86 build tools and libraries, including ATL and MFC. 
+Copy it to an AutoCAD support folder, for example `%APPDATA%\Autodesk\AutoCAD 2027\R26.0\enu\Support`. A 2026 build will be added to `arx/2026/` once it's verified.
 
-Note, to build DOSLib for version of AutoCAD, BricsCAD and/or ZWCAD earlier than what is listed above may also require an earlier version of Visual Studio. Check the documentation that comes with each of these SDK for their Visual Studio requirement.
+Build from source if you need a different AutoCAD release or want to change DOSLib.
 
-The DOSLib build solution looks for ObjectARX, BRXSDK and ZRXSDK installations in this folder structure:
+## Quick start
 
-```
-\acad
-  \arx
-    \23    - ObjectARX for AutoCAD 2019
-    \24    - ObjectARX for AutoCAD 2021
-    \25    - ObjectARX for AutoCAD 2025
-    \26    - ObjectARX for AutoCAD 2027
-  \brx
-    \21    - BRXSDK for BricsCAD Pro V21
-    \22    - BRXSDK for BricsCAD Pro V22
-    \23    - BRXSDK for BricsCAD Pro V23
-    \24    - BRXSDK for BricsCAD Pro V24
-    \25    - BRXSDK for BricsCAD Pro V25
-    \26    - BRXSDK for BricsCAD Pro V26
-  \zrx
-    \21    - ZRXSDK for ZWCAD 2021/2022/2023/2024
-    \25    - ZRXSDK for ZWCAD 2025
+1. Install Visual Studio 2026 Build Tools with the C++ workload, ATL, and MFC, plus the v143 and v145 toolsets.
+2. Download the ObjectARX SDK for your AutoCAD release from Autodesk Platform Services and unpack it to `\acad\arx\25` (2026) or `\acad\arx\26` (2027) at the drive root.
+3. Build:
+
+   ```bash
+   msbuild source\DOSLib.vcxproj /p:Configuration=Release_ARX26 /p:Platform=x64
+   msbuild source\DOSLib.vcxproj /p:Configuration=Release_ARX25 /p:Platform=x64
+   ```
+
+4. Copy `bin\Release\arx\DOSLib26x64.arx` (2027) or `DOSLib25x64.arx` (2026) to an AutoCAD support folder.
+
+See [BUILDING.md](BUILDING.md) for the full build, toolset, and layout details.
+
+## Using DOSLib
+
+Load the module with `ARXLOAD` or by putting the `.arx` on the support path and loading it from AutoLISP:
+
+```lisp
+(arxload "DOSLib26x64.arx")
 ```
 
-### Compiling
+Functions are named `dos_*`. Example from a working command:
 
-1. Clone the repository. At a command prompt, enter the following command:
+```lisp
+(setq fname (dos_getfiled "Select a file" "C:\\" "PTS files (*.pts)|*.pts||"))
 ```
-git clone https://github.com/dalefugier/doslib
-```
-2. Open the `DOSLib.sln` solution file, found in the `doslib\source` folder, in Visual Studio.
-3. Select either the `Release_ARX26`, `Release_BRX26` or `Release_ZRX25` solution configuration.
-4. Press <kbd>F7</kbd>, or click *Build > Build Solution*  to build the solution.
 
-Note, you can target DOSLib for other versions of AutoCAD, BricsCAD or ZWCAD as long as:
+## Example: PTS point-cloud import
 
-1. The correct ObjectARX, BRXSDK or ZRXSDK is installed in above mentioned location.
-2. The correct Visual Studio platform toolset is installed.
+The PTS import command for AutoCAD uses DOSLib for its file dialog, file size, and RGB-to-ACI color mapping. It imports ReCap `.pts` files as colored POINT entities.
 
-### More Information
+- Product page: [truevis.com/pts-import](https://truevis.com/pts-import/)
+- Autodesk App Store: [marketplace.autodesk.com](https://marketplace.autodesk.com/apps/466a254c-dcf0-44d8-96c0-300b4323f60b)
 
-[DOSLib home page](https://wiki.mcneel.com/doslib/home)
+## What changed from upstream
 
-[DOSLib online help](https://github.com/dalefugier/DOSLib/wiki)
+- **AutoCAD 2027 target:** `Release_ARX26` builds `DOSLib26x64.arx`.
+- **AutoCAD 2026 target:** `Release_ARX25` builds `DOSLib25x64.arx`.
+- **Fix:** the `Release_ARX26` configuration defined `ARX25` instead of `ARX26`. That made `_ARX_VER` evaluate to 25 in the 2027 build. It is now `ARX26`.
+- **Docs:** `BUILDING.md` covers the build and SDK layout for both releases.
 
-### License
-Code licensed under the [MIT License](https://github.com/dalefugier/DOSLib/blob/master/LICENSE).
+The upstream history is preserved.
+
+## License
+
+MIT License. See [LICENSE](LICENSE). The original copyright (Robert McNeel & Associates, 1992–2026) is retained, and changes in this fork are offered under the same license.
+
+## Credits
+
+- Original DOSLib: Dale Fugier, Robert McNeel & Associates.
+- AutoCAD 2026/2027 build and maintenance: truevis.
