@@ -11,7 +11,7 @@ Upstream DOSLib no longer publishes binaries for recent AutoCAD versions, so bui
 
 ## Requirements
 
-- Visual Studio 2026 Build Tools with the C++ workload, ATL, and MFC. The `Release_ARX26` configuration uses the `v145` toolset, and `Release_ARX25` uses `v143`. Install both.
+- Visual Studio 2026 Build Tools with the C++ workload, ATL, and MFC. Both `Release_ARX26` and `Release_ARX25` use the `v145` toolset. Supported releases are AutoCAD 2027 and AutoCAD 2026.1.2 or later.
 - ObjectARX SDK for each target release, unpacked to `<root>\acad\arx\<nn>`, where `<root>` is the drive root. The project refers to `\acad\arx\25` and `\acad\arx\26`.
   - ObjectARX 2027: `\acad\arx\26`
   - ObjectARX 2026: `\acad\arx\25`

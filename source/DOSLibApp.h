@@ -232,6 +232,14 @@ public:
   static int ads_dos_strright();
   static int ads_dos_strtokens();
   static int ads_dos_strtrim();
+  static int ads_dos_base64_encode();
+  static int ads_dos_base64_decode();
+  static int ads_dos_json_string();
+  static int ads_dos_json_get();
+  static int ads_dos_http_request();
+  static int ads_dos_clipboard_get();
+  static int ads_dos_clipboard_set();
+  static int ads_dos_pts_stats();
   static int ads_dos_strtrimleft();
   static int ads_dos_strtrimright();
   static int ads_dos_strformat();

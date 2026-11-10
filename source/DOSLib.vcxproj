@@ -132,7 +132,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseOfMfc>Dynamic</UseOfMfc>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v143</PlatformToolset>
+    <PlatformToolset>v145</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_ARX26|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -1576,6 +1576,7 @@
     <ClCompile Include="func_printers.cpp" />
     <ClCompile Include="func_processes.cpp" />
     <ClCompile Include="func_strings.cpp" />
+    <ClCompile Include="func_ai.cpp" />
     <ClCompile Include="func_systems.cpp" />
     <ClCompile Include="func_tcpip.cpp" />
     <ClCompile Include="StdAfx.cpp">

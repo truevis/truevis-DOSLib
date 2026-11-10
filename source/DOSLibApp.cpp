@@ -56,6 +56,7 @@ AcRx::AppRetCode CDOSLibApp::On_kInitAppMsg(void* pkt)
   }
 
   acutPrintf(L"\n%s %s\n%s\n", AppName(), AppVersion(), AppCopyright());
+  acutPrintf(L"Updated for 2026 and 2027 by Eric Boehlke, truevis.com\n");
 
   return retCode;
 }
@@ -437,6 +438,16 @@ DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_htmldialog, false)
 
 // String functions
 DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_strcase, false)
+
+// AI and web helpers (truevis additions)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_base64_encode, false)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_base64_decode, false)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_json_string, false)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_json_get, false)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_http_request, false)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_clipboard_get, false)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_clipboard_set, false)
+DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_pts_stats, false)
 DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_strcat, false)
 DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_strchar, false)
 DOS_ADSSYMBOL_ENTRY_AUTO(CDOSLibApp, dos_strcompare, false)
