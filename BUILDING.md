@@ -1,8 +1,8 @@
 # Building DOSLib for AutoCAD 2026 and 2027
 
-This fork builds the ObjectARX module for two AutoCAD releases. The public repo includes all source needed to build; only the Autodesk ObjectARX SDK is required on your machine (not stored in git). Prebuilt `.arx` files under `arx/` are optional convenience copies of a Release build.
+This fork builds the ObjectARX module for two AutoCAD releases. The public repo includes all source needed to build; only the Autodesk ObjectARX SDK is required on your machine (not stored in git). Release modules are build outputs under `bin\Release\arx\` and are not committed.
 
-Upstream DOSLib no longer publishes binaries for recent AutoCAD versions, so building from this tree is the supported path for customization, debugging, or targets beyond the shipped prebuilds.
+Upstream DOSLib no longer publishes binaries for recent AutoCAD versions, so building from this tree is the supported path.
 
 | AutoCAD | ObjectARX SDK | Configuration | Output |
 |---|---|---|---|
@@ -26,9 +26,7 @@ msbuild source\DOSLib.vcxproj /p:Configuration=Release_ARX26 /p:Platform=x64
 msbuild source\DOSLib.vcxproj /p:Configuration=Release_ARX25 /p:Platform=x64
 ```
 
-Successful builds write the module to `bin\Release\arx\` (for example `DOSLib26x64.arx`). Intermediate files land under `source\x64\` and `bin\`; both are listed in `.gitignore` so a clean clone stays small and you always rebuild against your installed SDK.
-
-To refresh the repo’s optional prebuilt under `arx\<year>\`, copy the matching `.arx` from `bin\Release\arx\` after you verify it in AutoCAD.
+Successful builds write the module to a version folder under `bin\Release\arx\`: `2027\DOSLib26x64.arx` for AutoCAD 2027, and `2026.1.2\DOSLib25x64.arx` for AutoCAD 2026.1.2 or later. Intermediate files land under `source\x64\` and `bin\`; both are listed in `.gitignore` so a clean clone stays small and you always rebuild against your installed SDK.
 
 ## Loading
 

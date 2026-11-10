@@ -366,8 +366,8 @@
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_ZRX25|x64'">..\bin\Release\zrx\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_ARX23|x64'">..\bin\Release\arx\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_ARX24|x64'">..\bin\Release\arx\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_ARX25|x64'">..\bin\Release\arx\</OutDir>
-    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_ARX26|x64'">..\bin\Release\arx\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_ARX25|x64'">..\bin\Release\arx\2026.1.2\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_ARX26|x64'">..\bin\Release\arx\2027\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_BRX21|x64'">..\bin\Release\brx\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_BRX22|x64'">..\bin\Release\brx\</OutDir>
     <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_BRX23|x64'">..\bin\Release\brx\</OutDir>

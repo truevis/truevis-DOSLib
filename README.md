@@ -37,7 +37,7 @@ When the module loads, AutoCAD prints `Updated for 2026 and 2027 by Eric Boehlke
 
 ## Get DOSLib
 
-You can **build from source** or **use a prebuilt module**. The repository ships the full C++ sources and Visual Studio project (`source\DOSLib.vcxproj`, `make\make_doslib.sln`). ObjectARX SDK paths are not included—you install those locally per [BUILDING.md](BUILDING.md). Build outputs under `bin\` and `source\x64\` are generated on your machine and are not committed.
+Build from source. The repository ships the full C++ sources and Visual Studio project (`source\DOSLib.vcxproj`, `make\make_doslib.sln`). ObjectARX SDK paths are not included—you install those locally per [BUILDING.md](BUILDING.md). Build outputs under `bin\` and `source\x64\` are generated on your machine and are not committed.
 
 ### Build from source
 
@@ -49,17 +49,9 @@ You can **build from source** or **use a prebuilt module**. The repository ships
     msbuild source\DOSLib.vcxproj /p:Configuration=Release_ARX26 /p:Platform=x64
     msbuild source\DOSLib.vcxproj /p:Configuration=Release_ARX25 /p:Platform=x64
    ```
-4. Copy `bin\Release\arx\DOSLib26x64.arx` (2027) or `DOSLib25x64.arx` (AutoCAD 2026.1.2) to an AutoCAD support folder.
+4. Copy `bin\Release\arx\2027\DOSLib26x64.arx` or `bin\Release\arx\2026.1.2\DOSLib25x64.arx` to an AutoCAD support folder. Example: `%APPDATA%\Autodesk\AutoCAD 2027\R26.0\enu\Support`. `DOSLib25x64.arx` is for AutoCAD 2026.1.2 or later.
 
 See [BUILDING.md](BUILDING.md) for toolsets, SDK layout, and troubleshooting.
-
-### Prebuilt binaries (optional)
-
-To use DOSLib in AutoCAD 2027 without compiling, copy the checked-in module from the repo:
-
-- `arx/2027/DOSLib26x64.arx` (SHA256 `3c98b20618c538365581dffb4532d9aa5d19dc3f019e485ef786be8d96a833f5`)
-
-Example support folders: `%APPDATA%\Autodesk\AutoCAD 2027\R26.0\enu\Support` for `DOSLib26x64.arx`, and the matching 2026.1.2 support path for `DOSLib25x64.arx`. A verified `DOSLib25x64.arx` (2026.1.2) build will be added under `arx/2026/` when ready. After you build locally, you can copy your own `.arx` from `bin\Release\arx\` instead—same file name.
 
 ## Using DOSLib
 
